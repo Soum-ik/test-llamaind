@@ -23,7 +23,7 @@ function FutureTech() {
                     <FutureTechLooping array={leftSideTechs} />
                     <div className=" !overflow-hidden relative flex items-center justify-center !mx-auto">
                         <video src={features} loop autoPlay muted className=" iamge1-fixer  !max-w-[1650px]" />
-                        <img src={FutureIcon} className='  z-50 absolute' alt="" />
+                        <img src={FutureIcon} className='  z-40 absolute' alt="" />
                     </div>
                     <div className="absolute z-10 blur-[200px]  rounded-full !left-[400px] mx-auto  w-[900px] h-[800px] opacity-30 bg-[#5D5CE8]" />
                     <FutureTechLooping array={rightSideTechs} />

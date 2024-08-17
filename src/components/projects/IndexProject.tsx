@@ -28,7 +28,7 @@ function IndexProject() {
         <div className=" relative flex  mx-auto items-center justify-between">
             {
                 projects.map((project, idx) => (
-                    <div key={idx} className=" z-50 w-[600px] text-white space-y-3">
+                    <div key={idx} className=" z-40 w-[600px] text-white space-y-3">
                         <img src={project.icon} alt="" />
                         <div className="leading-[54px] text-[44px] font-bold font-Roboto">
                             {project?.description?.map((line, lineIdx) => (
@@ -41,7 +41,7 @@ function IndexProject() {
             }
             <div className="absolute z-0 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full w-[900px] h-[800px] opacity-40 bg-[#3534C0]" />
 
-            <div className="z-50">
+            <div className="z-40">
                 <img className="" src={project1} alt="" />
             </div>
         </div>
