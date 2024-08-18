@@ -1,8 +1,8 @@
-import { useState } from "react";
+
 import Layout from "../layout/Layout";
 import icon1 from '../../../public/images/projects/project1.png'
 import project1 from '../../../public/images/project1.png'
-import { MoveRight, PowerOff } from "lucide-react";
+import { MoveRight } from "lucide-react";
 
 
 // Define the type for project details
@@ -13,7 +13,9 @@ interface Project {
 }
 
 function IndexProject() {
-    const [currentProjectNumber, setCurrentProjectNumber] = useState<string>('01');
+    // const [currentProjectNumber, setCurrentProjectNumber] = useState<string>('01');
+
+    let currentProjectNumber = 1
 
     const projects: Project[] = [
         { icon: icon1, description: ["The First Cloud-Based", " Fleet Monetization Platform"], status: "(Upcomming Project)" }
