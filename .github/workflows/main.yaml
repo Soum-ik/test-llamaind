@@ -44,8 +44,8 @@ jobs:
 
             # Clone the dev branch of the repository
             git stash
-            git fetch origin dev
-            git reset --hard origin/dev
+            git fetch origin main
+            git reset --hard origin/main
 
             # Install dependencies
             npm install
