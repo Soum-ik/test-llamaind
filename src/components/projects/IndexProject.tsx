@@ -21,7 +21,7 @@ function IndexProject() {
 
 
     return <Layout>
-        <div className=" flex items-center justify-between">
+        <div className=" flex items-center justify-between ">
             <h1 className="text-[250px] w-[700px] text-white font-Orbitron font-bold opacity-5">Projects</h1>
             <h1 className="text-[100px] w-[100px] -mr-9 text-white font-Orbitron font-bold opacity-5 rotate-90">{currentProjectNumber}</h1>
         </div>
@@ -39,7 +39,7 @@ function IndexProject() {
                     </div>
                 ))
             }
-            <div className="absolute z-0 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full w-[900px] h-[800px] opacity-40 bg-[#3534C0]" />
+            <div className="absolute pb-[100px] z-40 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full w-[900px] h-[800px] opacity-40 bg-[#3534C0]" />
 
             <div className="z-40">
                 <img className="" src={project1} alt="" />

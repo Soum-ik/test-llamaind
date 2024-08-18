@@ -74,7 +74,7 @@ function Details() {
     return (
         <Layout>
             <div className=" !pt-[200px] slider2 !flex relative !justify-between  mb-[400px] ">
-                <div ref={videoRef} id="slider2-video" className=" absolute padding-right">
+                <div ref={videoRef} id="slider2-video" className="  absolute padding-right">
                     <div className=" relative flex items-center justify-center">
                         <div className="!overflow-hidden flex items-center justify-center !mx-auto ">
                             <video className=" iamge-fixer  !mx-auto  !max-w-[1750px]" src={waveVideo} loop autoPlay muted />

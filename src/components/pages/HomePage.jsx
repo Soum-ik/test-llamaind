@@ -11,7 +11,6 @@ export default function HomePage() {
         <div className="  bg-black w-full  font-Orbitron">
             <Navbar />
             <Header />
-            <Instructor />
             <FutureTech />
             <IndexProject />
             <OpenPosition />
