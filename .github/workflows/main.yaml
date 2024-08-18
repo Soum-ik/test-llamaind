@@ -43,6 +43,7 @@ jobs:
             cd /home/ubuntu/Llmamind-website-frontend
 
             # Clone the dev branch of the repository
+            sudo su
             git stash
             git fetch origin main
             git reset --hard origin/main
