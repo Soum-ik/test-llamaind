@@ -1,0 +1,62 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20' # Specify the version of Node.js you need
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the React app
+        run: npm run build
+  
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.KEY }}
+
+      - name: SSH into EC2 and deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no -i $SSH_AUTH_SOCK ubuntu@ec2-13-250-61-96.ap-southeast-1.compute.amazonaws.com << 'EOF'
+            # Change to home directorys
+            cd /home/ubuntu/Llmamind-website-frontend
+
+            # Clone the dev branch of the repository
+            git stash
+            git fetch origin dev
+            git reset --hard origin/dev
+
+            # Install dependencies
+            npm install
+
+            # Build the React app
+            npm run build
+
+            # Move the built files to the web server directory
+            sudo rm -rf /var/www/llamamind-frontend/*
+            sudo mv dist/* /var/www/llamamind-frontend/
+
+            # Restart Nginx to serve the new files
+            sudo systemctl restart nginx
+          EOF

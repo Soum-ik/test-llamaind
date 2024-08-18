@@ -2,27 +2,18 @@
 import Layout from "./layout/Layout";
 import waveVideo from '../../public/video/hero.mp4'
 import headerImage from '../../public/images/header.png'
-import { useRef } from "react";
-
-interface AboutUsProps {
-    refarence?: React.RefObject<HTMLDivElement>;
-}
 
 
-const AboutUs: React.FC<AboutUsProps> = ({ refarence }) => {
-
-    // Alternatively, using useRef within the component
-    const localRef = useRef<HTMLDivElement>(null);
-
+const AboutUs = () => {
     return <Layout>
-        <div ref={refarence || localRef} className="!flex relative !justify-between mt-[300px] mb-[800px] ">
+        <div className="!flex relative !justify-between mt-[300px] z-40 mb-[1000px] ">
             <div className=" absolute -left-[520px]">
                 <div className=" relative flex items-center justify-center">
                     <div className="  !overflow-hidden flex items-center justify-center !mx-auto ">
                         <video className=" iamge-fixer  !mx-auto  !max-w-[1750px]" src={waveVideo} loop autoPlay muted />
                     </div>
                     <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
-                    <img className=" z-20 absolute inset-0 mx-auto -top-16 size-[660px]" src={headerImage} alt="" />
+                    <img className=" z-40 absolute inset-0 mx-auto -top-16 size-[660px]" src={headerImage} alt="" />
                 </div>
             </div>
 
