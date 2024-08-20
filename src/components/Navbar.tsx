@@ -8,11 +8,11 @@ function Navbar() {
     return (
         <div className=' w-full h-auto'>
             <Layout>
-                <div className=' mx-auto max-w-[1720px] fixed left-0 top-0 right-0 w-full z-50 backdrop-blur-2xl'>
-                    <div className="z-[20000px]  p-3 flex items-center justify-between">
-                        <div>
+                <div className=' mx-auto  fixed left-0 top-0 right-0 w-full z-50 backdrop-blur-2xl'>
+                    <div className="z-[20000px] max-w-[1720px] mx-auto px-3 py-4 flex items-center justify-between">
+                        <Link to={'/'}>
                             <img src={brandLogo} alt="brand logo z-[20000px]" />
-                        </div>
+                        </Link>
                         <div className="hidden md:flex items-center z-[20000px] font-Roboto gap-12 !text-white">
                             <Link className="text-gradient" to={'/about'}>About Us</Link>
                             <Link className='text-gradient' to={'/career'}>Careers</Link>

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Layout from "../layout/Layout";
-import waveVideo from "../../../public/video/hero.mp4";
+import waveVideo from "../../../public/video/about-us-new.mp4";
 import headerImage from "../../../public/images/aboutLogo.png";
 import { Minus } from 'lucide-react';
 
@@ -28,20 +28,45 @@ function Details() {
                 scrub: true,
             }
         });
+        const textElements = Array.from(textRef.current.children);
 
-        gsap.from(textRef.current.children, {
-            scrollTrigger: {
-                trigger: textRef.current,
-                start: "top top", // Start animation when text hits the center of the viewport
-                end: "bottom bottom",
-                scrub: true,
-            },
-            opacity: 3,
-            y: 50,
-            stagger: .4,
-            duration: 20,
-            delay: 2
+        textElements.forEach((text, index) => {
+            gsap.fromTo(
+                text,
+                { opacity: 0, y: 100 }, // Initial state
+                {
+                    scrollTrigger: {
+                        trigger: text,
+                        start: "top 75%", // Start animation when the top of the text is in view
+                        end: "top 25%",   // End when the top reaches near the top of the viewport
+                        scrub: true,
+                        onEnter: () => {
+                            // Apply blur to all text elements except the current one
+                            textElements.forEach((el, i) => {
+                                if (i !== index) {
+                                    gsap.to(el, { filter: "blur(20px)", duration: 0.5 });
+                                }
+                            });
+
+                            // Clear blur on the current text element
+                            gsap.to(text, { filter: "blur(0px)", duration: 0.5 });
+                        },
+                        onLeave: () => {
+                            // Reset blur to all text elements when the current one leaves the viewport
+                            textElements.forEach((el) => {
+                                gsap.to(el, { filter: "blur(0px)", duration: 0.5 });
+                            });
+                        },
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 1,
+                    filter: "blur(0px)", // Clear blur when entering
+                }
+            );
         });
+
 
     }, { scope: [textRef, videoRef] });
 
@@ -72,41 +97,45 @@ function Details() {
 
 
     return (
-        <Layout>
-            <div className=" !pt-[200px] slider2 !flex relative !justify-between  mb-[400px] ">
-                <div ref={videoRef} id="slider2-video" className="  absolute padding-right">
-                    <div className=" relative flex items-center justify-center">
-                        <div className="!overflow-hidden flex items-center justify-center !mx-auto ">
-                            <video className=" iamge-fixer  !mx-auto  !max-w-[1750px]" src={waveVideo} loop autoPlay muted />
+        <div className="relative">
+            <Layout>
+                <div className=" !pt-[200px] slider2 !flex relative !justify-between  pb-[300px] ">
+                    <div ref={textRef} id="rightSide" className="  pt-[50px] space-y-[500px] z-40">
+                        <div id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
+                            {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                            <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item.title}</h1>
+                            <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item.description}</p>
+                            {item.button && <Button text="View Projects" />}
                         </div>
-                        <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
-                        <img className=" z-20 absolute inset-0 mx-auto -top-16 size-[660px]" src={headerImage} alt="" />
-                    </div>
-                </div>
+                        <div id="slider2-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
+                            {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                            <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item1.title}</h1>
+                            <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
+                            {item1.button && <Button text="View Projects" />}
+                        </div>
+                        <div id="slider3-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
+                            {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                            <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item2.title}</h1>
+                            <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
+                            {item2.button && <Button text="View Projects" />}
+                        </div>
 
-                <div ref={textRef} id="rightSide" className="  space-y-[500px] z-40">
-                    <div id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
-                        {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                        <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item.title}</h1>
-                        <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item.description}</p>
-                        {item.button && <Button text="View Projects" />}
-                    </div>
-                    <div id="slider2-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
-                        {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                        <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item1.title}</h1>
-                        <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
-                        {item1.button && <Button text="View Projects" />}
-                    </div>
-                    <div id="slider3-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
-                        {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                        <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item2.title}</h1>
-                        <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
-                        {item2.button && <Button text="View Projects" />}
                     </div>
 
+                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] absolute z-20 right-0 top-[140px]">
+                        <div className=" relative flex items-center z-40 justify-center">
+                            {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
+                            <div className="z-40 about-video-size flex items-center justify-center !mx-auto">
+                                {/* <video className="!max-w-[850px]" src={waveVideo} loop autoPlay muted /> */}
+                                <video className="z-40 w-full h-full absolute left-[250px]" src={waveVideo} loop autoPlay muted />
+                            </div>
+                            <div className="absolute right-0 pb-10 z-40 about-blur-shadow" />
+                            <img className="  z-40 absolute -right-10 mx-auto about-image" src={headerImage} alt="" />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </Layout>
+            </Layout>
+        </div>
     );
 }
 

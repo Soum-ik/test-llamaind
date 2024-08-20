@@ -1,0 +1,131 @@
+{
+    "FrontendDeveloper": {
+      "WorkingDetails": [
+        "- 09:00 AM - 06:00 PM.",
+        "- Sunday to Thursday (5 days a week)",
+        "- Friday, Saturday off"
+      ],
+      "KeyResponsibilities": [
+        "- Develop responsive and visually appealing web applications using front-end technologies.",
+        "- Collaborate with designers and back-end developers to implement user interfaces and integrate with server-side logic.",
+        "- Ensure cross-browser compatibility and optimize application performance.",
+        "- Write clean, maintainable, and well-documented code.",
+        "- Conduct code reviews and provide constructive feedback."
+      ],
+      "Requirements": [
+        "- Proven experience as a Frontend Developer or similar role.",
+        "- Strong knowledge of HTML, CSS, JavaScript, and modern front-end frameworks (React, Angular, Vue.js).",
+        "- Experience with version control systems (Git).",
+        "- Familiarity with RESTful APIs and web services.",
+        "- Understanding of responsive design and web accessibility standards.",
+        "- Excellent problem-solving skills and attention to detail."
+      ],
+      "TechnicalProficiency": [
+        "- Experience with CSS preprocessors (SASS, LESS).",
+        "- Knowledge of state management libraries (Redux, MobX).",
+        "- Familiarity with build tools and task runners (Webpack, Gulp)."
+      ],
+      "Benefits": [
+        "- Competitive salary",
+        "- Health insurance",
+        "- Paid time off",
+        "- Professional development opportunities"
+      ]
+    },
+    "BackendDeveloper": {
+      "WorkingDetails": [
+        "09:00 AM - 06:00 PM.",
+        "Sunday to Thursday (5 days a week)",
+        "Friday, Saturday off"
+      ],
+      "KeyResponsibilities": [
+        "Develop and maintain server-side applications and APIs.",
+        "Design and implement database schemas and manage data storage solutions.",
+        "Ensure application security and data protection.",
+        "Write efficient, reusable, and scalable code.",
+        "Collaborate with frontend developers to integrate user-facing elements with server-side logic."
+      ],
+      "Requirements": [
+        "Proven experience as a Backend Developer or similar role.",
+        "Strong knowledge of server-side languages (Node.js, Python, Java, Ruby).",
+        "Experience with database management systems (SQL, MongoDB, PostgreSQL).",
+        "Familiarity with RESTful APIs and web services.",
+        "Understanding of server architecture and cloud platforms (AWS, Azure)."
+      ],
+      "TechnicalProficiency": [
+        "Experience with containerization and orchestration tools (Docker, Kubernetes).",
+        "Knowledge of CI/CD pipelines and automated deployment processes.",
+        "Familiarity with message brokers (RabbitMQ, Kafka)."
+      ],
+      "Benefits": [
+        "Competitive salary",
+        "Health insurance",
+        "Paid time off",
+        "Professional development opportunities"
+      ]
+    },
+    "UIDeveloper": {
+      "WorkingDetails": [
+        "09:00 AM - 06:00 PM.",
+        "Sunday to Thursday (5 days a week)",
+        "Friday, Saturday off"
+      ],
+      "KeyResponsibilities": [
+        "Design and develop user interfaces for web applications, ensuring a seamless and engaging user experience.",
+        "Work closely with UX designers to implement design concepts and prototypes.",
+        "Optimize UI components for performance and responsiveness.",
+        "Conduct usability testing and gather feedback for continuous improvement.",
+        "Stay updated with the latest UI/UX trends and best practices."
+      ],
+      "Requirements": [
+        "Proven experience as a UI Developer or similar role.",
+        "Strong knowledge of HTML, CSS, JavaScript, and UI frameworks (Bootstrap, Material-UI).",
+        "Experience with design tools (Figma, Adobe XD, Sketch).",
+        "Familiarity with responsive design and cross-browser compatibility.",
+        "Excellent attention to detail and visual design skills."
+      ],
+      "TechnicalProficiency": [
+        "Experience with front-end frameworks (React, Angular).",
+        "Knowledge of animation libraries and interactive elements (GSAP, Lottie).",
+        "Understanding of accessibility standards and guidelines."
+      ],
+      "Benefits": [
+        "Competitive salary",
+        "Health insurance",
+        "Paid time off",
+        "Professional development opportunities"
+      ]
+    },
+    "DevOpsEngineer": {
+      "WorkingDetails": [
+        "09:00 AM - 06:00 PM.",
+        "Sunday to Thursday (5 days a week)",
+        "Friday, Saturday off"
+      ],
+      "KeyResponsibilities": [
+        "Develop and maintain CI/CD pipelines for automated build, test, and deployment processes.",
+        "Manage and monitor cloud infrastructure and on-premise servers.",
+        "Implement and enforce security best practices and policies.",
+        "Collaborate with development teams to optimize application performance and scalability.",
+        "Troubleshoot and resolve infrastructure and deployment issues."
+      ],
+      "Requirements": [
+        "Proven experience as a DevOps Engineer or similar role.",
+        "Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).",
+        "Experience with containerization and orchestration tools (Docker, Kubernetes).",
+        "Familiarity with configuration management tools (Ansible, Terraform).",
+        "Understanding of networking, security, and system administration."
+      ],
+      "TechnicalProficiency": [
+        "Experience with monitoring and logging tools (Prometheus, Grafana, ELK Stack).",
+        "Knowledge of scripting languages (Bash, Python).",
+        "Familiarity with infrastructure as code (IaC) practices."
+      ],
+      "Benefits": [
+        "Competitive salary",
+        "Health insurance",
+        "Paid time off",
+        "Professional development opportunities"
+      ]
+    }
+  }

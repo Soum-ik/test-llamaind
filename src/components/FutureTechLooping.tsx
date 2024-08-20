@@ -6,7 +6,7 @@ type FutureTechLoopingProps = {
 
 function FutureTechLooping({ array }: FutureTechLoopingProps) {
     return (
-        <div className="mt-10 space-y-4 ">
+        <div className="mt-10 z-30 space-y-4 ">
             {array.map((item, idx) => (
                 <Box text={item} key={idx} />
             ))}

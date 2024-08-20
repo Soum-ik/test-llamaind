@@ -1,7 +1,8 @@
 const staticData = [
     {
-        "title": "Be Part of Our Innovative Journey",
-        "description": "Join a Team That Values Collaboration and Growth: We're Seeking Passionate Individuals Ready to Make a Difference in a Fast-Paced, Innovative Environment. If You Thrive on Teamwork, Adaptability, and Results, Explore Opportunities with Us.", 
+        "title": `Be Part of 
+        Our Innovative Journey`,
+        "description": "Join a Team That Values Collaboration and Growth: We're Seeking Passionate Individuals Ready to Make a Difference in a Fast-Paced, Innovative Environment. If You Thrive on Teamwork, Adaptability, and Results, Explore Opportunities with Us.",
         "button": "View Open Positions"
     },
     {
@@ -33,38 +34,72 @@ const staticData = [
             }
         ]
     }
-
-
     ,
     {
         "title": "Becoming One of Us",
         "one_of_us": [
             {
                 "title": "Innovative",
-                "description": "We focus on forward-thinking solutions to drive creativity and results."
+                "description": "We thrive on fresh ideas, pushing boundaries to create groundbreaking solutions that set us apart as industry leaders."
             },
             {
                 "title": "Empathetic",
-                "description": "We prioritize personal well-being, offer mental health care, and nurture strong team relationships."
+                "description": "Our empathetic approach allows us to deeply understand user needs, crafting designs that resonate and distinguish us from the rest."
             },
             {
                 "title": "Adaptable",
-                "description": "Through ever-evolving projects and tasks, we strive to create a flexible and accommodating work environment."
+                "description": "Thriving amidst change highlights our flexibility, enabling us to swiftly tackle challenges and solidify our reputation as a resilient and agile team."
             },
             {
                 "title": "Collaborative",
-                "description": "We build partnerships internally and externally, working together for collective growth and innovation."
+                "description": "Diverse perspectives come together in seamless collaboration, fostering a vibrant creative ecosystem that drives us to deliver excellence."
             },
             {
-                "title": "Growth",
-                "description": "We believe in helping others grow while working towards collective company success."
+                "title": "Excellent",
+                "description": "Striving for excellence defines us, driving us to create extraordinary work that highlights our team's exceptional dedication and skill."
             },
             {
                 "title": "Accountable",
-                "description": "We hold ourselves to high standards and own responsibility for our actions."
+                "description": "Ownership builds trust; our dedication to meeting and exceeding expectations enhances our reputation as a reliable and accomplished team."
             }
         ]
     }
 ]
 
-export { staticData };
+const openPositios = [
+    {
+        id: 1,
+        positionName: "Back-end Developer",
+        location: "Remote",
+        type: "Full time",
+    },
+    {
+        id: 2,
+        positionName: "Front-end Developer",
+        location: "Remote",
+        type: "Full time",
+    },
+    {
+        id: 3,
+        positionName: "UX Designer",
+        location: "Dhaka, Bangladesh",
+        type: "Full time",
+    },
+    {
+        id: 4,
+        positionName: "DevOps Engineer",
+        location: "Dhaka, Bangladesh",
+        type: "Full time",
+    },
+    {
+        id: 5,
+        positionName: "Mobile Apps Developer",
+        location: "Dhaka, Bangladesh",
+        type: "Full time",
+    },
+];
+
+
+export { staticData, openPositios };
+
+
