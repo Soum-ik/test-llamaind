@@ -9,6 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .blue__gradient {
   background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #5D5CE8 100%);
   filter: blur(123px);
@@ -94,6 +98,10 @@ html {
   }
 } */
 
+.project-showcase-size {
+  width: 300.852px;
+  height: 176.981px;
+}
 
 .image {
   width: 2800px;
@@ -311,3 +319,208 @@ html {
   line-height: 26px;
   /* 130% */
 }
+
+.home-video-size {
+  width: 1652px !important;
+  height: 665px !important;
+}
+
+/* mobile version */
+.main-heading {
+  color: var(--bg-texts-white, #FFF);
+  text-align: center;
+
+  /* Big Title Mobile 42 */
+  font-family: Orbitron;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 46px;
+  /* 109.524% */
+}
+
+.base-heading {
+  color: var(--bg-texts-white, #FFF);
+  text-align: center;
+
+  /* Regular Title Mobile 34 */
+  font-family: Orbitron;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 40px;
+  /* 117.647% */
+}
+
+.small-heading {
+  color: var(--bg-texts-white, #FFF);
+  text-align: center;
+
+  /* Regular Title Mobile 34 */
+  font-family: Orbitron;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 40px;
+  /* 117.647% */
+}
+
+.avater-size {
+  width: 346px;
+  height: 346px;
+  flex-shrink: 0;
+}
+
+.main-shadow-gradient {
+  width: 346px;
+  height: 346px;
+  flex-shrink: 0;
+  border-radius: 450.122px;
+  opacity: 0.3;
+  background: var(--Primary-Blue, #5D5CE8);
+  filter: blur(162.24777221679688px);
+}
+
+.mobile-project-moving {
+  border-radius: 450.122px;
+  opacity: 0.3;
+  background: var(--Primary-Blue, #5D5CE8);
+  filter: blur(162.24777221679688px);
+}
+
+.main-sub-heading {
+  color: var(--bg-texts-white, #FFF);
+  text-align: center;
+
+  /* Body Mobile 22 */
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+  /* 163.636% */
+}
+
+.main-sub-heading-low {
+  color: var(--bg-texts-white, #D5D5D5);
+  text-align: center;
+
+  /* Body Mobile 22 */
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+  /* 163.636% */
+}
+
+.background-color {
+  background: rgba(0, 0, 0, 0.90);
+  backdrop-filter: blur(10px);
+}
+
+.nav-box {
+  display: flex;
+  width: 353px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+
+/* mobile text */
+
+.large-mobile {
+  color: var(--bg-texts-navy-blue, #0A0A24);
+
+  /* Large Title Mobile 68 */
+  font-family: Orbitron;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.big-moblie {
+  color: var(--bg-texts-navy-blue, #0A0A24);
+
+  /* Big Title Mobile 42 */
+  font-family: Orbitron;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 46px;
+  /* 109.524% */
+}
+
+.regular-mobile {
+  color: var(--bg-texts-navy-blue, #0A0A24);
+
+  /* Regular Title Mobile 34 */
+  font-family: Orbitron;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 40px;
+  /* 117.647% */
+}
+
+.small-mobile {
+  color: var(--bg-texts-navy-blue, #0A0A24);
+
+  /* Small Title Mobile 32 */
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  /* 109.375% */
+}
+
+.very-small-mobile {
+  color: var(--bg-texts-navy-blue, #0A0A24);
+
+  /* Very Small Title Mobile 20 */
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.body-mobile {
+  color: var(--bg-texts-white, #FFF);
+
+  /* Body Mobile 22 */
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+  /* 163.636% */
+}
+
+.project-btn {
+  color: var(--bg-texts-white, #FFF);
+
+  /* Button 20 */
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  display: flex;
+  height: 50px;
+  padding: 18px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  align-self: stretch;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #5D5CE8 0%, #6CB1FF 100%);
+  box-shadow: 6px 6px 24px 0px rgba(93, 92, 232, 0.24);
+}
+
+ 

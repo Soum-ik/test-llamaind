@@ -13,7 +13,7 @@ function Positions() {
 
             {availableVacancies ?
                 <>
-                    <h1 className="text-[250px] w-[700px] text-white font-Orbitron font-bold opacity-5">Positions</h1>
+                    <h1 className="text-[250px] w-[700px] text-white font-Orbitron font-bold opacity-5 z-50">Positions</h1>
                     <JobList positions={openPositios} />
                 </> : <>
                     <div className=''>
