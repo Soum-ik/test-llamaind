@@ -25,10 +25,10 @@ function Navbar() {
                         </div>
                     </div>
                     {
-                        isOpen && <div className='md:hidden z-50  top-1 nav-bo min-h-[852px] w-full mt-[50px]  absolute background-color'>
-                            <h1 className='main-sub-heading'>About Us</h1>
-                            <h1 className='main-sub-heading'>Careers</h1>
-                            <h1 className='main-sub-heading'>Contact</h1>
+                        isOpen && <div className='md:hidden z-50 pt-[10px] -pl-[200px] top-3 nav-bo min-h-[852px] w-full mt-[50px]  absolute background-color'>
+                            <h1 className='main-sub-heading'><Link to={'/about'}>About Us</Link></h1>
+                            <h1 className='main-sub-heading'><Link to={'/career'}>Careers</Link></h1>
+                            <h1 className='main-sub-heading'><Link to={'/contact'}>Contact</Link></h1>
                         </div>
                     }
                 </div>

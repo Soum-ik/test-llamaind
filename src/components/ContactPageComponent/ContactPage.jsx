@@ -14,13 +14,13 @@ function ContactPage() {
                 <h1 className="heading-style">Drop Us a Line, We’re Here</h1>
                 <h1 className="sub-text pt-[20px]">Reach out for more details on our projects and how we can support you</h1>
             </div>
-            <div className=" grid grid-cols-2 gap-[30px]">
+            <div className=" grid grid-cols-1 md:grid-cols-2 gap-[100px] md:gap-[30px]">
                 <div className=" flex flex-col gap-[60px]">
                     <div className="flex flex-col gap-[20px]">
                         <h1 className=" contact-text">Contact</h1>
                         <div className=" space-y-[16px]">
-                            <div className=" flex items-center gap-[16px] input-label"><PhoneCall />+1 (647) 877-6445</div>
-                            <div className=" flex items-center gap-[16px] input-label"><Mail />info@llamamind.io</div>
+                            <div className=" flex items-center gap-[16px] text-[16px] input-label"><PhoneCall />+1 (647) 877-6445</div>
+                            <div className=" flex items-center gap-[16px] text-[16px] input-label"><Mail />info@llamamind.io</div>
                         </div>
                     </div>
                     <div className=" flex flex-col gap-[20px]">
