@@ -125,6 +125,16 @@ body {
   filter: blur(300px);
 }
 
+.mobile-blur-shadow {
+  width: 450.122px;
+  height: 450.122px;
+  flex-shrink: 0;
+  border-radius: 450.122px;
+  opacity: 0.3;
+  background: var(--Primary-Blue, #5D5CE8);
+  filter: blur(162.24777221679688px);
+}
+
 .about-blur-shadow {
   width: 1000px;
   height: 1000px;
@@ -523,4 +533,8 @@ body {
   box-shadow: 6px 6px 24px 0px rgba(93, 92, 232, 0.24);
 }
 
- 
+.about-mobile {
+  width: 743.601px;
+  height: 299.331px;
+  flex-shrink: 0;
+}

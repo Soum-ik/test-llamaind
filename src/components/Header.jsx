@@ -73,23 +73,23 @@ function Header() {
     // }, { scope: header.current });
 
     return (
-        <div ref={header} className=" pb-[550px] md:pb-[700px]">
+        <div ref={header} className=" relative pb-[550px] md:pb-[700px]">
             <Layout>
-                <div id="slider1" className="pt-[100px]">
+                <div id="slider1" className="z-40 pt-[100px]">
                     <h1 id="slider1-text" className="slider1-text leading-[46px] md:leading-[120px] font-extrabold text-white header z-20 text-[42px] md:text-[100px] font-Orbitron text-center"   >
                         Pioneering the Future with
                         <br /> Digital Excellence
                     </h1>
-                    <div id="slider1-video" className="slider1-video  relative flex items-center justify-center">
-                        <div className="  !overflow-hidden flex items-center   justify-center !mx-auto ">
-                            <video className=" z-10 -mt-[140px] md:-mt-56  mix-blend-plus-lighter !mx-auto   max-w-[950px] md:max-w-[2000px]" src={waveVideo} loop autoPlay muted />
+                    <div id="slider1-video" className="slider1-video  relative flex items-center justify-center mb-[400px] my-12">
+                        <div className="!overflow-hidden flex items-center   justify-center !mx-auto ">
+                            <video className=" absolute z-10 -top-[192px] md:-mt-64  mix-blend-plus-lighter    max-w-[950px] md:max-w-[2000px]" src={waveVideo} loop autoPlay muted />
                         </div>
                         <div className="absolute z-10 blur-[200px] rounded-full w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
-                        <img className=" z-20 absolute inset-0 mx-auto -top-[40px] md:-top-[90px] size-[346px] md:size-[770px]" src={headerImage} alt="" />
+                        <img className=" z-20 absolute inset-0 mx-auto -top-[80px] md:-top-[90px] size-[346px] md:size-[770px]" src={headerImage} alt="" />
                     </div>
                 </div>
 
-                <div id="instructor" className='!text-white flex items-center  justify-between'>
+                <div id="instructor" className='!text-white flex items-center  justify-between z-50'>
                     <div className=' -ml-[50px] z-10 font-Roboto rotate-90  hidden md:flex  gap-5'>
                         Scroll down <MoveRight />
                     </div>
@@ -102,7 +102,12 @@ function Header() {
                         </div>
                     </div>
                 </div>
-                <div id="slider2" className=" text-center md:text-right !flex relative  z-40  !justify-end ">
+
+                <div id="slider2" className=" -z-0 text-center md:text-right !flex relative  items-center md:z-40  !justify-end ">
+                    <div className="!overflow-hidden  md:hidden items-center -z-50  mix-blend-plus-lighter justify-center !mx-auto ">
+                        <video className=" absolute -z-20  mix-blend-plus-lighter md:-mt-64  right-[40px]  max-w-[870px] md:max-w-[2000px]" src={waveVideo} loop autoPlay muted />
+                    </div>
+                    <div className="absolute z-40  rounded-full md:w-[900px]  w-[743px] h-[300px] md:h-[800px] -left-30 top-24 blur-[150px]  bottom-10 opacity-20   bg-[#5D5CE8]" />
                     <div id="slider2-text" className="slider2-text  md:hidden md:-right-[1300px]  md:text-left z-40  top-[100px] md:-top-[280px]  text-ellipsis absolute font-light md:text-[37px] text-[22px] leading-[36px] md:leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
                 </div>
             </Layout>

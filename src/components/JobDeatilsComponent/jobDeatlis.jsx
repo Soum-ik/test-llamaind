@@ -20,20 +20,18 @@ function JobDeatlis({ jobName }) {
         { id: 7, href: '#Apply', label: 'Apply' },
     ];
 
-
-
-
-
     return <Layout>
-        <div className="  text-white padding ]">
-            <div className="relative flex items-center pb-[140px]  flex-col">
-                <h1 className="heading-style">{jobName}</h1>
-                <p className="font-Roboto pt-[10px] group-hover:textColor duration-500 text-[26px] flex items-center font-light gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
-                <button className=" mt-[40px] btn-gradient font-Roboto">Apply Now</button>
-                <div className="about-blur-shadow absolute top-0 z-40  mix-blend-plus-lighter"></div>
+        <div className="  text-white padding ">
+            <div className="relative flex md:items-center pb-[140px] flex-col">
+                <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
+                <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
+                {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
+                <button className=" mt-[32px] md:mt-[40px] btn-gradient text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
+                <div className="about-blur-shadow absolute top-0 md:block hidden z-40  mix-blend-plus-lighter"></div>
+                <div className="md:left-[10px] right-0 mobile-blur-shadow size-[450.122px] absolute top-0 md:hidden z-40 "></div>
             </div>
-            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[100px] pt-20">
-                <div className=" min-w-[340px] flex-col">
+            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[100px]  md:pt-20">
+                <div className=" min-w-[340px] hidden md:block flex-col">
                     <aside className=" sticky top-28  h-fit">
                         {menuItems.map((item) => (
                             <a
@@ -50,12 +48,12 @@ function JobDeatlis({ jobName }) {
                 </div>
                 <div className="z-40 flex flex-1 flex-col gap-[60px]">
                     <div className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Job Description</h1>
-                        <p id="job-description" className="details-text-dec">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
+                        <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
+                        <p id="job-description" className="md:text-[26px] text-[20px] opacity-[.7] font-normal leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
                     </div>
                     <div id="Working-details" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Working details</h1>
-                        <p className="details-text-dec">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Working details</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
                                 {
                                     `- 09:00 AM - 06:00 PM.
@@ -66,8 +64,8 @@ function JobDeatlis({ jobName }) {
                         </p>
                     </div>
                     <div id="Key Responsibilities" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Key Responsibilities</h1>
-                        <p className="details-text-dec">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Key Responsibilities</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
 
                                 {`
@@ -83,8 +81,8 @@ function JobDeatlis({ jobName }) {
                         </p>
                     </div>
                     <div id="Technical Proficiency" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Technical Proficiency</h1>
-                        <p className="details-text-dec">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Technical Proficiency</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
 
                                 {`
@@ -99,12 +97,12 @@ function JobDeatlis({ jobName }) {
                         </p>
                     </div>
                     <div id="Requirements" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Requirements</h1>
-                        <p className="details-text-dec">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Requirements</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
 
 
-                                {`- Proven experience as a DevOps Engineer or similar role.
+                                {`- Proven experience as a DevOps Engineer or  similar role.
     - Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
     - Experience with containerization and orchestration tools (Docker, Kubernetes).
     - Familiarity with configuration management tools (Ansible, Terraform).
@@ -114,8 +112,8 @@ function JobDeatlis({ jobName }) {
                         </p>
                     </div>
                     <div id="Benefits" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Benefits</h1>
-                        <p className="details-text-dec">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Benefits</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
                                 {`- Competitive salary
 - Health insurance
@@ -128,9 +126,9 @@ function JobDeatlis({ jobName }) {
 
                     {/* apply form */}
                     <div id="Apply" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Apply</h1>
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Apply</h1>
                         <form className="w-full max-w-[1020px]  font-Roboto  mt-[30px] text-white rounded-lg" >
-                            <div className="grid grid-cols-2  grid-rows-5 grid-flow-col gap-[20px]">
+                            <div className="grid md:grid-cols-2  md:grid-rows-5 md:grid-flow-col gap-[20px]">
                                 <div>
                                     <label className="block font-normal text-[20px]">Full Name</label>
                                     <input
@@ -178,7 +176,7 @@ function JobDeatlis({ jobName }) {
 
                                 <div className="  row-span-2">
                                     <label className="block mb-1">Resume</label>
-                                    <div className="w-full h-[75%]  border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
+                                    <div className="w-full md:h-[75%] h-[140px] border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
                                         <input type="file" className="hidden" id="resume" />
                                         <label htmlFor="resume" className="text-blue-500 cursor-pointer flex flex-col items-center">
                                             <img src={DownloadIcon} alt="" className=" size-[24px]" />
@@ -188,19 +186,19 @@ function JobDeatlis({ jobName }) {
                                     </div>
                                 </div>
 
-                                <div className="row-span-2 -mt-5">
+                                <div className="row-span-2 md:-mt-5">
                                     <label className="block font-normal  text-[20px]"> Cover Letter</label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] h-[85%] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] h-[170px] md:h-[85%] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
 
                             </div>
-                            <div className=" py-[20px]  flex items-center">
+                            <div className=" py-[20px]  flex md:items-center">
                                 <input
                                     type="checkbox"
-                                    className="mr-2 "
+                                    className="mr-2 -mt-4"
                                     id="consent"
                                 />
                                 <label htmlFor="consent" className="text-gray-400">
@@ -209,7 +207,7 @@ function JobDeatlis({ jobName }) {
                             </div>
                             <div className="">
 
-                                <button onClick={() => alert('d')} type="submit" className="z-40   transition-all rounded-lg px-[32px] py-[15px] text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"Submit application"}</button>
+                                <button onClick={() => alert('d')} type="submit" className="z-40   transition-all rounded-lg px-[32px] py-[15px] text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] w-full md:w-auto">{"Submit application"}</button>
 
                             </div>
                         </form>

@@ -14,9 +14,9 @@ import FooterVideo from '../../public/video/footerVideo.mp4';
 const Footer = () => {
     return (
         <div className="relative -pt-[100px] z-10">
-            <div className=" absolute z-10 top-0 right-0 left-0  bg-gradient-to-b from-black to-transparent w-full h-4/5"></div>
+            <div className=" absolute z-10 top-0 right-0 left-0  bg-gradient-to-b from-black to-transparent w-full h-3/5 md:h-4/5"></div>
             <Layout>
-                <div className="absolute left-0 right-0 bottom-0 max-w-[1720px] mx-auto mt-16 p-3 flex flex-col md:flex-row gap-[30px] items-center justify-between">
+                <div className="absolute left-0 right-0 bottom-0 max-w-[1720px] mx-auto mt-16 p-3 flex flex-col md:flex-row gap-[40px] items-center justify-between">
                     <div className=" flex flex-col gap-[16px] mix-blend-plus-lighter">
                         <svg width="204" height="40" viewBox="0 0 204 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M46.4434 23.7322L47.7606 21.8049C47.7151 23.3903 47.4564 24.8142 46.895 26.0107L46.4434 23.7322Z" fill="white" />

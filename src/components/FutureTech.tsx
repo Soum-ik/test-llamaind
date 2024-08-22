@@ -20,14 +20,14 @@ function FutureTech() {
             {/* options are will be avaiable */}
             <div className="relative  pt-10">
                 <div className=" px-24 flex flex-col md:flex-row items-center justify-between">
-                    <FutureTechLooping array={leftSideTechs} />
+                    <FutureTechLooping style=' space-y-[5px]' array={leftSideTechs} />
                     {/* <div className=" !overflow-hidden   flex items-center justify-center !mx-auto"> */}
                     <div className="   w-[1200px] md:!w-[1792px] ">
                         <video src={features} loop autoPlay muted className="-my-[180px]  mix-blend-plus-lighter z-30 md:absolute md:absolute-center " />
                         {/* <img src={FutureIcon} className='  z-40 absolute  absolute-center' alt="" /> */}
                     </div>
                     <div className="blur-shadow absolute left-1/2 transform -translate-x-1/2" />
-                    <FutureTechLooping array={rightSideTechs} />
+                    <FutureTechLooping style=' space-y-[5px]' array={rightSideTechs} />
                 </div>
             </div>
         </div>

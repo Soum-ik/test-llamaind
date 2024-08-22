@@ -25,7 +25,7 @@ function IndexProject() {
     return <Layout>
         <div className=" flex items-center justify-between ">
             <h1 className="md:text-[250px] text-[68px] w-[700px] text-white font-Orbitron font-bold opacity-5">Projects</h1>
-            <h1 className=" text-[42px] md:text-[100px] w-[100px] -mr-9 text-white font-Orbitron font-bold opacity-5 rotate-90">{currentProjectNumber}</h1>
+            <h1 className=" text-[42px] md:text-[100px] w-[100px] mt-[100px] -mr-5 text-white font-Orbitron font-bold opacity-20 rotate-90">{currentProjectNumber}</h1>
         </div>
         <div className=" relative flex gap-[40px] flex-col md:flex-row mx-auto  justify-between">
             {
@@ -48,7 +48,7 @@ function IndexProject() {
             </div>
             <div className=" body-mobile">
                 Introducing FleetBlox, the revolutionary subscription-based rental platform designed to maximize fleet revenue, enhance operational efficiency, and transform customer experience.
-                <button className="project-btn mt-3">View Project</button>
+                <button className="project-btn mt-3 w-full">View Project</button>
             </div>
         </div>
         <div className=' mt-10 text-white font-Roboto hidden  md:flex items-center gap-2'>
