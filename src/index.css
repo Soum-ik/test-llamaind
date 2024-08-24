@@ -90,6 +90,32 @@ body {
   .absolute-center {
     @apply left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform
   }
+
+
+  /* ---------------------------------- contact page text view -------------------------------------- */
+  .heading-text {
+    @apply text-white font-Orbitron font-extrabold text-center leading-[40px]
+  }
+
+  .sub-heading-text {
+    @apply text-[#D5D5D5] font-Roboto font-light text-center
+  }
+
+  .input {
+    outline: none;
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 10, 36, 0.20);
+  }
+
+  .input-label {
+    color: var(--bg-texts-white, #FFF);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
 }
 
 /* @layer utilities {
@@ -136,8 +162,6 @@ body {
 }
 
 .about-blur-shadow {
-  width: 1000px;
-  height: 1000px;
   flex-shrink: 0;
   border-radius: 1000px;
   opacity: 0.3;
@@ -294,36 +318,14 @@ body {
   line-height: 40px;
 }
 
-.input {
-  display: flex;
-  outline: none;
-  padding: 17px 20px;
-  align-items: center;
-  gap: 8px;
-  align-self: stretch;
-  border-radius: 6px;
-  border: 2px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 10, 36, 0.20);
-}
 
-.input-label {
-  color: var(--bg-texts-white, #FFF);
-
-  /* Body 20 */
-  font-family: Roboto;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px;
-  /* 130% */
-}
 
 .contact-text {
   color: var(--bg-texts-grey, #D5D5D5);
 
   /* Body 20 */
   font-family: Roboto;
-  font-size: 20px;
+ 
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
@@ -537,4 +539,31 @@ body {
   width: 743.601px;
   height: 299.331px;
   flex-shrink: 0;
+}
+
+
+.mobile-heading {
+  color: var(--bg-texts-white, #FFF);
+  text-align: center;
+
+  /* Regular Title Mobile 34 */
+  font-family: Orbitron;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 40px;
+  /* 117.647% */
+}
+
+.mobile-sub-heading {
+  color: var(--bg-texts-grey, #D5D5D5);
+  text-align: center;
+
+  /* Body Mobile 22 */
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 36px;
+  /* 163.636% */
 }

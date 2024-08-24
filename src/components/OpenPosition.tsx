@@ -11,7 +11,7 @@ function OpenPosition() {
                         <p className="z-40 max-w-5xl text-textColor text-center font-Roboto my-4 leading-[36px] text-[22px] md:text-2xl font-light">Be part of an innovative journey where your ideas matter, and your growth is our priority. Together, let's pioneer the future.</p>
                     </div>
                 </div>
-                <button className="project-btn max-w-[380px] w-full absolute -bottom-10">View Open Positions</button>
+                <button className="project-btn max-w-[350px] w-full absolute -bottom-10">View Open Positions</button>
             </Layout>
         </div>
     );

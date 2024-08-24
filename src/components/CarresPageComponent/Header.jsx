@@ -10,18 +10,18 @@ function Header() {
     const videoRef = useRef();
     const contentRef = useRef();
 
-        
-    useEffect(() => {
-        const handleScroll = () => {
-            console.log(window.scrollY);
-        };
 
-        window.addEventListener('scroll', handleScroll);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         console.log(window.scrollY);
+    //     };
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
 
     useGSAP(() => {
@@ -79,15 +79,15 @@ function Header() {
     }, { scope: [contentRef, videoRef] });
 
     return <Layout>
-        <div className="relative pt-[150px] flex items-start justify-between">
+        <div className="relative pt-[160px] flex items-start justify-between">
             <div ref={contentRef} className="z-40 max-w-[355px] md:max-w-[1000px]">
                 <Innovative staticData={staticData[0]} />
                 <CoreValus staticData={staticData[1]} />
                 <BecomingOne staticData={staticData[2]} />
             </div>
-            <div ref={videoRef} className="absolute -right-[200px] z-10">
-                <video className="mix-blend-plus-lighte md:w-[1100px]  md:-mt-[200px] -mt-[180px] " src={animation} loop muted autoPlay />
-                <div className=" -top-[400px] right-[10px]  absolute z-10   about-blur-shadow" />
+            <div className="absolute -right-[60px] mt-[100px] z-10 w-[450px]">
+                <video className="mix-blend-plus-lighte md:w-[1100px] w-full -mt-[260px]" src={animation} loop muted autoPlay />
+                <div className=" -top-[200px] right-[2px]  absolute z-10   mobile-blur-shadow" />
             </div>
         </div>
     </Layout>;
@@ -110,7 +110,7 @@ const Innovative = ({ staticData }) => {
 
 const CoreValus = ({ staticData }) => {
     return (
-        <div className=" text-white py-[50px] md:py-[150px]">
+        <div className=" text-white relative py-[50px] md:py-[150px]">
             <h1 className=" max-w-[800px] font-Orbitron text-[34px] md:text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
             <div className=" md:pt-[60px] grid grid-cols-1 md:grid-cols-2 gap-[60px]">
                 {
@@ -121,6 +121,7 @@ const CoreValus = ({ staticData }) => {
                         </div>
                     ))
                 }
+                <div className=" top-[200px] right-[1px]  absolute z-10   mobile-blur-shadow" />
             </div>
         </div>
     );

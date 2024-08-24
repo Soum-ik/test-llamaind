@@ -17,6 +17,7 @@ const config = {
     },
     extend: {
       screens: {
+        'xxs' : '390px',
         'xs': '440px'
       },
       animation: {
