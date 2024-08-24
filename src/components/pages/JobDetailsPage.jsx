@@ -8,7 +8,7 @@ function JobDetailsPage() {
   const { jobName } = useParams();
   return <div className=" min-h-screen bg-black">
     <Navbar />
-    <JobDeatlis jobName={jobName} />
+    <Jo bDeatlis jobName={jobName} />
     <Footer />
   </div>;
 }

@@ -45,7 +45,7 @@ const Footer = () => {
                             <FaSquareXTwitter size={20} />
                         </div>
                         <p className=" md:hidden text-[14px] footer-text">©2024 All rights reserved</p>
-                        <p className=" hidden cursor-pointer footer-text-right md:flex items-center"><Link to={'/about'}>About Us</Link>  <Dot /> <Link to={'/career'}>Careers</Link>  <Dot /> <Link to={'/contact'}>Contact</Link></p>
+                        <p className=" hidden cursor-pointer footer-text-right md:flex items-center"><a href={'/about'}>About Us</a>  <Dot /> <a href={'/career'}>Careers</a>  <Dot /> <a href={'/contact'}>Contact</a></p>
                     </div>
                 </div>
             </Layout>

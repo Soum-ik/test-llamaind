@@ -21,20 +21,22 @@ function JobDeatlis({ jobName }) {
     ];
 
     return <Layout>
-        <div className="  text-white padding ">
-            <div className="relative flex md:items-center pb-[140px] flex-col">
+        <div className="  text-white pt-[100px] ">
+            <div className="relative flex md:items-center pb-[90px] xl:pb-[140px] flex-col">
                 <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
                 <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
                 {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
                 <button className=" mt-[32px] md:mt-[40px] btn-gradient text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
-                <div className="about-blur-shadow absolute top-0 md:block hidden z-40  mix-blend-plus-lighter"></div>
-                <div className="md:left-[10px] right-0 mobile-blur-shadow size-[450.122px] absolute top-0 md:hidden z-40 "></div>
+                <div className="  right-[1px]  absolute z-10   mobile-blur-shadow md:hidden" />
+                <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
+
             </div>
-            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[100px]  md:pt-20">
-                <div className=" min-w-[340px] hidden md:block flex-col">
+            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20">
+                <div className=" min-w-[340px] hidden lg:block flex-col">
                     <aside className=" sticky top-28  h-fit">
                         {menuItems.map((item) => (
                             <a
+                                target="_blank"
                                 onClick={() => setCurrentSelected(item.id)}
                                 href={item.href}
                                 key={item.id}
@@ -49,7 +51,7 @@ function JobDeatlis({ jobName }) {
                 <div className="z-40 flex flex-1 flex-col gap-[60px]">
                     <div className=" flex flex-col gap-[20px]">
                         <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
-                        <p id="job-description" className="md:text-[26px] text-[20px] opacity-[.7] font-normal leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
+                        <p id="job-description" className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
                     </div>
                     <div id="Working-details" className=" flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Working details</h1>
@@ -111,6 +113,9 @@ function JobDeatlis({ jobName }) {
                             </MarkDown>
                         </p>
                     </div>
+                    <div className=" top-[1900px] right-[1px] bottom-0 absolute z-10 opacity-[0.3]  mobile-blur-shadow md:hidden" />
+                    <div className=" absolute  -right-[200px] hidden md:block  opacity-[.4] -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
+
                     <div id="Benefits" className=" flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Benefits</h1>
                         <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
