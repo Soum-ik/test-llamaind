@@ -36,7 +36,6 @@ function JobDeatlis({ jobName }) {
                     <aside className=" sticky top-28  h-fit">
                         {menuItems.map((item) => (
                             <a
-                                target="_blank"
                                 onClick={() => setCurrentSelected(item.id)}
                                 href={item.href}
                                 key={item.id}
@@ -71,7 +70,7 @@ function JobDeatlis({ jobName }) {
                             <MarkDown>
 
                                 {`
-- Develop and maintain CI/CD pipelines for automated build, test, and deployment processes.
+- Develop and maintain *CI/CD* pipelines for automated build, test, and deployment processes.
 - Manage and monitor cloud infrastructure and on-premise servers.
 - Implement and enforce security best practices and policies.
 - Collaborate with development teams to optimize application performance and scalability.
@@ -91,7 +90,7 @@ function JobDeatlis({ jobName }) {
 - Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
 - Experience with containerization and orchestration tools (Docker, Kubernetes).
 - Familiarity with configuration management tools (Ansible, Terraform).
-    - Understanding of networking, security, and system administration.
+- Understanding of networking, security, and system administration.
                             `}
 
                             </MarkDown>
@@ -104,11 +103,12 @@ function JobDeatlis({ jobName }) {
                             <MarkDown>
 
 
-                                {`- Proven experience as a DevOps Engineer or  similar role.
-    - Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
-    - Experience with containerization and orchestration tools (Docker, Kubernetes).
-    - Familiarity with configuration management tools (Ansible, Terraform).
-    - Understanding of networking, security, and system administration.`}
+                                {`
+- Proven experience as a DevOps Engineer or  similar role.
+- Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
+- Experience with containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with configuration management tools (Ansible, Terraform).
+- Understanding of networking, security, and system administration.`}
 
                             </MarkDown>
                         </p>
@@ -120,7 +120,8 @@ function JobDeatlis({ jobName }) {
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Benefits</h1>
                         <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
-                                {`- Competitive salary
+                                {`
+- Competitive salary
 - Health insurance
 - Paid time off
 - Professional development opportunities`}

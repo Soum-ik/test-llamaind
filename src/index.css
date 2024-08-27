@@ -13,6 +13,51 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Apply to all scrollable elements */
+* {
+  scrollbar-width: thin;
+  /* Firefox: Make scrollbar thin */
+  scrollbar-color: #030303 #2f2e2e;
+  /* Firefox: Set colors */
+}
+
+/* WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 1px;
+  /* Width of the scrollbar */
+  height: 1px;
+  /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  /* Background of the track */
+  border-radius: 1px;
+  /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Handle color */
+  border-radius: 10px;
+  /* Rounded corners */
+  border: 1px solid #f0f0f0;
+  /* Padding around the handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #030000;
+  /* Darker handle on hover */
+}
+
+/* Optional: Horizontal scrollbar styles */
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #888;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+
 .blue__gradient {
   background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #5D5CE8 100%);
   filter: blur(123px);
@@ -72,7 +117,7 @@ body {
   }
 
   .text-carries {
-    @apply bg-clip-text text-transparent bg-gradient-to-r font-bold duration-500 from-[#5D5CE8] to-[#4489E6]
+    @apply bg-clip-text text-transparent bg-gradient-to-r duration-500 from-[#5D5CE8] to-[#4489E6]
   }
 
   .text-gradient::after {
@@ -118,12 +163,6 @@ body {
 
 }
 
-/* @layer utilities {
-  .nav {
-    @apply relative
-  }
-} */
-
 .project-showcase-size {
   width: 300.852px;
   height: 176.981px;
@@ -151,6 +190,12 @@ body {
   filter: blur(300px);
 }
 
+.mobile-blur-shadow-gradient {
+  opacity: 0.3;
+  background: var(--Primary-Blue, #5D5CE8);
+  filter: blur(162.24777221679688px);
+}
+
 .mobile-blur-shadow {
   width: 450.122px;
   height: 450.122px;
@@ -162,7 +207,6 @@ body {
 }
 
 .about-blur-shadow {
-  flex-shrink: 0;
   border-radius: 1000px;
   opacity: 0.3;
   background: var(--Primary-Blue, #5D5CE8);
@@ -325,7 +369,7 @@ body {
 
   /* Body 20 */
   font-family: Roboto;
- 
+
   font-style: normal;
   font-weight: 400;
   line-height: 26px;

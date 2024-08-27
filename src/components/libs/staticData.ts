@@ -74,6 +74,12 @@ const openPositios = [
         type: "Full time",
     },
     {
+        id: 6,
+        positionName: "Senior Frontend Developer",
+        location: "Remote",
+        type: "Full time",
+    },
+    {
         id: 2,
         positionName: "Front-end Developer",
         location: "Remote",

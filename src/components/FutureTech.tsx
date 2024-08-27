@@ -1,6 +1,8 @@
 
 import FutureIcon from '../../public/images/futureIcon.png'
 import FutureTechLooping from "./FutureTechLooping";
+import FutureTechLoopingBig from "./FutureTechLooping";
+
 import Layout from "./layout/Layout";
 import features from '../../public/video/s.mp4'
 function FutureTech() {
@@ -10,29 +12,61 @@ function FutureTech() {
     const rightSideTechs = ['Blockhain', 'Internet of Things', 'Cloud Solutions', 'Augmented & Virtual Reality']
 
 
-    return <Layout>
-        <div className=" relative mb-[100px] md:!mb-[400px]">
-            <div className=" md:pb-[120px] max-w-4xl mx-auto text-white flex  justify-center flex-col">
-                <h1 className="z-30 font-bold text-[34px] md:text-7xl text-center md:text-left">Our Future Driven</h1>
-                <h1 className="z-30 ml-2 font-bold text-[34px] md:text-7xl text-center md:text-right"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
-            </div>
+    return (
+        <>
+            {/* for small device start */}
+            <div className='xl:hidden relative mt-[150px] xl:mt-[400px]'>
+                <div className=' '>
+                    <Layout>
+                        <div className=" xl:hidden mb-[100px]">
+                            <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] mx-auto  text-white flex items-center justify-center flex-col">
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
+                            </div>
 
-            {/* options are will be avaiable */}
-            <div className="relative  pt-10">
-                <div className=" px-24 flex flex-col md:flex-row items-center justify-between">
-                    <FutureTechLooping style=' space-y-[5px]' array={leftSideTechs} />
-                    {/* <div className=" !overflow-hidden   flex items-center justify-center !mx-auto"> */}
-                    <div className="   w-[1200px] md:!w-[1792px] ">
-                        <video src={features} loop autoPlay muted className="-my-[180px]  mix-blend-plus-lighter z-30 md:absolute md:absolute-center " />
-                        {/* <img src={FutureIcon} className='  z-40 absolute  absolute-center' alt="" /> */}
-                    </div>
-                    <div className="blur-shadow absolute left-1/2 transform -translate-x-1/2" />
-                    <FutureTechLooping style=' space-y-[5px]' array={rightSideTechs} />
+                            {/* options are will be avaiable */}
+                            <div className="pt-10">
+                                <div className=" px-24 gap-[265px] flex flex-col items-center justify-between">
+                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[8px]' array={leftSideTechs} />
+                                    <div className=" absolute z-0 bottom-[260px] rounded-full opacity-80 blue__gradient size-[380px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  "></div>
+                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[8px]' array={rightSideTechs} />
+                                </div>
+                            </div>
+                        </div>
+                    </Layout>
+                </div>
+                <div className=" py-[100px] absolute xl:hidden w-full items-center h-[94vh]  top-[140px] md:top-[276px] lg:top-[294px] justify-center overflow-hidden ">
+                    <video src={features} loop autoPlay muted className="h-full  w-auto object-cover mix-blend-plus-lighter z-30" />
+                    <img src={FutureIcon} className=' w-[140px]  z-40 absolute  absolute-center' alt="" />
                 </div>
             </div>
-        </div>
+            {/* for small device emd */}
 
-    </Layout>;
+            <Layout>
+                <div className="  hidden xl:block relative !mb-[400px]">
+                    <div className="  pb-[120px] max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
+                        <h1 className="z-30 font-extrabold text-[68px] text-left">Our Future Driven</h1>
+                        <h1 className="z-30  font-extrabold text-[68px] text-right -mt-[16px]"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
+                    </div>
+
+                    {/* options are will be avaiable */}
+                    <div className="relative  pt-10">
+                        <div className=" px-24 flex items-center   justify-between">
+                            <FutureTechLoopingBig array={leftSideTechs} />
+                            {/* <div className=" !overflow-hidden   flex items-center justify-center !mx-auto"> */}
+                            <div className="  !w-[1792px] iamge1-fixer   flex items-center justify-center !mx-auto">
+                                <video src={features} loop autoPlay muted className="iamge1-fixer mix-blend-plus-lighter z-30 absolute absolute-center " />
+                                <img src={FutureIcon} className='  z-40 absolute  absolute-center' alt="" />
+                            </div>
+                            <div className="blur-shadow absolute left-1/2 transform -translate-x-1/2" />
+                            <FutureTechLoopingBig array={rightSideTechs} />
+                        </div>
+                    </div>
+                </div>
+            </Layout>
+        </>
+
+    );
 }
 
 export default FutureTech;

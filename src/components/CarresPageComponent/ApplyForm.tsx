@@ -16,7 +16,7 @@ function ApplyForm() {
     };
 
     return <Layout>
-        <div className=" pt-[70px]">
+        <div className=" mb-10 lg:mb-0 lg:pt-[70px]">
             <div className=" flex flex-col gap-[17px]">
                 <h1 className=" text-white font-extrabold text-center font-Orbitron text-[34px] md:text-[68px]">Can’t see your position?</h1>
                 <p className=" text-[#D5D5D5] text-center font-light text-[22px] md:text-[26px] font-Roboto">Send your resume and the position you're interested in. We’ll be in touch if there's a fit.</p>
@@ -92,7 +92,7 @@ function ApplyForm() {
                 <div className=" pt-10 flex items-start md:items-center">
                     <input
                         type="checkbox"
-                        className="mr-2 mt-[7px]"
+                        className="mr-2 mt-[6px] md:mt-0"
                         id="consent"
                     />
                     <label htmlFor="consent" className="text-gray-400">
@@ -101,7 +101,7 @@ function ApplyForm() {
                 </div>
                 <div className=" flex items-center justify-center">
 
-                    <button onClick={() => alert('d')} type="submit" className="z-40  mt-4 transition-all rounded-lg w-full px-[32px] py-[15px] text-[20px] md:text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"Send Resume"}</button>
+                    <button onClick={() => alert('d')} type="submit" className="z-40  mt-4 transition-all md:max-w-max rounded-lg w-full px-[32px] py-[15px] text-[20px] md:text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"Send Resume"}</button>
 
                 </div>
             </form>

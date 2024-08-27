@@ -1,5 +1,4 @@
-import { FastForward, Menu, X } from 'lucide-react';
-import { Link } from "react-router-dom";
+import { Menu, X } from 'lucide-react';
 import brandLogo from '../../public/images/brandLogo.png'
 import Layout from "./layout/Layout";
 import { useState } from 'react';
@@ -13,22 +12,24 @@ function Navbar() {
             <Layout>
                 <div className=' mx-auto  fixed left-0 top-0 right-0 w-full z-50 backdrop-blur-2xl'>
                     <div className="z-[20000px] max-w-[1720px] mx-auto px-3 py-4 flex items-center justify-between">
-                        <Link to={'/'}>
+                        <a href={'/'}>
                             <img src={brandLogo} alt="brand logo z-[20000px]" />
-                        </Link>
-                        <div className="hidden md:flex items-center z-[20000px] font-Roboto gap-12 !text-white">
-                            <Link className="text-gradient" to={'/about'}>About Us</Link>
-                            <Link className='text-gradient' to={'/career'}>Careers</Link>
+                        </a>
+                        <div className="hidden lg:flex items-center z-[20000px] font-Roboto gap-12 !text-white">
+                            <a className="text-gradient" href={'/about'}>About Us</a>
+                            <a className='text-gradient' href={'/career'}>Careers</a>
                         </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className=' md:hidden  text-white'>
+                        <div onClick={() => setIsOpen(!isOpen)} className=' lg:hidden  text-white'>
                             {isOpen ? <X /> : <Menu />}
                         </div>
                     </div>
                     {
-                        isOpen && <div className='md:hidden z-50 pt-[10px] -pl-[200px] top-3 nav-bo min-h-[852px] w-full mt-[50px]  absolute background-color'>
-                            <h1 className='main-sub-heading'><Link to={'/about'}>About Us</Link></h1>
-                            <h1 className='main-sub-heading'><Link to={'/career'}>Careers</Link></h1>
-                            <h1 className='main-sub-heading'><Link to={'/contact'}>Contact</Link></h1>
+                        isOpen && <div className='lg:hidden z-50 pt-[10px]  top-3 nav-bo min-h-[852px] w-full mt-[50px]   absolute background-color'>
+                            <div className='  mt-[10px]'>
+                                <h1 className='main-sub-heading'><a href={'/about'}>About Us</a></h1>
+                                <h1 className='main-sub-heading'><a href={'/career'}>Careers</a></h1>
+                                <h1 className='main-sub-heading'><a href={'/contact'}>Contact</a></h1>
+                            </div>
                         </div>
                     }
                 </div>

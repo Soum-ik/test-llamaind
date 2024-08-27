@@ -36,8 +36,8 @@ const Footer = () => {
                         <p className=" hidden md:block footer-text">©2024 All rights reserved</p>
 
                     </div>
-                    <div className="z-40 text-lg font-Roboto space-y-[10px] md:space-y-[16px] text-white">
-                        <div className=" flex justify-end gap-[10px]">
+                    <div className="z-30 text-lg flex flex-col items-center md:items-end font-Roboto space-y-[10px] md:space-y-[16px] text-white">
+                        <div className=" flex items-center justify-end gap-[10px]">
                             <FaDiscord size={20} />
                             <FaFacebook size={20} />
                             <RiInstagramFill size={20} />
