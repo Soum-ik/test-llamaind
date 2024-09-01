@@ -1,5 +1,4 @@
 
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -16,8 +15,9 @@ const config = {
       },
     },
     extend: {
+
       screens: {
-        'xxs' : '390px',
+        'xxs': '390px',
         'xs': '440px'
       },
       animation: {
@@ -31,7 +31,9 @@ const config = {
       colors: {
         textColor: `#D5D5D5`,
       },
-
+      fontSize: {
+        clamp: "clamp(1rem, 5vw, 3rem)",
+      },
     },
   },
   plugins: [],

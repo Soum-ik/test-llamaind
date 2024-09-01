@@ -10,7 +10,7 @@ function Positions() {
     const [availableVacancies, setAvailableVacancies] = useState(true);
 
     return <Layout>
-        <div className='relative  mt-[80px] xl:mt-[40px] -z-0 pb-[180px] xl:pb-[300px]'>
+        <div className='relative  mt-[80px] xl:mt-[400px] -z-0 pb-[180px] xl:pb-[300px]'>
 
             {availableVacancies ?
                 <>

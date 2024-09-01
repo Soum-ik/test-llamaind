@@ -6,7 +6,6 @@ import JobDetailsPage from './components/pages/JobDetailsPage';
 import ContactPage from './components/pages/ContactPage';
 
 export default function App() {
- 
 
   return (
     <div className="w-full  font-Orbitron">

@@ -4,19 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
-html {
-  scroll-behavior: smooth;
+/* 
+body::-webkit-scrollbar {
+  display: none;
 }
 
-body {
-  scroll-behavior: smooth;
+  */
+body::-webkit-scrollbar {
+  display: none;
 }
+
 
 /* Apply to all scrollable elements */
 * {
   scrollbar-width: thin;
   /* Firefox: Make scrollbar thin */
+  scroll-behavior: smooth;
   scrollbar-color: #030303 #2f2e2e;
   /* Firefox: Set colors */
 }
@@ -182,7 +185,7 @@ body {
 
 .blur-shadow {
   width: 900px;
-  height: 951.745px;
+  height: 900.745px;
   flex-shrink: 0;
   border-radius: 951.745px;
   opacity: 0.35;
@@ -611,3 +614,5 @@ body {
   line-height: 36px;
   /* 163.636% */
 }
+
+/* for animation */

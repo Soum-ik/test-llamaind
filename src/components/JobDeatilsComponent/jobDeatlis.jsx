@@ -1,14 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "../layout/Layout";
 import MarkDown from '../../components/shared/TextEditorDataReader';
 import { Dot } from "lucide-react";
 import JSONPlaceHolder from '../libs/jobDes.json';
 import DownloadIcon from '../../../public/images/dowload.png';
 import { FaLessThanEqual } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function JobDeatlis({ jobName }) {
     const [currentSelected, setCurrentSelected] = useState(1);
-    let currenData;
+    const menuBarRef = useRef(null); // Ref for the menu bar
+    const sectionsRef = useRef({}); // Ref for the content sections
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentSection = Object.keys(sectionsRef.current).find(id => {
+                const section = sectionsRef.current[id];
+                const offset = section.offsetTop;
+                return window.scrollY >= offset - 50 && window.scrollY < offset + section.offsetHeight - 50;
+            });
+            setCurrentSelected(Number(currentSection));
+            adjustMenuBarHeight(currentSection);
+        };
+
+        const adjustMenuBarHeight = (sectionId) => {
+            if (menuBarRef.current && sectionsRef.current[sectionId]) {
+                const sectionHeight = sectionsRef.current[sectionId].offsetHeight;
+                menuBarRef.current.style.height = `${sectionHeight}px`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const menuItems = [
         { id: 1, href: '#job-description', label: 'Job Description' },
@@ -33,7 +57,7 @@ function JobDeatlis({ jobName }) {
             </div>
             <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20">
                 <div className=" min-w-[340px] hidden lg:block flex-col">
-                    <aside className=" sticky top-28  h-fit">
+                    <aside className=" sticky top-28  h-fit" ref={menuBarRef}>
                         {menuItems.map((item) => (
                             <a
                                 onClick={() => setCurrentSelected(item.id)}
@@ -48,9 +72,9 @@ function JobDeatlis({ jobName }) {
                     </aside>
                 </div>
                 <div className="z-40 flex flex-1 flex-col gap-[60px]">
-                    <div className=" flex flex-col gap-[20px]">
+                    <div id="job-description" className=" flex flex-col gap-[20px]">
                         <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
-                        <p id="job-description" className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
+                        <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
                     </div>
                     <div id="Working-details" className=" flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Working details</h1>

@@ -2,17 +2,16 @@ import Layout from "../layout/Layout";
 import { staticData } from "../libs/staticData";
 import Button from "../ui/Button";
 import animation from '../../../public/video/carries1.mp4';
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { MoveRight } from "lucide-react";
+import UseGetScroll from "../../Hooks/UseGetScroll";
 
 function Header() {
     const videoRef = useRef();
     const contentRef = useRef();
-
-
-
-
+    let projectsWidth = contentRef.current?.offsetHeigth;
 
     useGSAP(() => {
         // Pin the video at its current position
@@ -20,13 +19,15 @@ function Header() {
             scrollTrigger: {
                 trigger: videoRef.current,
                 start: "91% 95%",// Start when the top of the element reaches the center of the viewport
-                end: "+=210%", // Pin until 100% of the viewport height has been scrolled
+                end: "+=220%", // Pin until 100% of the viewport height has been scrolled
                 pin: true,
                 scrub: true,
                 // markers: true
             }
         });
         const textElements = Array.from(contentRef.current.children);
+        console.log(textElements.offsetHeigth, 'elements');
+
 
         textElements.forEach((text, index) => {
             gsap.fromTo(
@@ -48,6 +49,7 @@ function Header() {
 
                             // Clear blur on the current text element
                             gsap.to(text, { filter: "blur(0px)", duration: 0.5 });
+                            gsap.to('scroll', { opacity: '.2' });
                         },
                         onLeave: () => {
                             // Reset blur to all text elements when the current one leaves the viewport
@@ -69,7 +71,7 @@ function Header() {
     }, { scope: [contentRef, videoRef] });
 
     return (
-        <div className=" relative xs:pt-[130px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
+        <div className=" relative xs:pt-[200px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
             <Layout>
                 <div className="xl:hidden pt-[160px] flex items-start justify-between">
                     <div className="z-40 max-w-[355px] xxs:max-w-max pt-[75px] space-y-[230px] md:space-y-[200px]  xl:space-y-[450px]">
@@ -80,8 +82,8 @@ function Header() {
                 </div>
 
                 {/* big screen start */}
-                <div className=" hidden  pt-[150px] xl:flex items-start justify-between">
-                    <div ref={contentRef} className="z-40 max-w-[1000px] pt-[50px] space-y-[500px]  ">
+                <div className=" hidden pt-[100px]  xl:flex items-start justify-between">
+                    <div ref={contentRef} className="z-40 max-w-[1000px]  space-y-[500px]  ">
                         <BigInnovative staticData={staticData[0]} />
                         <BigCoreValus staticData={staticData[1]} />
                         <BigBecomingOne staticData={staticData[2]} />
@@ -163,11 +165,17 @@ const BecomingOne = ({ staticData }) => {
 
 
 const BigInnovative = ({ staticData }) => {
+    const scrolled = UseGetScroll();
+
+
     return (
-        <div className="text-white space-y-[40px]">
-            <h1 className=" max-w-[800px] font-Orbitron text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
-            <p className=" text-[#D5D5D5] text-[26px] font-light font-Roboto">{staticData.description}</p>
+        <div className="text-white">
+            <h1 className=" max-w-[800px] font-Orbitron text-[68px] leading-[85.27px]  font-extrabold">{staticData.title}</h1>
+            <p className=" text-[#D5D5D5] text-[26px] mb-[40px] mt-[10px] font-light font-Roboto">{staticData.description}</p>
             <Button text="View Open positions" />
+            {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] text-[18px] -left-[50px]  bg z-10 font-Roboto rotate-90 flex  gap-5'>
+                Scroll down <MoveRight />
+            </div>}
         </div>
     );
 };

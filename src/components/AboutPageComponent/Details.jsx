@@ -9,23 +9,18 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from "@gsap/react";
 import Button from "../ui/Button";
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+import UseGetScroll from "../../Hooks/UseGetScroll";
 
 
 // Register GSAP's ScrollTrigger
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function Details() {
     const videoRef = useRef();
     const textRef = useRef();
 
     useGSAP(() => {
-        // ScrollSmoother.create({
-        //     smooth: 10, // how long (in seconds) it takes to "catch up" to the native scroll position
-        //     effects: true, // looks for data-speed and data-lag attributes on elements
-        //     smoothTouch: 1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-        // });
-        // Pin the video at its current position
+
         gsap.to(videoRef.current, {
             scrollTrigger: {
                 trigger: videoRef.current,
@@ -102,6 +97,7 @@ function Details() {
     const item = contents[0];
     const item1 = contents[1];
     const item2 = contents[2];
+    const scrolled = UseGetScroll();
 
 
     return (
@@ -132,21 +128,24 @@ function Details() {
 
 
                 {/* big screen */}
-                <div className=" hidden !pt-[100px] slider2 xl:flex relative !justify-between  pb-[300px] ">
+                <div className=" hidden !pt-[50px] slider2 xl:flex relative !justify-between  pb-[300px] ">
                     <div ref={textRef} id="rightSide" className="  pt-[50px] space-y-[500px] z-40">
-                        <div id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
+                        <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item.title}</h1>
-                            <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item.description}</p>
+                            <p className=" mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
                             {item.button && <Button text="View Projects" />}
+                            {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
+                                Scroll down <MoveRight />
+                            </div>}
                         </div>
-                        <div id="slider2-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
+                        <div id="slider2-text" className=" space-y-[20px]  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item1.title}</h1>
                             <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
                             {item1.button && <Button text="View Projects" />}
                         </div>
-                        <div id="slider3-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
+                        <div id="slider3-text" className=" space-y-[20px] z-30 text-white   text-5xl max-w-[1000px] " >
                             {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item2.title}</h1>
                             <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
@@ -157,7 +156,7 @@ function Details() {
                     {/* <div className=' -ml-[50px] z-10 font-Roboto rotate-90  hidden md:flex  gap-5'>
                         Scroll down <MoveRight />
                     </div> */}
-                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] absolute z-20 right-0 top-[100px]">
+                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] absolute z-20 right-0">
                         <div className=" relative flex items-center z-40 justify-center">
                             {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
                             <div className="z-40 about-video-size flex items-center justify-center !mx-auto">
@@ -173,7 +172,7 @@ function Details() {
 
 
 
-            <div data-speed="0.1" className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div  className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={waveVideo1}
                     className="h-full w-auto object-cover"
