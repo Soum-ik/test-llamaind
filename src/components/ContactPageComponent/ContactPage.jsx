@@ -9,7 +9,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 function ContactPage() {
     return <Layout>
-        <div className="mx-auto xl:max-w-[1000px] 2xl:max-w-[1200px] relative padding   xs:mb-0 space-y-[60px]">
+        <div className="mx-auto xl:max-w-[1000px] 2xl:max-w-[1200px] relative padding   xs:mb-0  xl:-mb-[300px] space-y-[60px]">
             {/* heading part */}
             <div>
                 <h1 className="heading-text text-[34px] md:text-[45px] xl:text-[54px] 2xl:tex-[64px]">Drop Us a Line, We’re Here</h1>
@@ -29,12 +29,12 @@ function ContactPage() {
                         </div>
                     </div>
                     <div className=" flex flex-col gap-[20px]">
-                        <h1 className=" contact-text text-[18px] md:text-[20px]">Follow Us</h1>
-                        <div className=" space-y-[16px]">
-                            <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaFacebook /> facebook.com/llamamind</div>
-                            <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><RiInstagramFill /> instagram.com/llamamind</div>
-                            <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><IoLogoLinkedin /> linkdin.com/llamamind</div>
-                            <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaSquareXTwitter /> x.com/llamamind</div>
+                        <h1 className="z-40 contact-text text-[18px] md:text-[20px]">Follow Us</h1>
+                        <div className=" z-40 space-y-[16px]">
+                            <div className=" z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaFacebook /> facebook.com/llamamind</div>
+                            <div className=" z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><RiInstagramFill /> instagram.com/llamamind</div>
+                            <div className=" z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><IoLogoLinkedin /> linkdin.com/llamamind</div>
+                            <div className=" z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaSquareXTwitter /> x.com/llamamind</div>
                         </div>
                     </div>
 
@@ -61,13 +61,13 @@ function ContactPage() {
                                 <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><Mail />info@llamamind.io</div>
                             </div>
                         </div>
-                        <div className=" flex flex-col gap-[20px]">
-                            <h1 className=" contact-text text-[18px] md:text-[20px]">Follow Us</h1>
-                            <div className=" space-y-[16px]">
-                                <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaFacebook /> facebook.com/llamamind</div>
-                                <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><RiInstagramFill /> instagram.com/llamamind</div>
-                                <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><IoLogoLinkedin /> linkdin.com/llamamind</div>
-                                <div className=" flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaSquareXTwitter /> x.com/llamamind</div>
+                        <div className=" z-40 flex flex-col gap-[20px]">
+                            <h1 className=" z-40 contact-text text-[18px] md:text-[20px]">Follow Us</h1>
+                            <div className=" z-40 space-y-[16px]">
+                                <div className="z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaFacebook /> facebook.com/llamamind</div>
+                                <div className="z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><RiInstagramFill /> instagram.com/llamamind</div>
+                                <div className="z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><IoLogoLinkedin /> linkdin.com/llamamind</div>
+                                <div className="z-40 flex items-center gap-[16px] input-label text-[18px] md:text-[20px]"><FaSquareXTwitter /> x.com/llamamind</div>
                             </div>
                         </div>
 
@@ -80,7 +80,7 @@ function ContactPage() {
 
 
             <div className=" top-[100px] right-[1px] absolute z-10 mobile-blur-shadow md:hidden" />
-            <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[800px] lg:size-[930px] "></div>
+            <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block -translate-x-1/2 z-50 mix-blend-plus-darker  about-blur-shadow size-[350px] xs:size-[400px] md:size-[800px] lg:size-[700px] "></div>
         </div>
     </Layout>;
 }

@@ -19,13 +19,30 @@ function Details() {
     const videoRef = useRef();
     const textRef = useRef();
 
+
+    const projectsHeigth = textRef.current?.offsetHeight;
+    function getScrollAmount() {
+        console.log(projectsHeigth, 'total height');
+
+        if (projectsHeigth) {
+            return -((projectsHeigth * 1) - window.innerHeight);
+        }
+        return 0;
+    }
+
+
+    console.log(getScrollAmount());
+
+
+
+
     useGSAP(() => {
 
         gsap.to(videoRef.current, {
             scrollTrigger: {
                 trigger: videoRef.current,
                 start: "37% center", // Start when the top of the element reaches the center of the viewport
-                end: "+=178%", // Pin until 100% of the viewport height has been scrolled
+                end: "+=185%", // Pin until 100% of the viewport height has been scrolled
                 pin: true,
                 scrub: true,
                 // markers: true
@@ -128,7 +145,7 @@ function Details() {
 
 
                 {/* big screen */}
-                <div className=" hidden !pt-[50px] slider2 xl:flex relative !justify-between  pb-[300px] ">
+                <div className=" hidden !pt-[50px] slider2 xl:flex relative !justify-between  pb-[500px] ">
                     <div ref={textRef} id="rightSide" className="  pt-[50px] space-y-[500px] z-40">
                         <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
@@ -172,7 +189,7 @@ function Details() {
 
 
 
-            <div  className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={waveVideo1}
                     className="h-full w-auto object-cover"

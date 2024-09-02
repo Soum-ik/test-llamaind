@@ -37,7 +37,7 @@ function FutureTech() {
             timeline
                 .to(tech.current, {
                     opacity: 0,
-                    scale: 0.9,
+                    scale: 0.2,
                     duration: 7,
                     ease: 'power3.out',
                     force3D: true,

@@ -43,7 +43,7 @@ function Header() {
                 start: start,
                 end: end,
                 scrub: true,
-                markers: true
+                // markers: true
             }
         });
 
@@ -64,7 +64,7 @@ function Header() {
             rotateZ: 900,
         });
         tl.to('#slider1-video', {
-            top: 100,
+            top: 80,
             left: -540,
             ease: "power2.in",
             // autoAlpha : 0,
@@ -107,8 +107,8 @@ function Header() {
                             <br /> Digital Excellence
                         </h1>
 
-                        <div >
-                            <div id="slider1-video" className="slider1-video relative flex items-center justify-center">
+                        <div>
+                            <div data-scroll data-scroll-speed="-.9" data-scroll-section id="slider1-video" className="slider1-video relative flex items-center justify-center">
                                 <div className="!overflow-hidden flex items-center justify-center !mx-auto ">
                                     <video className=" z-10 -mt-[26vh]  mix-blend-plus-lighter !mx-auto  !max-w-[2200px]" src={waveVideo} loop autoPlay muted />
                                 </div>
@@ -121,7 +121,7 @@ function Header() {
 
                     </div>
 
-                    <div id="instructor" className='!text-white flex items-center instructor-fixer justify-between'>
+                    <div  id="instructor" className='!text-white flex items-center instructor-fixer justify-between'>
                         <div className=' -ml-[50px] z-10 font-Roboto rotate-90 flex  gap-5'>
                             Scroll down <MoveRight />
                         </div>

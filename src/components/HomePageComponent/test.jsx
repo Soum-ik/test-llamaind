@@ -1,5 +1,5 @@
 import React from 'react';
-import './homePage.css';
+// import './homePage.css';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

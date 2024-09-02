@@ -4,9 +4,9 @@ import AboutPage from './components/pages/AboutPage';
 import CareerPage from './components/pages/CareersPage';
 import JobDetailsPage from './components/pages/JobDetailsPage';
 import ContactPage from './components/pages/ContactPage';
-
+ 
 export default function App() {
-
+   
   return (
     <div className="w-full  font-Orbitron">
       <Routes>

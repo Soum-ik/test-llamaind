@@ -25,10 +25,10 @@ function Navbar() {
     }, [isOpen]);
 
     return (
-        <div data-scroll data-scroll-speed="0.6" className='w-full h-auto'>
+        <div className='w-full h-auto'>
             <Layout>
                 <div className=' mx-auto  fixed left-0 top-0 right-0 w-full z-50 backdrop-blur-2xl'>
-                    <div className="z-[20000px] max-w-[1720px] mx-auto px-3  py-5 flex items-center justify-between">
+                    <div className="z-[20000] max-w-[1720px] mx-auto px-3  py-5 flex items-center justify-between">
                         <a href={'/'}>
                             <img src={brandLogo} alt="brand logo z-[20000px]" />
                         </a>

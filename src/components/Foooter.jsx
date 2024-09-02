@@ -14,7 +14,7 @@ import FooterVideo from '../../public/video/footerVideo.mp4';
 const Footer = () => {
     return (
         <div className="relative 2xl:-pt-[600px] z-10">
-            <div className=" absolute z-10 top-0 right-0 left-0  bg-gradient-to-b from-black to-transparent w-full h-2/5 md:h-5/5"></div>
+            <div className="  absolute z-0 top-0 right-0 left-0  bg-gradient-to-b from-black to-transparent w-full h-4/5 md:h-5/5"></div>
             <Layout>
                 <div className="absolute left-0 right-0 bottom-0 max-w-[1720px] mx-auto mt-16 p-3 flex flex-col md:flex-row gap-[40px] items-center justify-between">
                     <div className=" flex flex-col gap-[16px] mix-blend-plus-lighter">
@@ -50,8 +50,8 @@ const Footer = () => {
                 </div>
             </Layout>
             {/* <video className=" bg-transparent z-10  mx-auto !w-full  absolute left-1/2  -bottom-0 transform -translate-x-1/2" src={FooterVideo} autoPlay muted loop /> */}
-            <div className="max-h-[425px]  overflow-hidden">
-                <video className=" mix-blend-plus-lighter h-full  z-0 opacity-30 !w-full" src={FooterVideo} autoPlay muted loop />
+            <div className="max-h-[500px]  overflow-hidden">
+                <video className=" mix-blend-plus-lighter h-full  -z-10 opacity-30 !w-full" src={FooterVideo} autoPlay muted loop />
             </div>
         </div>
     );

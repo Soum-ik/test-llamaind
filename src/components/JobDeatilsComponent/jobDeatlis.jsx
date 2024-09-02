@@ -7,46 +7,124 @@ import DownloadIcon from '../../../public/images/dowload.png';
 import { FaLessThanEqual } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
+
 function JobDeatlis({ jobName }) {
     const [currentSelected, setCurrentSelected] = useState(1);
-    const menuBarRef = useRef(null); // Ref for the menu bar
-    const sectionsRef = useRef({}); // Ref for the content sections
+    const [hash, setHash] = useState('');
+
+
+    const currentHash = window.location?.hash;
+    useEffect(() => {
+        setHash(currentHash);
+    }, [currentHash]);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const currentSection = Object.keys(sectionsRef.current).find(id => {
-                const section = sectionsRef.current[id];
-                const offset = section.offsetTop;
-                return window.scrollY >= offset - 50 && window.scrollY < offset + section.offsetHeight - 50;
-            });
-            setCurrentSelected(Number(currentSection));
-            adjustMenuBarHeight(currentSection);
+        let options = {
+            root: document.querySelector("#Apply"),
+            rootMargin: "0px",
+            // threshold: 1.0,
         };
+        function callback(e) {
+            console.log(e);
+        }
 
-        const adjustMenuBarHeight = (sectionId) => {
-            if (menuBarRef.current && sectionsRef.current[sectionId]) {
-                const sectionHeight = sectionsRef.current[sectionId].offsetHeight;
-                menuBarRef.current.style.height = `${sectionHeight}px`;
-            }
-        };
+        let observer = new IntersectionObserver(callback, options);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+
+
+
+
+    const menuBarRef = useRef(null);
+
+    const sectionsRef = useRef([]);
+
+
+    // Assuming you've populated myDivRef with the div element
+    if (sectionsRef.current) {
+        const children = sectionsRef.current?.children;
+
+
+
+        for (let i = 0; i < children; i++) {
+            const child = children.i;
+            console.log(child);
+
+            // const childId = child.id;
+
+            // console.log("Child ID:", childId);
+        }
+    } else {
+        console.error("myDivRef.current is null. Ensure it's properly populated.");
+    }
 
     const menuItems = [
         { id: 1, href: '#job-description', label: 'Job Description' },
         { id: 2, href: '#Working-details', label: 'Working details' },
-        { id: 3, href: '#Key Responsibilities', label: 'Key Responsibilities' },
-        { id: 4, href: '#Technical Proficiency', label: 'Technical Proficiency' },
+        { id: 3, href: '#Key-Responsibilities', label: 'Key Responsibilities' },
+        { id: 4, href: '#Technical-Proficiency', label: 'Technical Proficiency' },
         { id: 5, href: '#Requirements', label: 'Requirements' },
         { id: 6, href: '#Benefits', label: 'Benefits' },
         { id: 7, href: '#Apply', label: 'Apply' },
     ];
 
+    const handleMenuItemClick = (e, item) => {
+        e.preventDefault();
+        setCurrentSelected(item.id);
+
+        const targetElement = document.querySelector(item.href);
+        const offset = menuBarRef.current?.offsetHeight || 0;
+
+        const yOffset = -offset + (400);
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        // Initialize IntersectionObserver
+        const options = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.5, // Adjust this value as needed
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = parseInt(entry.target.getAttribute('data-id'));
+                    setCurrentSelected(id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, options);
+
+        console.log(sectionsRef.current.entries);
+
+
+        // Observe each section
+        // sectionsRef.current.forEach((section) => {
+        //     if (section) {
+        //         observer.observe(section);
+        //     }
+        // });
+
+        // return () => {
+        //     sectionsRef.current.forEach((section) => {
+        //         if (section) {
+        //             observer.unobserve(section);
+        //         }
+        //     });
+        // };
+    }, []);
+
+
     return <Layout>
-        <div className="  text-white pt-[100px] ">
-            <div className="relative flex md:items-center pb-[90px] xl:pb-[140px] flex-col">
+        <div className="  text-white pt-[100px] xl:-mb-[20px]">
+            <div className="relative flex md:items-center  flex-col">
                 <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
                 <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
                 {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
@@ -55,12 +133,12 @@ function JobDeatlis({ jobName }) {
                 <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
 
             </div>
-            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20">
-                <div className=" min-w-[340px] hidden lg:block flex-col">
-                    <aside className=" sticky top-28  h-fit" ref={menuBarRef}>
+            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20  xl:pt-[200px]  ">
+                <div className=" min-w-[340px] hidden lg:flex flex-col">
+                    <aside className=" sticky top-28 w-full h-fit" ref={menuBarRef}>
                         {menuItems.map((item) => (
                             <a
-                                onClick={() => setCurrentSelected(item.id)}
+                                onClick={(e) => handleMenuItemClick(e, item)}
                                 href={item.href}
                                 key={item.id}
                                 className={currentSelected === item.id ? 'box box-font box-active' : 'box box-font'}
@@ -71,7 +149,7 @@ function JobDeatlis({ jobName }) {
 
                     </aside>
                 </div>
-                <div className="z-40 flex flex-1 flex-col gap-[60px]">
+                <div ref={sectionsRef} className="z-40 flex flex-1 flex-col gap-[60px]">
                     <div id="job-description" className=" flex flex-col gap-[20px]">
                         <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
                         <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
@@ -88,7 +166,7 @@ function JobDeatlis({ jobName }) {
                             </MarkDown>
                         </p>
                     </div>
-                    <div id="Key Responsibilities" className=" flex flex-col gap-[20px]">
+                    <div id="Key-Responsibilities" className=" flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Key Responsibilities</h1>
                         <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
@@ -105,7 +183,7 @@ function JobDeatlis({ jobName }) {
 
                         </p>
                     </div>
-                    <div id="Technical Proficiency" className=" flex flex-col gap-[20px]">
+                    <div id="Technical-Proficiency" className=" flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Technical Proficiency</h1>
                         <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
@@ -121,7 +199,7 @@ function JobDeatlis({ jobName }) {
 
                         </p>
                     </div>
-                    <div id="Requirements" className=" flex flex-col gap-[20px]">
+                    <div id="Requirements" className="flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Requirements</h1>
                         <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
@@ -140,7 +218,7 @@ function JobDeatlis({ jobName }) {
                     <div className=" top-[1900px] right-[1px] bottom-0 absolute z-10 opacity-[0.3]  mobile-blur-shadow md:hidden" />
                     <div className=" absolute  -right-[200px] hidden md:block  opacity-[.4] -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
 
-                    <div id="Benefits" className=" flex flex-col gap-[20px]">
+                    <div id="Benefits" className="  flex flex-col gap-[20px]">
                         <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Benefits</h1>
                         <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
@@ -155,8 +233,8 @@ function JobDeatlis({ jobName }) {
                     </div>
 
                     {/* apply form */}
-                    <div id="Apply" className=" flex flex-col gap-[20px]">
-                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Apply</h1>
+                    <div id="Apply" className="   flex flex-col gap-[20px]">
+                        <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Apply</h1>
                         <form className="w-full max-w-[1020px]  font-Roboto  mt-[30px] text-white rounded-lg" >
                             <div className="grid md:grid-cols-2  md:grid-rows-5 md:grid-flow-col gap-[20px]">
                                 <div>
