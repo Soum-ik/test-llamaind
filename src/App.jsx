@@ -9,9 +9,17 @@ import LocomotiveScroll from 'locomotive-scroll';
 export default function App() {
   const locomotiveScroll = new LocomotiveScroll({
     lenisOptions: {
-      duration: 9,
-      lerp: 4,
+      wrapper: window,
+      content: document.documentElement,
+      duration: 1.5, // Increasing duration for a slower, smoother scroll
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
+      smoothTouch: true, // Smoothing touch as well
+      wheelMultiplier: 0.75, // Reducing wheel multiplier for smoother scroll on wheel events
+      touchMultiplier: 1.5, // Reducing touch multiplier for smoother touch scrolling
+      normalizeWheel: true,
+      easing: (t) => 1 - Math.pow(1 - t, 6),
     }
   });
   return (

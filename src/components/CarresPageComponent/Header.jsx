@@ -72,7 +72,7 @@ function Header() {
     return (
         <div className=" relative xs:pt-[200px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
             <Layout>
-                <div className="xl:hidden pt-[160px] flex items-start justify-between">
+                <div className="xl:hidden pt-[90px] xl:pt-0 pb-[160px] flex items-start justify-between">
                     <div className="z-40 max-w-[355px] xxs:max-w-max pt-[75px] space-y-[230px] md:space-y-[200px]  xl:space-y-[450px]">
                         <Innovative staticData={staticData[0]} />
                         <CoreValus staticData={staticData[1]} />
@@ -97,7 +97,7 @@ function Header() {
                 {/* big screen end */}
 
             </Layout>
-            <div className="absolute  sm:-top-[40px]  xs:-top-[20px] -top-[10px] left-0 flex sm:h-[78vh] xs:h-[64vh] h-[58vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div className="absolute xs:top-[40px] top-[0px] left-0 flex sm:h-[78vh] xs:h-[64vh] h-[58vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={animation}
                     className="h-full w-auto object-cover"
@@ -105,7 +105,8 @@ function Header() {
                     autoPlay
                     muted
                 />
-                <div className=" absolute z-10 mobile-blur-shadow-gradient sm:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                {/* <div className="top-[100px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
+                <div className=" absolute z-[100] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" />
             </div>
         </div>
     );

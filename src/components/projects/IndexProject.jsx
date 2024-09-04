@@ -12,7 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function IndexProject() {
- 
+
   const projects = [
     {
       id: '01',
@@ -26,7 +26,7 @@ function IndexProject() {
   ];
 
   return (
-    <motion.div transition={{ ease: '0, 0.55, 0.45, 1', duration: 12 }}
+    <div transition={{ ease: '0, 0.55, 0.45, 1', duration: 12 }}
       className="relative py-[160px] xl:py-0">
       <Layout>
         <div className=" xl:hidden ">
@@ -66,8 +66,8 @@ function IndexProject() {
           </div>
         </div>
       </Layout>
-     
-    </motion.div>
+
+    </div>
   );
 }
 

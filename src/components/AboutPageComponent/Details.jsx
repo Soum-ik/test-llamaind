@@ -118,8 +118,8 @@ function Details() {
     return (
         <div className="relative xs:pt-[130px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
             <Layout>
-                <div className=" z-40 xs:pt-[300px] pt-[200px] slider2 flex xl:hidden relative !justify-between  xl:pb-[300px] ">
-                    <div id="rightSide" className=" min-w-[355px] pt-[75px] space-y-[230px] md:space-y-[200px]  xl:space-y-[450px] z-40">
+                <div className=" z-40 xs:pt-[300px] pt-[200px] slider2 flex xl:hidden relative !justify-between  pb-[160px] ">
+                    <div id="rightSide" className=" min-w-[355px] pt-[75px] space-y-[160px] md:space-y-[200px]  xl:space-y-[450px] z-40">
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white  text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center z-40 bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className=" z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item.title}</h1>

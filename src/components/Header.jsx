@@ -185,7 +185,7 @@ function Header() {
                 </Layout>
 
 
-                <div className="absolute sm:top-[110px]  xs:top-[120px] xxs:top-[110px] top-[110px] left-0 flex md:h-[102vh] sm:h-[90vh] xs:h-[80vh] h-[75vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+                <div className="absolute sm:top-[110px]  xs:top-[120px] xxs:top-[130px] top-[110px] left-0 flex md:h-[102vh] sm:h-[90vh] xs:h-[80vh] h-[75vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                     <video
                         src={waveVideo}
                         className="z-10 pt-[10px] md:pt-[50px] sm:mt-[40px] h-full w-auto object-cover"

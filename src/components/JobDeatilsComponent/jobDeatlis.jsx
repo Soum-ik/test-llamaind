@@ -217,52 +217,52 @@ function JobDeatlis({ jobName }) {
                         <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Apply</h1>
                         <form className="w-full max-w-[1020px]  font-Roboto  mt-[30px] text-white rounded-lg" >
                             <div className="grid md:grid-cols-2  md:grid-rows-5 md:grid-flow-col gap-[20px]">
-                                <div>
+                                <div className="space-y-[10px]">
                                     <label className="block font-normal text-[20px]">Full Name</label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
-                                <div>
+                                <div className="space-y-[10px]">
                                     <label className="block font-normal text-[20px]"> Email</label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
 
-                                <div>
+                                <div className="space-y-[10px]">
                                     <label className="block font-normal text-[20px]"> Phone </label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
-                                <div>
+                                <div className="space-y-[10px]">
                                     <label className="block font-normal text-[20px]"> LinkedIn Profile  </label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
-                                <div>
+                                <div className="space-y-[10px]">
                                     <label className="block font-normal text-[20px]"> Website / Portfolio / GitHub </label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
-                                <div>
+                                <div className="space-y-[10px]">
                                     <label className="block font-normal text-[20px]"> Expected Salary</label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
 
 
-                                <div className="  row-span-2">
+                                <div className="  row-span-2 space-y-[10px]">
                                     <label className="block mb-1">Resume</label>
                                     <div className="w-full md:h-[75%] h-[140px] border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
                                         <input type="file" className="hidden" id="resume" />
@@ -274,11 +274,11 @@ function JobDeatlis({ jobName }) {
                                     </div>
                                 </div>
 
-                                <div className="row-span-2 md:-mt-5">
+                                <div className="row-span-2 md:-mt-5 space-y-[10px] ">
                                     <label className="block font-normal  text-[20px]"> Cover Letter</label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] h-[170px] md:h-[85%] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] h-[170px] md:h-[85%] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
 
