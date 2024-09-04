@@ -6,7 +6,7 @@ import Header from "../CarresPageComponent/Header";
 
 export default function CareerPage() {
     return (
-        <div className="  bg-black w-full  min-h-screen  font-Orbitron">
+        <div className="  bg-black z-50 min-h-screen  font-Orbitron">
             <Navbar />
             <Header />
             <Positions />

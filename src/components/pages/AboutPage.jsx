@@ -6,7 +6,7 @@ import OpenPosition from '../OpenPosition';
 
 export default function AboutPage() {
     return (
-        <div className=" bg-black min-h-screen">
+        <div className=" bg-black -z-10 min-h-screen">
             <Navbar />
             <Details />
             <OpenPosition />

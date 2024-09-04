@@ -1,43 +1,124 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "../layout/Layout";
 import MarkDown from '../../components/shared/TextEditorDataReader';
 import { Dot } from "lucide-react";
 import JSONPlaceHolder from '../libs/jobDes.json';
 import DownloadIcon from '../../../public/images/dowload.png';
 import { FaLessThanEqual } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 
 function JobDeatlis({ jobName }) {
     const [currentSelected, setCurrentSelected] = useState(1);
-    let currenData;
+    const [hash, setHash] = useState('');
+
+
+    const currentHash = window.location?.hash;
+    useEffect(() => {
+        setHash(currentHash);
+    }, [currentHash]);
+
+
+
+    const menuBarRef = useRef(null);
+
+    const sectionsRef = useRef([]);
+
+
+    // Assuming you've populated myDivRef with the div element
+    if (sectionsRef.current) {
+        const children = sectionsRef.current?.children;
+
+
+
+        for (let i = 0; i < children; i++) {
+            const child = children.i;
+           
+        }
+    } else {
+        console.error("myDivRef.current is null. Ensure it's properly populated.");
+    }
 
     const menuItems = [
         { id: 1, href: '#job-description', label: 'Job Description' },
         { id: 2, href: '#Working-details', label: 'Working details' },
-        { id: 3, href: '#Key Responsibilities', label: 'Key Responsibilities' },
-        { id: 4, href: '#Technical Proficiency', label: 'Technical Proficiency' },
+        { id: 3, href: '#Key-Responsibilities', label: 'Key Responsibilities' },
+        { id: 4, href: '#Technical-Proficiency', label: 'Technical Proficiency' },
         { id: 5, href: '#Requirements', label: 'Requirements' },
         { id: 6, href: '#Benefits', label: 'Benefits' },
         { id: 7, href: '#Apply', label: 'Apply' },
     ];
 
+    const handleMenuItemClick = (e, item) => {
+        e.preventDefault();
+        setCurrentSelected(item.id);
+
+        const targetElement = document.querySelector(item.href);
+        const offset = menuBarRef.current?.offsetHeight || 0;
+
+        const yOffset = -offset + (400);
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
 
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+
+    useEffect(() => {
+        // Initialize IntersectionObserver
+        const options = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.5, // Adjust this value as needed
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = parseInt(entry.target.getAttribute('data-id'));
+                    setCurrentSelected(id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, options);
+
+        // console.log(sectionsRef.current.entries);
+
+
+        // Observe each section
+        // sectionsRef.current.forEach((section) => {
+        //     if (section) {
+        //         observer.observe(section);
+        //     }
+        // });
+
+        // return () => {
+        //     sectionsRef.current.forEach((section) => {
+        //         if (section) {
+        //             observer.unobserve(section);
+        //         }
+        //     });
+        // };
+    }, []);
 
 
     return <Layout>
-        <div className="  text-white padding ]">
-            <div className="relative flex items-center pb-[140px]  flex-col">
-                <h1 className="heading-style">{jobName}</h1>
-                <p className="font-Roboto pt-[10px] group-hover:textColor duration-500 text-[26px] flex items-center font-light gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
-                <button className=" mt-[40px] btn-gradient font-Roboto">Apply Now</button>
-                <div className="about-blur-shadow absolute top-0 z-40  mix-blend-plus-lighter"></div>
+        <div className="  text-white pt-[100px] xl:-mb-[20px] ">
+            <div className="relative flex md:items-center  flex-col">
+                <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
+                <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
+                {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
+                <button className=" mt-[32px] md:mt-[40px] btn-gradient text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
+                <div className="  right-[1px]  absolute z-10   mobile-blur-shadow md:hidden" />
+                <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
+
             </div>
-            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[100px] pt-20">
-                <div className=" min-w-[340px] flex-col">
-                    <aside className=" sticky top-28  h-fit">
+            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20  xl:pt-[200px]  ">
+                <div className=" min-w-[340px] hidden lg:flex flex-col">
+                    <aside className=" sticky top-28 w-full h-fit" ref={menuBarRef}>
                         {menuItems.map((item) => (
                             <a
-                                onClick={() => setCurrentSelected(item.id)}
+                                onClick={(e) => handleMenuItemClick(e, item)}
                                 href={item.href}
                                 key={item.id}
                                 className={currentSelected === item.id ? 'box box-font box-active' : 'box box-font'}
@@ -48,14 +129,14 @@ function JobDeatlis({ jobName }) {
 
                     </aside>
                 </div>
-                <div className="z-40 flex flex-1 flex-col gap-[60px]">
-                    <div className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Job Description</h1>
-                        <p id="job-description" className="details-text-dec">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
+                <div ref={sectionsRef} className="z-40 flex flex-1 flex-col mt-[100px] xl:mt-0 gap-[60px]">
+                    <div id="job-description" className=" flex flex-col gap-[20px]">
+                        <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
+                        <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
                     </div>
                     <div id="Working-details" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Working details</h1>
-                        <p className="details-text-dec">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Working details</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
                                 {
                                     `- 09:00 AM - 06:00 PM.
@@ -65,13 +146,13 @@ function JobDeatlis({ jobName }) {
                             </MarkDown>
                         </p>
                     </div>
-                    <div id="Key Responsibilities" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Key Responsibilities</h1>
-                        <p className="details-text-dec">
+                    <div id="Key-Responsibilities" className=" flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Key Responsibilities</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
 
                                 {`
-- Develop and maintain CI/CD pipelines for automated build, test, and deployment processes.
+- Develop and maintain *CI/CD* pipelines for automated build, test, and deployment processes.
 - Manage and monitor cloud infrastructure and on-premise servers.
 - Implement and enforce security best practices and policies.
 - Collaborate with development teams to optimize application performance and scalability.
@@ -82,42 +163,47 @@ function JobDeatlis({ jobName }) {
 
                         </p>
                     </div>
-                    <div id="Technical Proficiency" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Technical Proficiency</h1>
-                        <p className="details-text-dec">
+                    <div id="Technical-Proficiency" className=" flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Technical Proficiency</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
 
                                 {`
 - Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
 - Experience with containerization and orchestration tools (Docker, Kubernetes).
 - Familiarity with configuration management tools (Ansible, Terraform).
-    - Understanding of networking, security, and system administration.
+- Understanding of networking, security, and system administration.
                             `}
 
                             </MarkDown>
 
                         </p>
                     </div>
-                    <div id="Requirements" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Requirements</h1>
-                        <p className="details-text-dec">
+                    <div id="Requirements" className="flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Requirements</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
 
 
-                                {`- Proven experience as a DevOps Engineer or similar role.
-    - Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
-    - Experience with containerization and orchestration tools (Docker, Kubernetes).
-    - Familiarity with configuration management tools (Ansible, Terraform).
-    - Understanding of networking, security, and system administration.`}
+                                {`
+- Proven experience as a DevOps Engineer or  similar role.
+- Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
+- Experience with containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with configuration management tools (Ansible, Terraform).
+- Understanding of networking, security, and system administration.`}
 
                             </MarkDown>
                         </p>
                     </div>
-                    <div id="Benefits" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Benefits</h1>
-                        <p className="details-text-dec">
+                    <div className=" top-[1900px] right-[1px] bottom-0 absolute z-10 opacity-[0.3]  mobile-blur-shadow md:hidden" />
+                    <div className=" absolute  -right-[200px] hidden md:block  opacity-[.4] -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
+
+                    <div id="Benefits" className="  flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Benefits</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
                             <MarkDown>
-                                {`- Competitive salary
+                                {`
+- Competitive salary
 - Health insurance
 - Paid time off
 - Professional development opportunities`}
@@ -127,10 +213,10 @@ function JobDeatlis({ jobName }) {
                     </div>
 
                     {/* apply form */}
-                    <div id="Apply" className=" flex flex-col gap-[20px]">
-                        <h1 className="details-text-heading">Apply</h1>
+                    <div id="Apply" className="   flex flex-col gap-[20px]">
+                        <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Apply</h1>
                         <form className="w-full max-w-[1020px]  font-Roboto  mt-[30px] text-white rounded-lg" >
-                            <div className="grid grid-cols-2  grid-rows-5 grid-flow-col gap-[20px]">
+                            <div className="grid md:grid-cols-2  md:grid-rows-5 md:grid-flow-col gap-[20px]">
                                 <div>
                                     <label className="block font-normal text-[20px]">Full Name</label>
                                     <input
@@ -178,7 +264,7 @@ function JobDeatlis({ jobName }) {
 
                                 <div className="  row-span-2">
                                     <label className="block mb-1">Resume</label>
-                                    <div className="w-full h-[75%]  border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
+                                    <div className="w-full md:h-[75%] h-[140px] border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
                                         <input type="file" className="hidden" id="resume" />
                                         <label htmlFor="resume" className="text-blue-500 cursor-pointer flex flex-col items-center">
                                             <img src={DownloadIcon} alt="" className=" size-[24px]" />
@@ -188,19 +274,19 @@ function JobDeatlis({ jobName }) {
                                     </div>
                                 </div>
 
-                                <div className="row-span-2 -mt-5">
+                                <div className="row-span-2 md:-mt-5">
                                     <label className="block font-normal  text-[20px]"> Cover Letter</label>
                                     <input
                                         type="text"
-                                        className="w-full text-[20px] h-[85%] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                                        className="w-full text-[20px] h-[170px] md:h-[85%] font-normal px-[20px] py-2 text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                                     />
                                 </div>
 
                             </div>
-                            <div className=" py-[20px]  flex items-center">
+                            <div className=" py-[20px]  flex md:items-center">
                                 <input
                                     type="checkbox"
-                                    className="mr-2 "
+                                    className="mr-2 -mt-4"
                                     id="consent"
                                 />
                                 <label htmlFor="consent" className="text-gray-400">
@@ -209,7 +295,7 @@ function JobDeatlis({ jobName }) {
                             </div>
                             <div className="">
 
-                                <button onClick={() => alert('d')} type="submit" className="z-40   transition-all rounded-lg px-[32px] py-[15px] text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"Submit application"}</button>
+                                <button onClick={() => alert('d')} type="submit" className="z-40   transition-all rounded-lg px-[32px] py-[15px] text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] w-full md:w-auto">{"Submit application"}</button>
 
                             </div>
                         </form>
