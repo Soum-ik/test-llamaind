@@ -8,18 +8,15 @@ import OpenPosition from "../OpenPosition";
 import IndexProject from "../projects/IndexProject";
 import { useSmotherContext } from "../../Hooks/ScrollingContext";
 import App from "../HomePageComponent/test";
-import LocomotiveScroll from 'locomotive-scroll';
 
 
 export default function HomePage() {
-    const locomotiveScroll = new LocomotiveScroll();
-
-
     return (
-        <div className="   bg-black font-Orbitron">
+        <div className="bg-black h-auto font-Orbitron">
             <Navbar />
             <Header />
             <FutureTech />
+            <IndexProject />
             <OpenPosition />
             <Foooter />
         </div>

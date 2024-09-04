@@ -8,8 +8,7 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const window = useWindowSize();
-    console.log(window, "get the window size");
-
+    
 
     useEffect(() => {
         if (isOpen) {
@@ -27,14 +26,14 @@ function Navbar() {
     return (
         <div className='w-full h-auto'>
             <Layout>
-                <div className=' mx-auto  fixed left-0 top-0 right-0 w-full z-50 backdrop-blur-2xl'>
+                <div className=' mx-auto z-[20000] fixed left-0 top-0 right-0 w-full backdrop-blur-2xl'>
                     <div className="z-[20000] max-w-[1720px] mx-auto px-3  py-5 flex items-center justify-between">
                         <a href={'/'}>
-                            <img src={brandLogo} alt="brand logo z-[20000px]" />
+                            <img src={brandLogo} alt="brand logo z-[20000]" />
                         </a>
 
                         {/* <p className=' text-white'>{window.width}</p> */}
-                        <div className="hidden lg:flex items-center z-[20000px] font-Roboto gap-12 !text-white">
+                        <div className="hidden lg:flex items-center z-[20000] font-Roboto gap-[20px] !text-white">
                             <a className="text-gradient" href={'/about'}>About Us</a>
                             <a className='text-gradient' href={'/career'}>Careers</a>
                         </div>

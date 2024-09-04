@@ -4,9 +4,16 @@ import AboutPage from './components/pages/AboutPage';
 import CareerPage from './components/pages/CareersPage';
 import JobDetailsPage from './components/pages/JobDetailsPage';
 import ContactPage from './components/pages/ContactPage';
- 
+import LocomotiveScroll from 'locomotive-scroll';
+
 export default function App() {
-   
+  const locomotiveScroll = new LocomotiveScroll({
+    lenisOptions: {
+      duration: 9,
+      lerp: 4,
+      smoothWheel: true,
+    }
+  });
   return (
     <div className="w-full  font-Orbitron">
       <Routes>

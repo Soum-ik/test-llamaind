@@ -1,3 +1,6 @@
+import icon1 from '../../../public/images/projects/project1.png'
+import projectVideo from '../../../public/video/projects.mp4'
+
 const staticData = [
     {
         "title": `Be Part of 
@@ -105,7 +108,28 @@ const openPositios = [
     },
 ];
 
+const leftSideTechs = [
+    'Artificial Intelligence', 'Machine Learning', 'Natural Language Processing', 'Computer Vision'
+];
 
-export { staticData, openPositios };
+const rightSideTechs = [
+    'Blockchain', 'Internet of Things', 'Cloud Solutions', 'Augmented & Virtual Reality'
+];
+
+
+const projects = [
+    {
+        id: '01',
+        icon: icon1,
+        headings: ["The First Cloud-Based", "Fleet Monetization Platform"],
+        status: "(Upcoming Project)",
+        des: "Introducing FleetBlox, the revolutionary subscription-based rental platform designed to maximize fleet revenue, enhance operational efficiency, and transform customer experience.",
+        video: projectVideo
+    },
+
+
+];
+
+export { staticData, openPositios, leftSideTechs, rightSideTechs, projects };
 
 

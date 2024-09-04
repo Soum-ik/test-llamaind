@@ -5,9 +5,10 @@ import { useState } from 'react';
 import animation from '../../../public/video/no-job-open.mp4';
 // import animation from '../../../public/video/gif.gif';
 import { openPositios } from '../libs/staticData';
+// import { Turtle } from 'lucide-react';
 
 function Positions() {
-    const [availableVacancies, setAvailableVacancies] = useState(false);
+    const [availableVacancies, setAvailableVacancies] = useState(true);
 
     return <Layout>
         <div className='relative mt-[40px]  md:mt-[150px] xl:mt-[270px] -z-0 pb-[200px] md:pb-[300px] xl:pb-[300px]'>
@@ -29,10 +30,10 @@ function Positions() {
                         />
                         <div className="top-[100px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
                         <p className='  mix-blend-lighten -z-30 text-[26px] sm:text-[36px] -mt-[60px] xl:text-[46px]  font-bold text-center  font-Roboto text-[#D5D5D5]'>No Vacancies Available at this Moment</p>
-                         
+
                     </div>
-                    
-                   
+
+
 
                 </>
             }

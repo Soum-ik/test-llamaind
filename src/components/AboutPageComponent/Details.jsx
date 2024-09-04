@@ -22,16 +22,14 @@ function Details() {
 
     const projectsHeigth = textRef.current?.offsetHeight;
     function getScrollAmount() {
-        console.log(projectsHeigth, 'total height');
-
+    
         if (projectsHeigth) {
             return -((projectsHeigth * 1) - window.innerHeight);
         }
         return 0;
     }
 
-
-    console.log(getScrollAmount());
+ 
 
 
 

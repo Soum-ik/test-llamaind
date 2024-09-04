@@ -1,14 +1,14 @@
 import Layout from "./layout/Layout";
 import headerImage from '../../public/images/header.png';
 import waveVideo from '../../public/video/main-animation.mp4';
-import { MoveRight } from 'lucide-react';
+import { ImportIcon, MoveRight, Turtle } from 'lucide-react';
 import arrow from '../../public/images/textSpin.png';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useWindowSize from "../Hooks/UseGetScreenSize";
-
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -19,8 +19,9 @@ function Header() {
     let start, end, start1, end1;
 
     if (width <= 1920) {
-        start = "95% 80%";
-        end = "88% 67%";
+        start = "top bottom-=1",
+            end = "bottom top+=1";
+        // end = "bottom 67%";
         start1 = "80% 80%";
         end1 = "67% 67%";
 
@@ -39,11 +40,12 @@ function Header() {
     useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: "#slider2",
-                start: start,
-                end: end,
+                trigger: "#holder",
+                start: "bottom+20% bottom+=20%",
+                end: "60% 82%",
+          
                 scrub: true,
-                // markers: true
+                // markers: true,
             }
         });
 
@@ -64,30 +66,29 @@ function Header() {
             rotateZ: 900,
         });
         tl.to('#slider1-video', {
-            top: 80,
+            top: 70,
             left: -540,
-            ease: "power2.in",
-            // autoAlpha : 0,
-            duration: 10
+            ease: "0.7, 0, 0.84, 0",
+            duration: 13,
         });
 
         // Second timeline for slider2
         const tl2 = gsap.timeline({
             scrollTrigger: {
-                trigger: "#slider2",
-                start: start1,
-                end: end1,
+                trigger: "#holder",
+                start: "bottom+20% bottom+=20%",
+                end: "60% 82%",
                 scrub: true,
                 // markers: true,
             },
         });
 
         tl2.to('#slider2-text', {
-            delay: 20,
-            duration: 2,
+            delay: 25,
+            duration: 20,
             x: -1300,
             display: 'block',
-            ease: "power2.inOut"
+            ease: "0.45, 0, 0.55, 1",
         });
 
         // Cleanup function to kill ScrollTriggers on unmount
@@ -108,20 +109,20 @@ function Header() {
                         </h1>
 
                         <div>
-                            <div data-scroll data-scroll-speed="-.9" data-scroll-section id="slider1-video" className="slider1-video relative flex items-center justify-center">
+                            <motion.div transition={{ ease: 'linear', duration: 5, delay: 1 }} id="slider1-video" className="slider1-video relative flex items-center justify-center">
                                 <div className="!overflow-hidden flex items-center justify-center !mx-auto ">
                                     <video className=" z-10 -mt-[26vh]  mix-blend-plus-lighter !mx-auto  !max-w-[2200px]" src={waveVideo} loop autoPlay muted />
                                 </div>
                                 <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
                                 <img className=" z-20 absolute inset-0 mx-auto -top-[90px] size-[770px]" src={headerImage} alt="" />
-                            </div>
+                            </motion.div>
                         </div>
 
 
 
                     </div>
 
-                    <div  id="instructor" className='!text-white flex items-center instructor-fixer justify-between'>
+                    <div id="instructor" className='!text-white flex items-center instructor-fixer justify-between'>
                         <div className=' -ml-[50px] z-10 font-Roboto rotate-90 flex  gap-5'>
                             Scroll down <MoveRight />
                         </div>
@@ -135,8 +136,12 @@ function Header() {
                         </div>
                     </div>
 
-                    <div id="slider2" className=" text-right !flex relative  z-40  !justify-end ">
-                        <div id="slider2-text" className="slider2-text  hidden -right-[1300px] text-left z-40 -top-[255px]  text-ellipsis absolute font-light text-[37px] leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
+                    <div id="slider2" className=" text-right !flex relative  z-40  mb-20 !justify-end ">
+                        <div id="slider2-text" className="slider2-text  hidden -right-[1300px] text-left z-40 -top-[300px]  text-ellipsis absolute font-light text-[37px] leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
+                    </div>
+
+                    <div id="holder" className="hidden xl:block mt-[130px]">
+
                     </div>
                 </Layout>
             </div>
@@ -180,7 +185,7 @@ function Header() {
                 </Layout>
 
 
-                <div className="absolute sm:top-[110px]  xs:top-[120px] xxs:top-[110px] top-[100px] left-0 flex md:h-[102vh] sm:h-[90vh] xs:h-[80vh] h-[75vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+                <div className="absolute sm:top-[110px]  xs:top-[120px] xxs:top-[110px] top-[110px] left-0 flex md:h-[102vh] sm:h-[90vh] xs:h-[80vh] h-[75vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                     <video
                         src={waveVideo}
                         className="z-10 pt-[10px] md:pt-[50px] sm:mt-[40px] h-full w-auto object-cover"

@@ -13,7 +13,7 @@ import FooterVideo from '../../public/video/footerVideo.mp4';
 
 const Footer = () => {
     return (
-        <div className="relative 2xl:-pt-[600px] z-10">
+        <div  className="relative 2xl:-pt-[600px] z-10">
             <div className="  absolute z-0 top-0 right-0 left-0  bg-gradient-to-b from-black to-transparent w-full h-4/5 md:h-5/5"></div>
             <Layout>
                 <div className="absolute left-0 right-0 bottom-0 max-w-[1720px] mx-auto mt-16 p-3 flex flex-col md:flex-row gap-[40px] items-center justify-between">

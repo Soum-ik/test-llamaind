@@ -26,8 +26,7 @@ function Header() {
             }
         });
         const textElements = Array.from(contentRef.current.children);
-        console.log(textElements.offsetHeigth, 'elements');
-
+ 
 
         textElements.forEach((text, index) => {
             gsap.fromTo(

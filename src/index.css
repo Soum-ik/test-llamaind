@@ -4,17 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
+
+
+
+
 body::-webkit-scrollbar {
   display: none;
 }
-
-  */
-body::-webkit-scrollbar {
-  display: none;
-}
-
-
 
 .blue__gradient {
   background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #5D5CE8 100%);
@@ -71,7 +67,7 @@ body::-webkit-scrollbar {
   }
 
   .text-gradient {
-    @apply relative bg-clip-text text-transparent text-[20px] bg-gradient-to-r font-bold duration-500 from-white to-white hover:from-[#3534C0] hover:to-[#06FFDF]
+    @apply relative w-[100px] text-center bg-clip-text text-transparent text-[20px] bg-gradient-to-r font-bold duration-500 from-white to-white hover:from-[#3534C0] hover:to-[#06FFDF]
   }
 
   .text-carries {
@@ -79,7 +75,7 @@ body::-webkit-scrollbar {
   }
 
   .text-gradient::after {
-    @apply content-[''] bg-gradient-to-r from-[#3534C0] to-[#06FFDF] h-[2px] w-[0%] left-0 absolute -bottom-1 rounded-xl duration-500
+    @apply content-[''] bg-gradient-to-r from-[#3534C0] to-[#06FFDF] h-[3px] w-[0%] left-0 absolute -bottom-1 rounded-xl duration-500
   }
 
   .text-gradient:hover::after {

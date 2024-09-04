@@ -18,22 +18,6 @@ function JobDeatlis({ jobName }) {
         setHash(currentHash);
     }, [currentHash]);
 
-    useEffect(() => {
-        let options = {
-            root: document.querySelector("#Apply"),
-            rootMargin: "0px",
-            // threshold: 1.0,
-        };
-        function callback(e) {
-            console.log(e);
-        }
-
-        let observer = new IntersectionObserver(callback, options);
-
-    }, []);
-
-
-
 
 
     const menuBarRef = useRef(null);
@@ -49,11 +33,7 @@ function JobDeatlis({ jobName }) {
 
         for (let i = 0; i < children; i++) {
             const child = children.i;
-            console.log(child);
-
-            // const childId = child.id;
-
-            // console.log("Child ID:", childId);
+           
         }
     } else {
         console.error("myDivRef.current is null. Ensure it's properly populated.");
@@ -102,7 +82,7 @@ function JobDeatlis({ jobName }) {
 
         const observer = new IntersectionObserver(observerCallback, options);
 
-        console.log(sectionsRef.current.entries);
+        // console.log(sectionsRef.current.entries);
 
 
         // Observe each section
@@ -123,7 +103,7 @@ function JobDeatlis({ jobName }) {
 
 
     return <Layout>
-        <div className="  text-white pt-[100px] xl:-mb-[20px]">
+        <div className="  text-white pt-[100px] xl:-mb-[20px] ">
             <div className="relative flex md:items-center  flex-col">
                 <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
                 <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
@@ -149,7 +129,7 @@ function JobDeatlis({ jobName }) {
 
                     </aside>
                 </div>
-                <div ref={sectionsRef} className="z-40 flex flex-1 flex-col gap-[60px]">
+                <div ref={sectionsRef} className="z-40 flex flex-1 flex-col mt-[100px] xl:mt-0 gap-[60px]">
                     <div id="job-description" className=" flex flex-col gap-[20px]">
                         <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
                         <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
