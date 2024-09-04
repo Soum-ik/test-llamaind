@@ -4,11 +4,7 @@ import DownloadIcon from '../../../public/images/dowload.png'
 
 
 function ApplyForm() {
-    // const [resume, setResume] = useState(null);
 
-    // const handleResumeUpload = (e: { target: { files: SetStateAction<null>[]; }; }) => {
-    //     setResume(e.target.files[0]);
-    // };
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -23,52 +19,52 @@ function ApplyForm() {
             </div>
             <form className="w-full max-w-[1020px] mx-auto font-Roboto  z-50 mt-[30px] text-white rounded-lg" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2  md:grid-rows-5 md:grid-flow-col gap-[20px]">
-                    <div>
+                    <div className=" space-y-[10px]">
                         <label className="block font-normal text-[20px]">Full Name</label>
                         <input
                             type="text"
-                            className="w-full text-[20px] font-normal px-[20px] py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                            className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                         />
                     </div>
-                    <div>
+                    <div className=" space-y-[10px]">
                         <label className="block font-normal text-[20px]"> Email</label>
                         <input
                             type="text"
-                            className="w-full text-[20px] font-normal px-[20px] py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                            className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                         />
                     </div>
 
-                    <div>
+                    <div className=" space-y-[10px]">
                         <label className="block font-normal text-[20px]"> Phone </label>
                         <input
                             type="text"
-                            className="w-full text-[20px] font-normal px-[20px] py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                            className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                         />
                     </div>
-                    <div>
+                    <div className=" space-y-[10px]">
                         <label className="block font-normal text-[20px]"> LinkedIn Profile  </label>
                         <input
                             type="text"
-                            className="w-full text-[20px] font-normal px-[20px] py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                            className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                         />
                     </div>
-                    <div className="z-40">
+                    <div className="z-40 space-y-[10px]">
                         <label className="z-40 block font-normal text-[20px]"> Website / Portfolio / GitHub </label>
                         <input
                             type="text"
-                            className="w-full z-40 text-[20px] font-normal px-[20px] py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                            className="w-full z-40 text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                         />
                     </div>
-                    <div>
+                    <div className="  space-y-[10px]">
                         <label className="block font-normal text-[20px]"> Job Position</label>
                         <input
                             type="text"
-                            className="w-full text-[20px] font-normal px-[20px] py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
+                            className="w-full text-[20px] font-normal px-[20px] py-[12px] xl:py-[17px] text-white rounded-lg bg-[#0A0A24] bg-opacity-[20%] border-[2px] border-[#ffffff] border-opacity-[8%]  focus:outline-none"
                         />
                     </div>
 
 
-                    <div className="  row-span-2">
+                    <div className=" space-y-[10px] row-span-2">
                         <label className="block mb-1">Resume</label>
                         <div className="w-full md:h-[75%] h-[144px] border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
                             <input type="file" className="hidden" id="resume" />
@@ -80,7 +76,7 @@ function ApplyForm() {
                         </div>
                     </div>
 
-                    <div className="z-40 row-span-2 md:-mt-5">
+                    <div className="z-40 row-span-2 md:-mt-5 space-y-[10px]">
                         <label className=" z-40 block font-normal  text-[20px]"> Cover Letter</label>
                         <input
                             type="text"
@@ -101,7 +97,7 @@ function ApplyForm() {
                 </div>
                 <div className=" flex items-center justify-center">
 
-                    <button   type="submit" className="z-40  mt-4 transition-all md:max-w-max rounded-lg w-full px-[32px] py-[15px] text-[20px] md:text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"Send Resume"}</button>
+                    <button type="submit" className="z-40  mt-4 transition-all md:max-w-max rounded-lg w-full px-[32px] py-[15px] text-[20px] md:text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"Send Resume"}</button>
 
                 </div>
             </form>

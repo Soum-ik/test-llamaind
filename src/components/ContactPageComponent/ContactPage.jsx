@@ -42,15 +42,15 @@ function ContactPage() {
                 <div className=" relative z-40 w-[330px] xxs:w-[375px] xs:w-[430px] sm:w-[490px] mb-[350px] md:mb-0  2xl:w-[586px]  font-Roboto  text-white grid grid-rows-6 gap-[20px] grid-flow-col">
                     <div className=" flex  flex-col gap-[10px]">
                         <h1 className=" input-label text-[18px] xl:text-[20px]">Full Name</h1>
-                        <input type="text" className=" input px-[20px] py-[12px]" name="" id="" />
+                        <input type="text" className=" input px-[20px] py-[12px] xl:py-[17px]" name="" id="" />
                     </div>
                     <div className=" flex flex-col gap-[10px]">
                         <h1 className="input-label text-[18px] xl:text-[20px]">Email</h1>
-                        <input type="text" className=" input px-[20px] py-[12px]" name="" id="" />
+                        <input type="text" className=" input px-[20px] py-[12px] xl:py-[17px]" name="" id="" />
                     </div>
                     <div className=" h-[200px] row-span-3 flex flex-col gap-[10px]">
                         <h1 className=" input-label text-[18px] xl:text-[20px]">Your Message</h1>
-                        <textarea className=" input h-full" name="" id="" />
+                        <textarea className=" input h-full px-[20px] py-[8px]" name="" id="" />
                     </div>
                     <button className="btn-gradient w-full md:max-w-max -mt-[100px]  2xl:-mt-[100px] font-bold">Send Message</button>
                     <div className=" md:hidden absolute md:static  bottom-0 top-[600px] -left-[0px] flex flex-col gap-[60px]">
