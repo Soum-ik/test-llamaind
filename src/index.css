@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
   }
 
   .text-gradient {
-    @apply relative w-[100px] text-center bg-clip-text text-transparent text-[20px] bg-gradient-to-r font-bold duration-500 from-white to-white hover:from-[#3534C0] hover:to-[#06FFDF]
+    @apply relative w-[100px] text-center bg-clip-text text-transparent text-[20px] bg-gradient-to-r  duration-500 from-white to-white hover:from-[#3534C0] hover:to-[#06FFDF]
   }
 
   .text-carries {
