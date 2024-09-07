@@ -212,13 +212,13 @@ body::-webkit-scrollbar {
 }
 
 .projectMovieCircel-gradient {
-  border-radius: 154.545px;
+ 
   background: linear-gradient(180deg, #5D5CE8 0%, #6CB1FF 100%);
   box-shadow: 3.091px 3.091px 24.727px 0px rgba(93, 92, 232, 0.32);
 }
 
 .projectMovieCircel-gradient:hover {
-  border-radius: 181.818px;
+  
   background: linear-gradient(180deg, #3534C0 0%, #06FFDF 100%);
   box-shadow: 3.636px 3.636px 29.091px 0px rgba(93, 92, 232, 0.32);
 }

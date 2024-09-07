@@ -2,7 +2,7 @@ import Layout from "./layout/Layout";
 import headerImage from '../../public/images/header.png';
 import waveVideo from '../../public/video/main-animation.mp4';
 import { ImportIcon, MoveRight, Turtle } from 'lucide-react';
-import arrow from '../../public/images/textSpin.png';
+import arrow from '../../public/images/spiner.png';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -126,7 +126,7 @@ function Header() {
                         <div className=' -ml-[50px] z-10 font-Roboto rotate-90 flex  gap-5'>
                             Scroll down <MoveRight />
                         </div>
-                        <div id="projectMoveing" className='z-10 group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
+                        <div id="projectMoveing" className='z-10 group  p-4  size-[170px] relative transition-colors  duration-500 rounded-full projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
                             <img className=' group-hover:animate-none animate-spin-slow transition-colors duration-500' src={arrow} alt="" />
                             <div className="   absolute top-1/2 left-1/2 transition-transform -translate-x-1/2 -translate-y-1/2 group-hover:rotate-45">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
