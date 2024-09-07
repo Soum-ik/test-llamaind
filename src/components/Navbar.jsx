@@ -38,8 +38,8 @@ function Navbar() {
 
                         <p className=' text-white'>{window.width}</p>
                         <div className="hidden lg:flex items-center z-[20000] font-Roboto gap-[20px] !text-white">
-                            <a className={`text-gradient ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
-                            <a className={`text-gradient ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
+                            <a className={`text-gradient leading-[23.44px] ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
+                            <a className={`text-gradient leading-[23.44px] ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
                         </div>
                         <div onClick={() => setIsOpen(!isOpen)} className=' lg:hidden  z-[1000000] text-white'>
                             {isOpen ? <X /> : <Menu />}

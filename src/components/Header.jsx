@@ -42,10 +42,10 @@ function Header() {
                 trigger: "#holder",
                 start: "bottom+20% bottom+=20%",
                 // end: "90% 60%",
-                end: "160% 82%",
+                end: "200% 82%",
                 // end: "60% 50%",          
                 scrub: true,
-                // markers: true,
+
             }
         });
 
@@ -77,9 +77,7 @@ function Header() {
             scrollTrigger: {
                 trigger: "#holder",
                 start: "bottom+20% bottom+=20%",
-                end: "160% 82%",
-                // end: "90% 60%",
-                // end: "60% 50%",
+                end: "200% 82%",
                 scrub: true,
                 // markers: true,
             },
