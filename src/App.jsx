@@ -9,8 +9,6 @@ import LocomotiveScroll from 'locomotive-scroll';
 export default function App() {
   const locomotiveScroll = new LocomotiveScroll({
     lenisOptions: {
-      wrapper: window,
-      content: document.documentElement,
       duration: 1.5, // Increasing duration for a slower, smoother scroll
       orientation: 'vertical',
       gestureOrientation: 'vertical',

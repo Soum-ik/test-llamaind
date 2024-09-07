@@ -3,12 +3,16 @@ import brandLogo from '../../public/images/brandLogo.png';
 import Layout from "./layout/Layout";
 import { useEffect, useState } from 'react';
 import useWindowSize from '../Hooks/UseGetScreenSize';
+import { useLocation } from 'react-router-dom';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+    const pathname = location.pathname;
+
 
     const window = useWindowSize();
-    
+
 
     useEffect(() => {
         if (isOpen) {
@@ -27,26 +31,26 @@ function Navbar() {
         <div className='w-full h-auto'>
             <Layout>
                 <div className=' mx-auto z-[20000] fixed left-0 top-0 right-0 w-full backdrop-blur-2xl'>
-                    <div className="z-[20000] max-w-[1720px] mx-auto px-3  py-5 flex items-center justify-between">
-                        <a href={'/'}>
-                            <img src={brandLogo} alt="brand logo z-[20000]" />
+                    <div className="z-[20000000] max-w-[1720px] mx-auto px-3  py-5 flex items-center justify-between">
+                        <a href={'/'} className=' z-[2000000]'>
+                            <img src={brandLogo} alt="brand logo z-[230000000]" />
                         </a>
 
-                        {/* <p className=' text-white'>{window.width}</p> */}
+                        <p className=' text-white'>{window.width}</p>
                         <div className="hidden lg:flex items-center z-[20000] font-Roboto gap-[20px] !text-white">
-                            <a className="text-gradient" href={'/about'}>About Us</a>
-                            <a className='text-gradient' href={'/career'}>Careers</a>
+                            <a className={`text-gradient ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
+                            <a className={`text-gradient ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
                         </div>
-                        <div onClick={() => setIsOpen(!isOpen)} className=' lg:hidden  text-white'>
+                        <div onClick={() => setIsOpen(!isOpen)} className=' lg:hidden  z-[1000000] text-white'>
                             {isOpen ? <X /> : <Menu />}
                         </div>
                     </div>
                     {
-                        isOpen && <div className='lg:hidden z-50 pt-[10px]  top-3 nav-bo min-h-[1000px] w-full mt-[50px]   absolute background-color'>
-                            <div className='  mt-[10px]'>
-                                <h1 className='main-sub-heading'><a href={'/about'}>About Us</a></h1>
-                                <h1 className='main-sub-heading'><a href={'/career'}>Careers</a></h1>
-                                <h1 className='main-sub-heading'><a href={'/contact'}>Contact</a></h1>
+                        isOpen && <div className='lg:hidden z-40 pt-[10px]  top-3 nav-bo min-h-[1000px] w-full -mt-[100px]    background-color'>
+                            <div className=' pt-[100px] flex flex-col items-start text-left px-[20px] w-full mt-[10px]'>
+                                <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
+                                <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
+                                <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/contact' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/contact'}>Contact</a>
                             </div>
                         </div>
                     }

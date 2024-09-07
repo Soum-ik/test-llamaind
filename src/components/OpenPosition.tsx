@@ -5,9 +5,9 @@ function OpenPosition() {
     return (
         <div className="mx-auto relative z-30 xl:pt-0 xl:pb-[10px] pt-[110px] pb-[200px] ">
             <Layout>
-                <div id="Position"    className=" hidden xl:flex  absolute  top-0 left-1/2 transform -translate-y-1/2 -translate-x-1/2  z-40    text-white flex-col  items-center">
+                <div id="Position"    className=" hidden xl:flex  absolute  min-w-[700px] 2xl:w-[1000px] top-0 left-1/2 transform -translate-y-1/2 -translate-x-1/2  z-40    text-white flex-col  items-center">
                     <h1 className="z-40 font-bold text-[68px]">Join Our Journey </h1>
-                    <p className="z-40  wat text-textColor text-center font-Roboto my-4 text-2xl">Be part of an innovative journey where your ideas matter, and your growth is our priority. Together, let's pioneer the future.</p>
+                    <p className="z-40  wat text-textColor text-center font-Roboto my-6 text-2xl">Be part of an innovative journey where your ideas matter, and your growth is our priority. Together, let's pioneer the future.</p>
                     <Button text={"View Open positions"} />
                 </div>
 

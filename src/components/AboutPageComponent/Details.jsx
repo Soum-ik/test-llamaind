@@ -1,15 +1,16 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "../layout/Layout";
 import waveVideo from "../../../public/video/about-us-new.mp4";
 import waveVideo1 from "../../../public/video/main-animation.mp4";
 import headerImage from "../../../public/images/aboutLogo.png";
-import { Minus, MoveRight } from 'lucide-react';
+import { Minus, MoveRight, Turtle } from 'lucide-react';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from "@gsap/react";
 import Button from "../ui/Button";
 import UseGetScroll from "../../Hooks/UseGetScroll";
+import UseWindowSize from "../../Hooks/UseGetScreenSize";
 
 
 // Register GSAP's ScrollTrigger
@@ -18,29 +19,54 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 function Details() {
     const videoRef = useRef();
     const textRef = useRef();
+    const { height, width } = UseWindowSize();
 
 
-    const projectsHeigth = textRef.current?.offsetHeight;
-    function getScrollAmount() {
-    
-        if (projectsHeigth) {
-            return -((projectsHeigth * 1) - window.innerHeight);
+    const [scrollTriggerConfig, setScrollTriggerConfig] = useState({
+        start: 0,
+        end: 0
+    });
+
+    useEffect(() => {
+        if (textRef.current) {
+            const rect = textRef.current.getBoundingClientRect();
+            const start = rect.top + window.scrollY; // Top position relative to the document
+            const end = rect.bottom + window.scrollY; // Bottom position relative to the document
+            setScrollTriggerConfig({ start, end });
         }
-        return 0;
-    }
-
- 
-
-
-
+    }, []);
 
     useGSAP(() => {
+        let endValue;
+
+        const calculateEndValue = (width) => {
+            if (width > 2700) {
+                return "+=174%";
+            } else if (width > 2500) {
+                return "+=190%";
+            } else if (width >= 2400) {
+                return "+=190%";
+            } else if (width > 2100) {
+                return "+=196%";
+            } else if (width > 1900) {
+                return "+=210%";
+            } else if (width > 1600) {
+                return "+=220%";
+            } else if (width > 1400) {
+                return "+=230%";
+            } else {
+                return "+=220%";
+            }
+        };
+        endValue = calculateEndValue(width);
+        console.log(endValue);
 
         gsap.to(videoRef.current, {
             scrollTrigger: {
                 trigger: videoRef.current,
-                start: "37% center", // Start when the top of the element reaches the center of the viewport
-                end: "+=185%", // Pin until 100% of the viewport height has been scrolled
+                start: `${scrollTriggerConfig.start} 210px`, // Start when the top of the element reaches the center of the viewport
+                end: endValue,
+
                 pin: true,
                 scrub: true,
                 // markers: true
@@ -86,7 +112,7 @@ function Details() {
         });
 
 
-    }, { scope: [textRef, videoRef] });
+    }, [textRef, videoRef]);
 
 
     const contents = [
@@ -118,8 +144,10 @@ function Details() {
     return (
         <div className="relative xs:pt-[130px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
             <Layout>
-                <div className=" z-40 xs:pt-[300px] pt-[200px] slider2 flex xl:hidden relative !justify-between  pb-[160px] ">
-                    <div id="rightSide" className=" min-w-[355px] pt-[75px] space-y-[160px] md:space-y-[200px]  xl:space-y-[450px] z-40">
+
+                {/* small screen size start */}
+                <div className=" z-40 xs:pt-[300px] pt-[200px] slider2 flex xl:hidden relative !justify-between pb-[160px]">
+                    <div id="rightSide" className=" min-w-[355px] pt-[75px] md:space-y-[200px]  space-y-[160px] z-40">
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white  text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center z-40 bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className=" z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item.title}</h1>
@@ -140,33 +168,40 @@ function Details() {
                         </div>
                     </div>
                 </div>
+                {/* small screen size end */}
 
 
-                {/* big screen */}
-                <div className=" hidden !pt-[50px] slider2 xl:flex relative !justify-between  pb-[500px] ">
-                    <div ref={textRef} id="rightSide" className="  pt-[50px] space-y-[500px] z-40">
-                        <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[1000px] " >
-                            {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                            <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item.title}</h1>
-                            <p className=" mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
-                            {item.button && <Button text="View Projects" />}
-                            {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
-                                Scroll down <MoveRight />
-                            </div>}
+                {/* big screen start */}
+                <div className="hidden !pt-[50px] 3xl:pt-[200px] 4k:pt-[400px] slider2 xl:flex relative   !justify-between pb-[400px]">
+                    <div ref={textRef} id="rightSide" className="pt-[50px] space-y-[500px] z-40">
+                        <div className=" 2xl:min-h-[50vh] flex items-center justify-start">
+                            <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
+                                {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item.title}</h1>
+                                <p className=" mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
+                                {item.button && <Button text="View Projects" />}
+                                {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
+                                    Scroll down <MoveRight />
+                                </div>}
+                            </div>
                         </div>
-                        <div id="slider2-text" className=" space-y-[20px]  z-30 text-white   text-5xl max-w-[1000px] " >
-                            {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                            <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item1.title}</h1>
-                            <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
-                            {item1.button && <Button text="View Projects" />}
-                        </div>
-                        <div id="slider3-text" className=" space-y-[20px] z-30 text-white   text-5xl max-w-[1000px] " >
-                            {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                            <h1 className="  font-Orbitron text-[68px] font-extrabold leading-[85.27px]">{item2.title}</h1>
-                            <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
-                            {item2.button && <Button text="View Projects" />}
-                        </div>
+                        <div className="  2xl:min-h-[50vh] flex items-center justify-center">
+                            <div id="slider2-text" className=" space-y-[20px]  z-30 text-white text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
+                                {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item1.title}</h1>
+                                <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
+                                {item1.button && <Button text="View Projects" />}
+                            </div>
 
+                        </div>
+                        <div className="  2xl:min-h-[50vh] flex items-center justify-start">
+                            <div id="slider3-text" className=" space-y-[20px] z-30 text-white text-5xl max-w-[730px] 2xl:max-w-[1000px] " >
+                                {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold ">{item2.title}</h1>
+                                <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
+                                {item2.button && <Button text="View Projects" />}
+                            </div>
+                        </div>
                     </div>
                     {/* <div className=' -ml-[50px] z-10 font-Roboto rotate-90  hidden md:flex  gap-5'>
                         Scroll down <MoveRight />
@@ -174,20 +209,23 @@ function Details() {
                     <div ref={videoRef} id="slider2-video" className=" min-w-[500px] absolute z-20 right-0">
                         <div className=" relative flex items-center z-40 justify-center">
                             {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
-                            <div className="z-40 about-video-size flex items-center justify-center !mx-auto">
+                            <div className="z-40 2xl:w-[1644px] 2xl:h-[637px] w-[1000px] h-[500px] flex items-center justify-center !mx-auto">
                                 {/* <video className="!max-w-[850px]" src={waveVideo} loop autoPlay muted /> */}
-                                <video className="z-40 w-full h-full absolute left-[250px]" src={waveVideo} loop autoPlay muted />
+                                <video className="z-40 w-full h-full absolute left-[10px] 2xl:left-[250px]" src={waveVideo} loop autoPlay muted />
                             </div>
                             <div className="absolute right-0 pb-10 z-40 about-blur-shadow size-[1000px]" />
-                            <img className="  z-40 absolute -right-10 mx-auto about-image" src={headerImage} alt="" />
+                            <img className="  z-40 absolute -right-10 mx-auto size-[700px] 2xl:size-[840px]" src={headerImage} alt="" />
                         </div>
                     </div>
                 </div>
+                {/* big screen end*/}
+
             </Layout>
 
 
 
-            <div className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+
+            <div className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex md:h-[130vh] lg:h-[150vh] 2xl:h-[] sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={waveVideo1}
                     className="h-full w-auto object-cover"
@@ -198,6 +236,7 @@ function Details() {
                 <div className="top-[100px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
                 <img className="absolute !w-[600px] z-30" src={headerImage} alt="" />
             </div>
+
         </div>
     );
 }
