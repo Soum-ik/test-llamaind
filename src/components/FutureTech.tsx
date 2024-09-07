@@ -24,7 +24,7 @@ function FutureTech() {
     function getScrollAmount() {
         const projectsWidth = projectsHolder.current?.offsetWidth;
         if (projectsWidth) {
-            return -((projectsWidth * 1.07) - window.innerWidth);
+            return -((projectsWidth * 1.17) - window.innerWidth);
         }
         return 0;
     }
@@ -55,10 +55,11 @@ function FutureTech() {
 
         if (projectWrapper.current) {
             gsap.fromTo(projectWrapper.current,
-                { x: '100%', opacity: 0, scale: .6 },
+                { x: '100%', opacity: 0, scale: .6, autoAlpha: 0 },
                 {
                     x: '0%',
                     scale: 1,
+                    autoAlpha: 1,
                     opacity: 1,
                     scrollTrigger: {
                         trigger: tech.current,
@@ -131,7 +132,8 @@ function FutureTech() {
                 </div>
             </div>
             {/* for small device emd */}
-            {/* FutureTech section */}
+
+            {/* FutureTech section bigger screen start*/}
             <Layout>
                 <div ref={tech} className="hidden xl:block relative !mb-[170px]">
                     <div className="pb-[120px] max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
@@ -155,17 +157,18 @@ function FutureTech() {
                     </div>
                 </div>
             </Layout>
+            {/* FutureTech section bigger screen end*/}
 
-            {/* IndexProject section */}
-            {/* <div ref={project} className="  overflow-hidden"> */}
-            <div className="relative xl:pb-[10px]">
+
+            {/* IndexProject section  start*/}
+            <div className=" relative xl:pb-[10px]">
                 <div ref={projectWrapper} className="hidden -mt-[800px] opacity-0  mx-auto px-5 xl:block">
                     <motion.h1 className="text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
                     </motion.h1>
                     <motion.div ref={projectsHolder} className=" z-10 ml-[300px] flex flex-nowrap  mx-auto w-fit relative gap-[400px] -mt-[150px]">
                         {projects.map((project, idx) => (
-                            <div className="flex items-center justify-center" key={idx}>
+                            <div className="flex items-center justify-center snap-center" key={idx}>
                                 <section>
                                     <div className=" z-40 text-white flex items-center justify-end gap-[50px]">
                                         <div className="space-y-[20px] min-w-[700px]">

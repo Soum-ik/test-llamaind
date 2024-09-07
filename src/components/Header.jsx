@@ -19,9 +19,8 @@ function Header() {
     let start, end, start1, end1;
 
     if (width <= 1920) {
-        start = "top bottom-=1",
-            end = "bottom top+=1";
-        // end = "bottom 67%";
+        start = "top bottom-=1";
+        end = "bottom top+=1";
         start1 = "80% 80%";
         end1 = "67% 67%";
 
@@ -43,9 +42,9 @@ function Header() {
                 trigger: "#holder",
                 start: "bottom+20% bottom+=20%",
                 end: "60% 82%",
-          
+                // end: "60% 50%",          
                 scrub: true,
-                // markers: true,
+                markers: true,
             }
         });
 
@@ -69,7 +68,7 @@ function Header() {
             top: 70,
             left: -540,
             ease: "0.7, 0, 0.84, 0",
-            duration: 13,
+            duration: 20,
         });
 
         // Second timeline for slider2
@@ -78,15 +77,16 @@ function Header() {
                 trigger: "#holder",
                 start: "bottom+20% bottom+=20%",
                 end: "60% 82%",
+                // end: "60% 50%",
                 scrub: true,
                 // markers: true,
             },
         });
 
         tl2.to('#slider2-text', {
-            delay: 25,
+            delay: 18,
             duration: 20,
-            x: -1300,
+            x: -1200,
             display: 'block',
             ease: "0.45, 0, 0.55, 1",
         });
@@ -100,7 +100,7 @@ function Header() {
 
         <>
             {/* bigger screen start */}
-            <div ref={header} className=" hidden xl:block pb-[340px]">
+            <div ref={header} className="min-h-[80vh] hidden xl:flex items-center justify-center pb-[340px]">
                 <Layout>
                     <div id="slider1" className="pt-[110px]">
                         <h1 id="slider1-text" className="slider1-text leading-[100px] 2xl:leading-[120px] font-bold text-white header z-20 text-[90px] 2xl:text-[100px] font-Orbitron text-center"   >
@@ -110,20 +110,18 @@ function Header() {
 
                         <div>
                             <motion.div transition={{ ease: 'linear', duration: 5, delay: 1 }} id="slider1-video" className="slider1-video relative flex items-center justify-center">
-                                <div className="!overflow-hidden flex items-center justify-center !mx-auto ">
-                                    <video className=" z-10 -mt-[26vh]  mix-blend-plus-lighter !mx-auto  !max-w-[2200px]" src={waveVideo} loop autoPlay muted />
+                                <div className="flex items-center justify-center !mx-auto size-[770px]">
+                                    {/* <video className="h-full w-auto object-cover" src={waveVideo} loop autoPlay muted /> */}
+                                    <video className=" z-10 -mt-[18vh]  mix-blend-plus-lighter !mx-auto  !max-w-[2200px]" src={waveVideo} loop autoPlay muted />
                                 </div>
                                 <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
-                                <img className=" z-20 absolute inset-0 mx-auto -top-[90px] size-[770px]" src={headerImage} alt="" />
+                                <img className=" z-20 absolute inset-0 mx-auto -top-[90px] size-[600px] 2xl:size-[770px]" src={headerImage} alt="" />
                             </motion.div>
                         </div>
-
-
-
                     </div>
 
-                    <div id="instructor" className='!text-white flex items-center instructor-fixer justify-between'>
-                        <div className=' -ml-[50px] z-10 font-Roboto rotate-90 flex  gap-5'>
+                    <div id="instructor" className='text-white flex items-center instructor-fixer justify-between'>
+                        <div className='-ml-[50px] z-10 font-Roboto rotate-90 flex gap-5'>
                             Scroll down <MoveRight />
                         </div>
                         <div id="projectMoveing" className='z-10 group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
@@ -137,17 +135,18 @@ function Header() {
                     </div>
 
                     <div id="slider2" className=" text-right !flex relative  z-40  mb-20 !justify-end ">
-                        <div id="slider2-text" className="slider2-text  hidden -right-[1300px] text-left z-40 -top-[300px]  text-ellipsis absolute font-light text-[37px] leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
+                        <div id="slider2-text" className="slider2-text  hidden -right-[1300px] text-left z-40 -top-[250px]  text-ellipsis absolute font-light text-[37px] leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
                     </div>
-
-                    <div id="holder" className="hidden xl:block mt-[130px]">
-
+                    <div id="holder" className="hidden xl:block min-h-[10vh] mt-[130px]">
                     </div>
                 </Layout>
             </div>
             {/* bigger screen end */}
 
-            <div className="relative xl:hidden">
+
+
+            {/* smalll screen start */}
+            <div className="relative 2xl:hidden">
                 <Layout>
                     <div className="z-40  pt-[100px]">
                         <h1 className=" absolute z-40  leading-[46px] xs:leading-[55px] sm:leading-[65px] md:leading-[80px] lg:leading-[90px] 2xl:leading-[100px] text-[42px] xs:text-[55px] sm:text-[65px] md:text-[70px] lg:text-[90px]  font-extrabold text-white header  font-Orbitron text-center"   >
@@ -197,6 +196,7 @@ function Header() {
                     <img className="absolute min-w-[450px] xs:w-auto h-[48vh] sm:h-[55vh] md:h-[65vh]  md:max-w-[900px] md:bottom-[110px]  bottom-28  z-40" src={headerImage} alt="" />
                 </div>
             </div>
+            {/* smalll screen end */}
         </>
     );
 }

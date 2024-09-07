@@ -33,7 +33,7 @@ function JobDeatlis({ jobName }) {
 
         for (let i = 0; i < children; i++) {
             const child = children.i;
-           
+
         }
     } else {
         console.error("myDivRef.current is null. Ensure it's properly populated.");
@@ -108,9 +108,10 @@ function JobDeatlis({ jobName }) {
                 <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
                 <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
                 {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
-                <button className=" mt-[32px] md:mt-[40px] btn-gradient text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
-                <div className="  right-[1px]  absolute z-10   mobile-blur-shadow md:hidden" />
-                <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
+                <button className=" mt-[32px] md:mt-[40px] bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] px-[32px] py-[18px] rounded-lg text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
+                {/* <button className=" bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] h-[60px] px-[32px]  py-[18px]  rounded-lg w-full md:max-w-max font-Roboto mt-[32px] md:mt-[40px] font-bold">Apply</button> */}
+                <div className="right-[1px] absolute z-10 mobile-blur-shadow md:hidden" />
+                {/* <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div> */}
 
             </div>
             <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20  xl:pt-[200px]  ">
@@ -286,7 +287,7 @@ function JobDeatlis({ jobName }) {
                             <div className=" py-[20px]  flex md:items-center">
                                 <input
                                     type="checkbox"
-                                    className="mr-2 -mt-4"
+                                    className="mr-2 -mt-4 xl:mt-0"
                                     id="consent"
                                 />
                                 <label htmlFor="consent" className="text-gray-400">
@@ -294,9 +295,7 @@ function JobDeatlis({ jobName }) {
                                 </label>
                             </div>
                             <div className="">
-
-                                <button onClick={() => alert('d')} type="submit" className="z-40   transition-all rounded-lg px-[32px] py-[15px] text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] w-full md:w-auto">{"Submit application"}</button>
-
+                                <button type="submit" className="z-40   transition-all rounded-lg px-[32px] py-[15px] text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] w-full md:w-auto">{"Submit application"}</button>
                             </div>
                         </form>
                     </div>

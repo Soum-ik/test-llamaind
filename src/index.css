@@ -426,7 +426,7 @@ body::-webkit-scrollbar {
 
 .background-color {
   background: rgba(0, 0, 0, 0.90);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 
 .nav-box {
@@ -567,3 +567,7 @@ body::-webkit-scrollbar {
 }
 
 /* for animation */
+
+.border-drop {
+  border-bottom: 1px solid rgba(93, 92, 232, 0.20);
+}
