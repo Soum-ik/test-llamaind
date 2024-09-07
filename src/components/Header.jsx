@@ -2,7 +2,7 @@ import Layout from "./layout/Layout";
 import headerImage from '../../public/images/header.png';
 import waveVideo from '../../public/video/main-animation.mp4';
 import { ImportIcon, MoveRight, Turtle } from 'lucide-react';
-import arrow from '../../public/images/textSpin.png';
+import arrow from '../../public/images/Vector.png';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -41,10 +41,11 @@ function Header() {
             scrollTrigger: {
                 trigger: "#holder",
                 start: "bottom+20% bottom+=20%",
-                end: "60% 82%",
+                // end: "90% 60%",
+                end: "160% 82%",
                 // end: "60% 50%",          
                 scrub: true,
-                markers: true,
+                // markers: true,
             }
         });
 
@@ -57,7 +58,7 @@ function Header() {
             opacity: 0,
             duration: 5,
             // x: 100,
-            display: 'hidden'
+            // display: 'hidden'
         });
         tl.to('#projectMoveing', {
             opacity: 0,
@@ -76,7 +77,8 @@ function Header() {
             scrollTrigger: {
                 trigger: "#holder",
                 start: "bottom+20% bottom+=20%",
-                end: "60% 82%",
+                end: "160% 82%",
+                // end: "90% 60%",
                 // end: "60% 50%",
                 scrub: true,
                 // markers: true,
@@ -86,7 +88,7 @@ function Header() {
         tl2.to('#slider2-text', {
             delay: 18,
             duration: 20,
-            x: -1200,
+            x: -1500,
             display: 'block',
             ease: "0.45, 0, 0.55, 1",
         });
@@ -124,8 +126,8 @@ function Header() {
                         <div className='-ml-[50px] z-10 font-Roboto rotate-90 flex gap-5'>
                             Scroll down <MoveRight />
                         </div>
-                        <div id="projectMoveing" className='z-10 group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
-                            <img className=' group-hover:animate-none animate-spin-slow transition-colors duration-500' src={arrow} alt="" />
+                        <div id="projectMoveing" className='z-10 group rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
+                            <img className=' group-hover:animate-none p-1 animate-spin-slow transition-colors m-2 duration-500 ' src={arrow} alt="" />
                             <div className="   absolute top-1/2 left-1/2 transition-transform -translate-x-1/2 -translate-y-1/2 group-hover:rotate-45">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.86039 23.9V21.52H19.8425L0.100389 1.77788L1.77829 0.0999756L21.5204 19.8421V4.85998H23.9004V23.9H4.86039Z" fill="white" />
@@ -135,7 +137,7 @@ function Header() {
                     </div>
 
                     <div id="slider2" className=" text-right !flex relative  z-40  mb-20 !justify-end ">
-                        <div id="slider2-text" className="slider2-text  hidden -right-[1300px] text-left z-40 -top-[250px]  text-ellipsis absolute font-light text-[37px] leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
+                        <div id="slider2-text" className="slider2-text  hidden -right-[1600px] text-left z-40 -top-[220px]  text-ellipsis absolute font-light text-[37px] leading-[64px] font-Roboto text-white max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
                     </div>
                     <div id="holder" className="hidden xl:block min-h-[10vh] mt-[130px]">
                     </div>
