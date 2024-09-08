@@ -49,9 +49,9 @@ function Details() {
             } else if (width > 2100) {
                 return "+=196%";
             } else if (width > 1900) {
-                return "+=210%";
+                return "+=205%";
             } else if (width > 1600) {
-                return "+=220%";
+                return "+=230%";
             } else if (width > 1400) {
                 return "+=230%";
             } else {
@@ -62,15 +62,15 @@ function Details() {
         console.log(endValue);
 
         gsap.to(videoRef.current, {
+
             scrollTrigger: {
                 trigger: videoRef.current,
                 start: `${scrollTriggerConfig.start} 210px`, // Start when the top of the element reaches the center of the viewport
                 end: endValue,
-
                 pin: true,
                 scrub: true,
-                // markers: true
-            }
+            },
+
         });
         const textElements = Array.from(textRef.current.children);
 
@@ -151,20 +151,20 @@ function Details() {
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white  text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center z-40 bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className=" z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item.title}</h1>
-                            <p className="z-40 text-[#D5D5D5] font-light text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto">{item.description}</p>
-                            {item.button && <button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max ">View Open positions</button>}
+                            <p className="z-40 text-[#D5D5D5] font-light text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto pb-[20px]">{item.description}</p>
+                            {item.button && <a href="/career" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Open positions</button></a>}
                         </div>
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className="  font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item1.title}</h1>
                             <p className=" text-[#D5D5D5] font-light text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto">{item1.description}</p>
-                            {item1.button && <button className="btn-gradient  text-[20px] font-Roboto w-full">View Open positions</button>}
+                            {item1.button &&<a href="/career" className=" mt-[20px]"> <button className="btn-gradient  text-[20px] font-Roboto w-full pt-[20px]">View Open positions</button></a>}
                         </div>
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className="  font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item2.title}</h1>
                             <p className=" text-[#D5D5D5] font-light text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto">{item2.description}</p>
-                            {item2.button && <button className=" btn-gradient  text-[20px] font-Roboto w-full">View Open positions</button>}
+                            {item2.button &&<a href="/career" className=" mt-[20px]"> <button className=" btn-gradient  text-[20px] font-Roboto w-full pt-[20px]">View Open positions</button></a>}
                         </div>
                     </div>
                 </div>
@@ -172,14 +172,14 @@ function Details() {
 
 
                 {/* big screen start */}
-                <div className="hidden !pt-[50px] 3xl:pt-[200px] 4k:pt-[400px] slider2 xl:flex relative   !justify-between pb-[400px]">
+                <div className="hidden -mt-[100px] laptop:mt-0 !pt-[50px] 3xl:pt-[200px] 4k:pt-[400px] slider2 xl:flex relative   !justify-between pb-[400px]">
                     <div ref={textRef} id="rightSide" className="pt-[50px] space-y-[500px] z-40">
                         <div className=" 2xl:min-h-[50vh] flex items-center justify-start">
                             <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
                                 {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                                 <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item.title}</h1>
                                 <p className=" mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
-                                {item.button && <Button text="View Projects" />}
+                                {item.button && <a href="/"><Button text="View Projects" /></a>}
                                 {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
                                     Scroll down <MoveRight />
                                 </div>}
@@ -190,7 +190,7 @@ function Details() {
                                 {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                                 <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item1.title}</h1>
                                 <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
-                                {item1.button && <Button text="View Projects" />}
+                                {item1.button && <a href="/"><Button text="View Projects" /></a>}
                             </div>
 
                         </div>
@@ -199,22 +199,22 @@ function Details() {
                                 {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                                 <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold ">{item2.title}</h1>
                                 <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
-                                {item2.button && <Button text="View Projects" />}
+                                {item2.button && <a href="/"><Button text="View Projects" /></a>}
                             </div>
                         </div>
                     </div>
                     {/* <div className=' -ml-[50px] z-10 font-Roboto rotate-90  hidden md:flex  gap-5'>
                         Scroll down <MoveRight />
                     </div> */}
-                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] absolute z-20 right-0">
-                        <div className=" relative flex items-center z-40 justify-center">
+                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] 4k:pt-[100px] max-w-[1920px] absolute z-20 right-0">
+                        <div className=" relative flex items-center z-40 justify-center  ">
                             {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
-                            <div className="z-40 2xl:w-[1644px] 2xl:h-[637px] w-[1000px] h-[500px] flex items-center justify-center !mx-auto">
+                            <div className="z-40 2xl:w-[1240px] 2xl:h-[637px] w-[1000px] h-[500px] flex items-center justify-center !mx-auto">
                                 {/* <video className="!max-w-[850px]" src={waveVideo} loop autoPlay muted /> */}
-                                <video className="z-40 w-full h-full absolute left-[10px] 2xl:left-[250px]" src={waveVideo} loop autoPlay muted />
+                                <video id="videoMoving" className="z-40 w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
                             </div>
                             <div className="absolute right-0 pb-10 z-40 about-blur-shadow size-[1000px]" />
-                            <img className="  z-40 absolute -right-10 mx-auto size-[700px] 2xl:size-[840px]" src={headerImage} alt="" />
+                            <img className="z-40 absolute -right-0 mx-auto size-[700px] 2xl:size-[840px]" src={headerImage} alt="" />
                         </div>
                     </div>
                 </div>
@@ -225,7 +225,7 @@ function Details() {
 
 
 
-            <div className="absolute sm:-top-[110px] xs:-top-[80px] -top-[10px] left-0 flex md:h-[130vh] lg:h-[150vh] 2xl:h-[] sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div className="absolute sm:-top-[110px] xs:-top-[40px] -top-[10px] left-0 flex md:h-[130vh] lg:h-[150vh] 2xl:h-[] sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={waveVideo1}
                     className="h-full w-auto object-cover"
@@ -233,7 +233,7 @@ function Details() {
                     autoPlay
                     muted
                 />
-                <div className="top-[100px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                <div className="top-[100px] xs:-top-[200px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
                 <img className="absolute !w-[600px] z-30" src={headerImage} alt="" />
             </div>
 
