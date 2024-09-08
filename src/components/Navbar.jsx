@@ -36,7 +36,7 @@ function Navbar() {
                             <img src={brandLogo} alt="brand logo z-[230000000]" />
                         </a>
 
-                        <p className=' text-white'>{window.width}</p>
+{/*                         <p className=' text-white'>{window.width}</p> */}
                         <div className="hidden lg:flex items-center z-[20000] font-Roboto gap-[20px] !text-white">
                             <a className={`text-gradient leading-[23.44px] ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
                             <a className={`text-gradient leading-[23.44px] ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
