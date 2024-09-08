@@ -11,6 +11,7 @@ import { leftSideTechs, rightSideTechs, projects } from '../components/libs/stat
 
 
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 function FutureTech() {
@@ -55,9 +56,8 @@ function FutureTech() {
 
         if (projectWrapper.current) {
             gsap.fromTo(projectWrapper.current,
-                { x: '100%', opacity: 0, scale: .6, autoAlpha: 0 },
+                { opacity: 0, scale: .6, autoAlpha: 0 },
                 {
-                    x: '0%',
                     scale: 1,
                     autoAlpha: 1,
                     opacity: 1,
@@ -65,7 +65,8 @@ function FutureTech() {
                         trigger: tech.current,
                         start: '40% 30%',
                         end: '40% 20%',
-                        scrub: true,
+                        scrub: 0.3,
+                        invalidateOnRefresh: true, // Ensures proper resizing
                     },
                 }
             )
@@ -106,36 +107,36 @@ function FutureTech() {
         <>
 
             {/* for small device start */}
-            <div className='xl:hidden relative mt-[150px]'>
-                <div className=' '>
+            <div className='13inch:hidden relative mt-[150px] xl:mb-[120px]'>
+                <div className=''>
                     <Layout>
-                        <div className=" xl:hidden">
-                            <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] mx-auto  text-white flex items-center justify-center flex-col">
-                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
-                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
+                        <div className=" 13inch:hidden">
+                            <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] xl:w-[800px] mx-auto  text-white flex items-center justify-center flex-col">
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
                             </div>
 
                             {/* options are will be avaiable */}
                             <div className="pt-10">
-                                <div className=" px-24 gap-[265px] flex flex-col items-center justify-between">
+                                <div className=" px-24 gap-[265px] relative flex flex-col items-center justify-between">
                                     <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px]' array={leftSideTechs} />
-                                    <div className=" absolute z-0 bottom-[260px] rounded-full opacity-80 blue__gradient size-[380px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  "></div>
+                                    <div className=" top-1/2 -translate-y-1/2 absolute z-0 transition-transform bottom-[260px] rounded-full opacity-80 blue__gradient size-[380px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]"></div>
                                     <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px]' array={rightSideTechs} />
                                 </div>
                             </div>
                         </div>
                     </Layout>
                 </div>
-                <div className=" py-[100px] absolute xl:hidden w-full items-center h-[94vh]  top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] justify-center overflow-hidden ">
+                <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden ">
                     <video src={features} loop autoPlay muted className="h-full  w-auto object-cover mix-blend-plus-lighter z-30" />
-                    <img src={FutureIcon} className=' w-[140px]  z-40 absolute  absolute-center' alt="" />
+                    <img src={FutureIcon} className=' w-[140px] xl:right-[200px]  z-40 absolute  absolute-center' alt="" />
                 </div>
             </div>
             {/* for small device emd */}
 
             {/* FutureTech section bigger screen start*/}
             <Layout>
-                <div ref={tech} className="hidden xl:block relative !mb-[170px]">
+                <div ref={tech} className="hidden 13inch:block relative !mb-[170px]">
                     <div className="pb-[120px] max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
                         <h1 className="z-30 font-extrabold text-[68px] text-left">Our Future Driven</h1>
                         <h1 className="z-30 font-extrabold text-[68px] text-right -mt-[16px]">
@@ -162,8 +163,8 @@ function FutureTech() {
 
             {/* IndexProject section  start*/}
             <div className=" relative xl:pb-[10px]">
-                <div ref={projectWrapper} className="hidden -mt-[800px] opacity-0  mx-auto px-5 xl:block">
-                    <motion.h1 className="text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
+                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 13inch:block">
+                    <motion.h1 className=" text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
                     </motion.h1>
                     <motion.div ref={projectsHolder} className=" z-10 ml-[300px] flex flex-nowrap  mx-auto w-fit relative gap-[400px] -mt-[150px]">
@@ -181,6 +182,11 @@ function FutureTech() {
                                             <h1 className="font-normal text-[#D5D5D5] text-xl font-Roboto">{project.status}</h1>
                                         </div>
                                     </div>
+                                    {/* <Layout>
+                                        <div className="  z-[100] bg-red-700  text-white font-Roboto flex items-center gap-2">
+                                            Scroll down <MoveRight />
+                                        </div>
+                                    </Layout> */}
                                 </section>
                                 <section>
                                     <div className="z-40 min-w-max relative">
@@ -207,11 +213,7 @@ function FutureTech() {
                         ))}
                     </motion.div>
                     <div className=" top-1/2 left-1/2 transform  mr-[200px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
-                    <Layout children={undefined}>
-                        {/* <div className="absolute top-0 z-[100] bg-red-700 -mt-[340px] text-white font-Roboto flex items-center gap-2">
-            Scroll down <MoveRight />
-          </div> */}
-                    </Layout>
+
                 </div>
             </div>
             {/* </div> */}

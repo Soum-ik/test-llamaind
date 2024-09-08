@@ -45,9 +45,9 @@ function Header() {
             } else if (width > 2100) {
                 return "+=195%";
             } else if (width > 1900) {
-                return "+=220%";
+                return "+=212%";
             } else if (width > 1600) {
-                return "+=235%";
+                return "+=220%";
             } else if (width > 1400) {
                 return "+=250%";
             } else {
@@ -137,8 +137,8 @@ function Header() {
                 {/* small screen left side end */}
 
                 {/* big screen start */}
-                <div className=" hidden pt-[100px] 3xl:mt-[120px]  min-h-[100vh] xl:flex items-center justify-between">
-                    <div ref={contentRef} className="z-40 max-w-[1000px]  space-y-[500px]  ">
+                <div className=" hidden pt-[130px] 3xl:mt-[120px]  min-h-[100vh] xl:flex items-center justify-between">
+                    <div ref={contentRef} className="z-40   space-y-[500px]  ">
                         <BigInnovative staticData={staticData[0]} />
                         <BigCoreValus staticData={staticData[1]} />
                         <BigBecomingOne staticData={staticData[2]} />
@@ -159,8 +159,8 @@ function Header() {
                     autoPlay
                     muted
                 />
-                {/* <div className="top-[100px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
-                <div className=" absolute z-[100] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                <div className="top-[100px] xs:-top-[200px] absolute z-[2000] mobile-blur-shadow-gradient  xs:size-[500px] size-[350px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                {/* <div className=" absolute z-[100] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
             </div>
         </div>
     );
@@ -174,8 +174,8 @@ const Innovative = ({ staticData, animation }) => {
         <div   {...(animation && { 'data-aos': 'zoom-in-up' })} className="text-white space-y-[30px] pt-[100px]">
             {/* <h1 className=" max-w-[800px] md:max-w-[1200px] font-Orbitron text-[34px] md:text-[68px] leading-[40px] md:leading-[85.27px] font-extrabold">{staticData.title}</h1> */}
             <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{staticData.title}</h1>
-            <p className=" text-[#D5D5D5] text-[22px] md:text-[26px] leading-[36px] font-light font-Roboto">{staticData.description}</p>
-            <button className=" btn-gradient w-full md:max-w-max font-Roboto ">View Open positions</button>
+            <p className=" text-[#D5D5D5] text-[22px] md:text-[26px] leading-[36px] font-light font-Roboto pb-[20px]">{staticData.description}</p>
+            <a href="#position" className=" pt-[100px]"><button className=" btn-gradient w-full md:max-w-max font-Roboto ">View Open positions</button></a>
         </div>
     );
 };
@@ -223,11 +223,12 @@ const BigInnovative = ({ staticData }) => {
 
 
     return (
-        <div className="text-white max-w-[800px]">
-            <h1 className="   font-Orbitron text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
-            <p className=" text-[#D5D5D5] text-[26px] mb-[40px] mt-[10px] font-light font-Roboto">{staticData.description}</p>
-            <Button text="View Open positions" />
-            {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] text-[18px] -left-[50px]  bg z-10 font-Roboto rotate-90 flex  gap-5'>
+        <div className="text-white  text-5xl max-w-[700px] 2xl:max-w-[1000px] ">
+            <h1 className=" font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold ">Be Part of <br />
+                Our Innovative Journey</h1>
+            <p className="  mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{staticData.description}</p>
+           <a href="#position"> <Button text="View Open positions" /></a>
+            {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
                 Scroll down <MoveRight />
             </div>}
         </div>
@@ -236,7 +237,7 @@ const BigInnovative = ({ staticData }) => {
 
 const BigCoreValus = ({ staticData }) => {
     return (
-        <div className=" text-white ">
+        <div className=" text-white text-5xl max-w-[700px] 2xl:max-w-[1000px] ">
             <h1 className=" max-w-[800px] font-Orbitron text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
             <div className=" pt-[60px] grid grid-cols-2 gap-[30px] 2xl:gap-[60px]">
                 {
@@ -254,7 +255,7 @@ const BigCoreValus = ({ staticData }) => {
 
 const BigBecomingOne = ({ staticData }) => {
     return (
-        <div className=" text-white">
+        <div className=" text-white text-5xl max-w-[700px] 2xl:max-w-[1000px]">
             <h1 className=" max-w-[800px] font-Orbitron text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
             <div className=" pt-[60px] grid grid-cols-2 gap-[30px] 2xl:gap-[60px]">
                 {

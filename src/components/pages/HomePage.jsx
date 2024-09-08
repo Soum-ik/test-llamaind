@@ -15,8 +15,11 @@ export default function HomePage() {
         <div className="bg-black h-auto font-Orbitron">
             <Navbar />
             <Header />
+            
             <FutureTech />
             <IndexProject />
+
+
             <OpenPosition />
             <Foooter />
         </div>

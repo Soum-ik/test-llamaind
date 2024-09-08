@@ -46,7 +46,7 @@ function Navbar() {
                         </div>
                     </div>
                     {
-                        isOpen && <div className='lg:hidden z-40 pt-[10px]  top-3 nav-bo min-h-[1000px] w-full -mt-[100px]    background-color'>
+                        isOpen && <div className='lg:hidden z-40 pt-[10px]  top-3 nav-box min-h-[1000px] w-full -mt-[100px] background-color'>
                             <div className=' pt-[100px] flex flex-col items-start text-left px-[20px] w-full mt-[10px]'>
                                 <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
                                 <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
