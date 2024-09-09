@@ -47,10 +47,10 @@ function Navbar() {
                     </div>
                     {
                         isOpen && <div className='lg:hidden z-40 pt-[10px]  top-3 nav-box min-h-[1000px] w-full -mt-[100px] background-color'>
-                            <div className=' pt-[100px] flex flex-col items-start text-left px-[20px] w-full mt-[10px]'>
-                                <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a>
-                                <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a>
-                                <a className={` text-[22px] w-full py-[20px] m-auto border-drop main-sub-heading ${pathname === '/contact' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/contact'}>Contact</a>
+                            <div className=' pt-[100px] flex  flex-col items-start text-left px-[20px] w-full mt-[10px]'>
+                                <button className=' text-[22px] w-full py-[20px] text-left flex items-start justify-start border-drop main-sub-heading'><a className={` ${pathname === '/about' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/about'}>About Us</a></button>
+                                <button className=' text-[22px] w-full py-[20px] text-left flex items-start justify-start border-drop main-sub-heading'> <a className={` ${pathname === '/career' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/career'}>Careers</a></button>
+                                <button className=' text-[22px] w-full py-[20px] text-left flex items-start justify-start border-drop main-sub-heading'> <a className={` ${pathname === '/contact' ? 'text-[#6CB1FF]' : 'text-white'}`} href={'/contact'}>Contact</a></button>
                             </div>
                         </div>
                     }
