@@ -162,7 +162,7 @@ function FutureTech() {
 
 
             {/* IndexProject section  start*/}
-            <div className=" relative xl:pb-[10px]">
+            <div id='project' className=" relative xl:pb-[10px]">
                 <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 13inch:block">
                     <motion.h1 className=" text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
@@ -205,7 +205,9 @@ function FutureTech() {
                                         <div className="space-y-[20px] mr-[80px]">
                                             <img src={project.icon} alt="" />
                                             <p className="text-[26px] font-Roboto font-light w-[700px]">{project.des}</p>
-                                            <button className="project-btn mt-3 w-full md:max-w-max">View Project</button>
+                                            {/* <button className=" mt-3 w-full md:max-w-max">View Project</button> */}
+                                            <a href="/career" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Project</button></a>
+
                                         </div>
                                     </div>
                                 </section>

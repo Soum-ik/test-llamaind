@@ -16,7 +16,7 @@ function OpenPosition() {
                     <div className=" ">
                         <h1 className="z-40 font-extrabold leading-10 text-[34px] sm:text-[46px]  lg:text-[50px] text-center">Join Our Journey </h1>
                         <p className="z-40 max-w-5xl md:max-w-3xl mx-auto text-textColor text-center font-Roboto my-4 leading-[36px] text-[22px] md:text-2xl font-light">Be part of an innovative journey where your ideas matter, and your growth is our priority. Together, let's pioneer the future.</p>
-                        <a href="/career"> <button className="project-btn   xl:hidden max-w-[350px] mt-2 md:w-full left-1/2 -translate-x-1/2 w-full mx-auto absolute -bottom-10">View Open Positions</button></a>
+                        <a href="/career"> <button className="project-btn  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF]  xl:hidden max-w-[350px] mt-2 md:w-full left-1/2 -translate-x-1/2 w-full mx-auto absolute -bottom-10">View Open Positions</button></a>
                     </div>
                 </div>
             </Layout>

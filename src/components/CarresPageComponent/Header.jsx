@@ -172,7 +172,6 @@ export default Header;
 const Innovative = ({ staticData, animation }) => {
     return (
         <div   {...(animation && { 'data-aos': 'zoom-in-up' })} className="text-white space-y-[30px] pt-[100px]">
-            {/* <h1 className=" max-w-[800px] md:max-w-[1200px] font-Orbitron text-[34px] md:text-[68px] leading-[40px] md:leading-[85.27px] font-extrabold">{staticData.title}</h1> */}
             <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{staticData.title}</h1>
             <p className=" text-[#D5D5D5] text-[22px] md:text-[26px] leading-[36px] font-light font-Roboto pb-[20px]">{staticData.description}</p>
             <a href="#position" className=" pt-[100px]"><button className=" btn-gradient w-full md:max-w-max font-Roboto ">View Open positions</button></a>

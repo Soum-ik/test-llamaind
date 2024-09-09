@@ -111,7 +111,7 @@ function Header() {
                         </div>
                     </div>
 
-                    <div id="instructor" className='text-white instructor-fixer  flex justify-between'>
+                    <a href="#project" id="instructor" className='text-white instructor-fixer  flex justify-between'>
                         <div className='-ml-[50px] z-10 font-Roboto rotate-90 flex gap-5'>
                             Scroll down <MoveRight />
                         </div>
@@ -123,7 +123,7 @@ function Header() {
                                 </svg>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <div id="slider2" className=" text-right !flex relative  z-40  mb-20 !justify-end ">
                         <div id="slider2-text" className="slider2-text  hidden -right-[1600px] text-left z-40 -top-[220px]  text-ellipsis absolute font-light  text-[33px] leading-[50px] laptop:text-[37px] laptop:leading-[64px] font-Roboto text-white max-w-[900px] laptop:max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>

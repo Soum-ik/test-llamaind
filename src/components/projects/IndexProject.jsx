@@ -9,7 +9,7 @@ import { gsap } from 'gsap';
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+ 
 
 function IndexProject() {
 
@@ -26,7 +26,7 @@ function IndexProject() {
   ];
 
   return (
-    <div transition={{ ease: '0, 0.55, 0.45, 1', duration: 12 }}
+    <div id='project'
       className="relative py-[160px] xl:py-0 pb-[200px]">
       <Layout>
         <div className="13inch:hidden">
