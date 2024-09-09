@@ -111,7 +111,7 @@ function Header() {
                         </div>
                     </div>
 
-                    <div id="instructor" className='text-white instructor-fixer flex justify-between'>
+                    <div id="instructor" className='text-white instructor-fixer  flex justify-between'>
                         <div className='-ml-[50px] z-10 font-Roboto rotate-90 flex gap-5'>
                             Scroll down <MoveRight />
                         </div>

@@ -27,7 +27,7 @@ function IndexProject() {
 
   return (
     <div transition={{ ease: '0, 0.55, 0.45, 1', duration: 12 }}
-      className="relative py-[160px] xl:py-0 pb-[100px]">
+      className="relative py-[160px] xl:py-0 pb-[200px]">
       <Layout>
         <div className="13inch:hidden">
           <div className=" flex items-center justify-between overflow-hidden">
