@@ -26,7 +26,7 @@ function IndexProject() {
   ];
 
   return (
-    <div
+    <div id='project'
       className="relative py-[160px] xl:py-0 pb-[200px]">
       <Layout>
         <div className="13inch:hidden">

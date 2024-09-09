@@ -100,8 +100,8 @@ function JobDeatlis({ jobName }) {
     return <Layout>
         <div className="  text-white pt-[100px] xl:-mb-[20px] ">
             <div className="relative flex md:items-center  flex-col">
-                <h1 className=" font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
-                <p className="font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
+                <h1 className=" z-[200] font-Orbitron md:text-[68px] text-[34px] font-extrabold leading-[40px] md:leading-normal">{jobName}</h1>
+                <p className="  z-[200] font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
                 {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
                 <button className=" mt-[32px] md:mt-[40px] bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] px-[32px] py-[18px] rounded-lg z-[200] text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
                 {/* <button className=" bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] h-[60px] px-[32px]  py-[18px]  rounded-lg w-full md:max-w-max font-Roboto mt-[32px] md:mt-[40px] font-bold">Apply</button> */}

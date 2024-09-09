@@ -6,6 +6,9 @@ import { FaDiscord } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import { MdEmail } from "react-icons/md";
+
 import Button from "../ui/Button";
 
 function ContactPage() {
@@ -26,8 +29,8 @@ function ContactPage() {
                         <div className="flex flex-col gap-[20px]">
                             <h1 className=" contact-text text-[18px] md:text-[20px]">Contact</h1>
                             <div className=" space-y-[16px]">
-                                <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><PhoneCall />+1 (647) 877-6445</div>
-                                <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><Mail />info@llamamind.io</div>
+                                <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><BiSolidPhoneCall />+1 (647) 877-6445</div>
+                                <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><MdEmail />info@llamamind.io</div>
                             </div>
                         </div>
                         <div className=" flex flex-col gap-[20px]">
