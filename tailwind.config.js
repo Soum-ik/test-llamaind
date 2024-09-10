@@ -25,8 +25,14 @@ const config = {
         "laptop": "1600px",
         "3xl": "2000px",
         "4xl": "2300px",
+        "4k": "2560px",
+        "5k": "2700px",
+        "6k": "3000px",
+        "7k": "3500px",
+        "8k": "4000px",
+        "9k": "5000px",
+        "10k": "6000px",
 
-        "4k": "2560px"
       },
       animation: {
         "spin-slow": "spin 12s linear infinite",
