@@ -8,6 +8,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion'
 import project1 from '../../public/images/Group.png';
 import { leftSideTechs, rightSideTechs, projects } from '../components/libs/staticData'
+import Button from './ui/Button';
 
 
 
@@ -109,34 +110,37 @@ function FutureTech() {
             {/* for small device start */}
             <div className='13inch:hidden relative mt-[150px] xl:mb-[120px]'>
                 <div className=''>
-                    <Layout>
+                    <>
                         <div className=" 13inch:hidden">
                             <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] xl:w-[800px] mx-auto  text-white flex items-center justify-center flex-col">
-                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
-                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[57px]  xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[57px]  xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
                             </div>
 
                             {/* options are will be avaiable */}
                             <div className="pt-10">
-                                <div className=" px-24 gap-[265px] relative flex flex-col items-center justify-between">
-                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px]' array={leftSideTechs} />
-                                    <div className=" top-1/2 -translate-y-1/2 absolute z-0 transition-transform bottom-[260px] rounded-full opacity-80 blue__gradient size-[380px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]"></div>
-                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px]' array={rightSideTechs} />
+                                <div className=" px-24 gap-[265px] sm:gap-[400px] relative flex flex-col items-center justify-between">
+                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]' array={leftSideTechs} />
+                                    <div className="top-1/2 -translate-y-1/2 absolute z-[10] transition-transform">
+                                        {/* <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden "> */}
+                                        <video src={features} loop autoPlay muted className="h-[65vh] xxs:h-[74vh] sm:h-[84vh] w-auto object-cover mix-blend-plus-lighter z-30" />
+                                        <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  size-[130px] sm:size-[180px] left-1/2 -translate-x-1/2' alt="" />
+                                        {/* <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  h-[130px] xxs:h-[180vh] sm:h-[84vh] left-1/2 -translate-x-1/2' alt="" /> */}
+                                        <div className=" top-1/2 -translate-y-1/2 absolute z-0 transition-transform  lg:-mt-[100px]   left-1/2 -translate-x-1/2 opacity-80 lg:opacity-40 rounded-full blue__gradient size-[380px] xs:size-[400px] md:size-[600px] lg:size-[900px] xl:size-[1000px]"></div>
+                                    </div>
+                                    <FutureTechLooping style=' z-[20] space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]' array={rightSideTechs} />
                                 </div>
                             </div>
                         </div>
-                    </Layout>
+                    </>
                 </div>
-                <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden ">
-                    <video src={features} loop autoPlay muted className="h-full  w-auto object-cover mix-blend-plus-lighter z-30" />
-                    <img src={FutureIcon} className=' w-[140px] xl:right-[200px]  z-40 absolute  absolute-center' alt="" />
-                </div>
+
             </div>
             {/* for small device emd */}
 
             {/* FutureTech section bigger screen start*/}
             <Layout>
-                <div ref={tech} className="hidden 13inch:block relative !mb-[170px]">
+                <div ref={tech} className="hidden 13inch:block min-h-[70vh] 3xl:min-h-screen relative !mb-[170px]">
                     <div className="pb-[120px] max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
                         <h1 className="z-30 font-extrabold text-[68px] text-left">Our Future Driven</h1>
                         <h1 className="z-30 font-extrabold text-[68px] text-right -mt-[16px]">
@@ -204,9 +208,10 @@ function FutureTech() {
                                     <div className=" z-40 text-white flex items-center justify-center">
                                         <div className="space-y-[20px] mr-[80px]">
                                             <img src={project.icon} alt="" />
-                                            <p className="text-[26px] font-Roboto font-light w-[700px]">{project.des}</p>
+                                            <p className="text-[26px] font-Roboto font-light w-[700px] pb-[20px]">{project.des}</p>
                                             {/* <button className=" mt-3 w-full md:max-w-max">View Project</button> */}
-                                            <a href="/career" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Project</button></a>
+                                            {/* <a href="/career" className=" mt-[20px]"><button className="z-40 transform rounded-lg px-[32px] py-[16px]   text-[22px]  transition-colors font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">View Project</button></a> */}
+                                            <a href="/career" className=""><Button text="View Projects" /></a>
 
                                         </div>
                                     </div>

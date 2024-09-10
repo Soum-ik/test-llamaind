@@ -130,6 +130,93 @@ const projects = [
 
 ];
 
-export { staticData, openPositios, leftSideTechs, rightSideTechs, projects };
+const contents = [
+    {
+        title: "LlamaMind - Grow with Smart Solutions",
+        description: "We innovate at the cutting edge, creating advanced applications that elevate user experiences. Our mission is to transform the app industry through intelligent insights and automation, setting new standards for digital excellence.",
+        button: "View Project"
+    },
+    {
+        top: true,
+        title: "Empowering Tomorrow's Technology",
+        description: "We envision a future where technology seamlessly integrates into everyday life, turning challenges into opportunities and driving progress across all sectors. Our unwavering commitment to excellence and innovation drives us to continuously push the boundaries of what's possible with tech-enhanced applications.",
+
+    },
+
+    {
+        top: true,
+        title: "Providing Futuristic Solutions",
+        description: "Our primary goal is to empower businesses and individuals with intelligent, reliable, and scalable applications that harness the latest technological advancements to fuel growth, enhance decision-making, and create a smarter, more connected world. We are dedicated to making advanced technologies accessible and beneficial to all.",
+    },
+];
+
+const menuItems = [
+    { id: 1, href: '#job-description', label: 'Job Description' },
+    { id: 2, href: '#Working-details', label: 'Working details' },
+    { id: 3, href: '#Key-Responsibilities', label: 'Key Responsibilities' },
+    { id: 4, href: '#Technical-Proficiency', label: 'Technical Proficiency' },
+    { id: 5, href: '#Requirements', label: 'Requirements' },
+    { id: 6, href: '#Benefits', label: 'Benefits' },
+    { id: 7, href: '#Apply', label: 'Apply' },
+];
+
+const sections = [
+    {
+        id: "job-description",
+        title: "Job Description",
+        content: `We are a startup Canadian company seeking a highly skilled Backend Developer.We are a startup Canadian company seeking a highly skilled Backend Developer`,
+    },
+    {
+        id: "Working-details",
+        title: "Working Details",
+        content: `
+- 09:00 AM - 06:00 PM.
+- Sunday to Thursday (5 days a week)
+- Friday, Saturday off`,
+    },
+    {
+        id: "Key-Responsibilities",
+        title: "Key Responsibilities",
+        content: `
+- Develop and maintain CI/CD pipelines for automated build, test, and deployment processes.
+- Manage and monitor cloud infrastructure and on-premise servers.
+- Implement and enforce security best practices and policies.
+- Collaborate with development teams to optimize application performance and scalability.
+- Troubleshoot and resolve infrastructure and deployment issues.`,
+    },
+    {
+        id: "Technical-Proficiency",
+        title: "Technical Proficiency",
+        content: `
+- Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
+- Experience with containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with configuration management tools (Ansible, Terraform).
+- Understanding of networking, security, and system administration.`,
+    },
+    {
+        id: "Requirements",
+        title: "Requirements",
+        content: `
+- Proven experience as a DevOps Engineer or similar role.
+- Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
+- Experience with containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with configuration management tools (Ansible, Terraform).
+- Understanding of networking, security, and system administration.`,
+    },
+    {
+        id: "Benefits",
+        title: "Benefits",
+        content: `
+- Competitive salary
+- Health insurance
+- Paid time off
+- Professional development opportunities`,
+    },
+];
+
+
+
+export { staticData, openPositios, leftSideTechs, rightSideTechs, projects, contents, menuItems, sections };
+
 
 

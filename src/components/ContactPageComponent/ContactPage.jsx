@@ -58,7 +58,7 @@ function ContactPage() {
                             <textarea className=" text-[20px] input h-full px-[20px] py-[8px]" name="" id="" />
                         </div>
                         <div className=" -mt-[120px]">
-                            <button className="z-40 transform rounded-lg px-[32px] py-[18px] text-[22px] text-nowrap transition-transform font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">Send Message</button>
+                            <button className="z-40 w-full md:max-w-max transform rounded-lg px-[32px] py-[18px] text-[22px] text-nowrap transition-transform font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">Send Message</button>
                         </div>
                         {/* <button className=" z-40 transform rounded-lg font-bold px-[32px] py-[18px] max-w-max text-[22px]  transition-transform font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF]">Send Message</button> */}
                         {/* <button className=" bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] h-[60px] px-[32px]  py-[18px]  rounded-lg w-full md:max-w-max font-Roboto text -mt-[80px] 2xl:-mt-[130px] font-bold">Send Message</button> */}
@@ -66,8 +66,8 @@ function ContactPage() {
                             <div className="flex flex-col gap-[20px]">
                                 <h1 className=" contact-text text-[18px] md:text-[20px]">Contact</h1>
                                 <div className=" space-y-[16px]">
-                                    <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><PhoneCall />+1 (647) 877-6445</div>
-                                    <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><Mail />info@llamamind.io</div>
+                                    <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><BiSolidPhoneCall />+1 (647) 877-6445</div>
+                                    <div className=" flex items-center gap-[16px] text-[18px] md:text-[20px] input-label"><MdEmail />info@llamamind.io</div>
                                 </div>
                             </div>
                             <div className=" z-40 flex flex-col gap-[20px]">
@@ -88,7 +88,7 @@ function ContactPage() {
 
 
 
-                <div className=" top-[100px]   absolute z-10  xs:size-[450px] rounded-[450px] size-[380px]  flex-shrink-0 mobile-blur-shadow-gradient -translate-x-1/2  left-1/2 " />
+                <div className=" top-[100px]   absolute z-[30]  xs:size-[450px] rounded-[450px] size-[380px]  flex-shrink-0 mobile-blur-shadow-gradient -translate-x-1/2  left-1/2 " />
                 {/* <div className=" absolute z-[30] top-1/2 -translate-y-1/2 left-1/2 hidden md:block -translate-x-1/2  mix-blend-plus-darker  about-blur-shadow size-[350px] xs:size-[400px] md:size-[800px] lg:size-[500px] "></div> */}
             </div>
         </div>

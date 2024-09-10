@@ -30,7 +30,7 @@ function Navbar() {
     return (
         <div className='w-full h-auto'>
             <Layout>
-                <div className=' mx-auto z-[20000] fixed left-0 top-0 right-0 w-full backdrop-blur-2xl'>
+                <div className=' mx-auto z-[20000] fixed left-0 top-0 right-0 w-full backdrop-blur-2xl '>
                     <div className="z-[20000000] max-w-[1720px] mx-auto px-3  py-5 flex items-center justify-between">
                         <a href={'/'} className=' z-[2000000]'>
                             <img src={brandLogo} alt="brand logo z-[230000000]" />

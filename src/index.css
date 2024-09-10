@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
 
 .blue__gradient {
   background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #5D5CE8 100%);
-  filter: blur(123px);
+  filter: blur(203px);
 }
 
 

@@ -1,0 +1,81 @@
+                    {/* <div id="job-description" className="sectionEl flex flex-col gap-[20px]">
+                        <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Job Description</h1>
+                        <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">We are a start up Canadian company seeking a highly skilled Backend Developer to join our team, capable of understanding and contributing to the overall application architecture. You will play a crucial role in developing robust and scalable backend systems using modern technologies. As a key member of our team, you will lead backend development efforts, ensuring adherence to best practices and promoting efficiency, reliability, and maintainability.</p>
+                    </div>
+                    <div id="Working-details" className="sectionEl flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Working details</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
+                            <MarkDown>
+                                {
+                                    `- 09:00 AM - 06:00 PM.
+- Sunday to Thursday (5 days a week)
+- Friday, Saturday off`
+                                }
+                            </MarkDown>
+                        </p>
+                    </div>
+                    <div id="Key-Responsibilities" className="sectionEl flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Key Responsibilities</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
+                            <MarkDown>
+
+                                {`
+- Develop and maintain *CI/CD* pipelines for automated build, test, and deployment processes.
+- Manage and monitor cloud infrastructure and on-premise servers.
+- Implement and enforce security best practices and policies.
+- Collaborate with development teams to optimize application performance and scalability.
+- Troubleshoot and resolve infrastructure and deployment issues.
+                            `}
+
+                            </MarkDown>
+
+                        </p>
+                    </div>
+                    <div id="Technical-Proficiency" className="sectionEl flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Technical Proficiency</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
+                            <MarkDown>
+
+                                {`
+- Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
+- Experience with containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with configuration management tools (Ansible, Terraform).
+- Understanding of networking, security, and system administration.
+                            `}
+
+                            </MarkDown>
+
+                        </p>
+                    </div>
+                    <div id="Requirements" className="sectionEl flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Requirements</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
+                            <MarkDown>
+
+
+                                {`
+- Proven experience as a DevOps Engineer or  similar role.Proven experience as a DevOps Engineer or  
+- Strong knowledge of cloud platforms (AWS, Azure, Google Cloud).
+- Experience with containerization and orchestration tools (Docker, Kubernetes).Experience with containerization and orchestration tools (Docker, Kubernetes).Experience with containerization and orchestration tools (Docker, Kubernetes).
+- Familiarity with configuration management tools (Ansible, Terraform).
+- Understanding of networking, security, and system administration.`}
+
+                            </MarkDown>
+                        </p>
+                    </div>
+                    <div className=" top-[1900px] right-[1px] bottom-0 absolute z-10 opacity-[0.3]  mobile-blur-shadow md:hidden" />
+                    <div className=" absolute  -right-[200px] hidden md:block mt-[1000px] -translate-y-1/2  opacity-[.4] -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[900px]"></div>
+
+                    <div id="Benefits" className="sectionEl  flex flex-col gap-[20px]">
+                        <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">Benefits</h1>
+                        <p className=" font-Roboto md:text-[20px] text-[16px] leading-[20px] md:leading-[26px]  font-normal opacity-[.7]">
+                            <MarkDown>
+                                {`
+- Competitive salary
+- Health insurance
+- Paid time off
+- Professional development opportunities`}
+                            </MarkDown>
+                        </p>
+
+                    </div> */}
