@@ -4,7 +4,7 @@ import Layout from "./layout/Layout";
 import features from '../../public/video/s.mp4';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion'
 import project1 from '../../public/images/Group.png';
 import { leftSideTechs, rightSideTechs, projects } from '../components/libs/staticData'
