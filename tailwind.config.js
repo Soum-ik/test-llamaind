@@ -11,14 +11,28 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        // "2xl": "1400px",
+
       },
     },
     extend: {
 
       screens: {
         'xxs': '390px',
-        'xs': '440px'
+        'xs': '440px',
+        // 'laptop': ''
+        "13inch": "1400px",
+        "laptop": "1600px",
+        "3xl": "2000px",
+        "4xl": "2300px",
+        "4k": "2560px",
+        "5k": "2700px",
+        "6k": "3000px",
+        "7k": "3500px",
+        "8k": "4000px",
+        "9k": "5000px",
+        "10k": "6000px",
+
       },
       animation: {
         "spin-slow": "spin 12s linear infinite",

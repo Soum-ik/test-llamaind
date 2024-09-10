@@ -8,6 +8,8 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion'
 import project1 from '../../public/images/Group.png';
 import { leftSideTechs, rightSideTechs, projects } from '../components/libs/staticData'
+import Button from './ui/Button';
+
 
 
 
@@ -24,7 +26,7 @@ function FutureTech() {
     function getScrollAmount() {
         const projectsWidth = projectsHolder.current?.offsetWidth;
         if (projectsWidth) {
-            return -((projectsWidth * 1.07) - window.innerWidth);
+            return -((projectsWidth * 1.17) - window.innerWidth);
         }
         return 0;
     }
@@ -55,16 +57,17 @@ function FutureTech() {
 
         if (projectWrapper.current) {
             gsap.fromTo(projectWrapper.current,
-                { x: '100%', opacity: 0, scale: .6 },
+                { opacity: 0, scale: .6, autoAlpha: 0 },
                 {
-                    x: '0%',
                     scale: 1,
+                    autoAlpha: 1,
                     opacity: 1,
                     scrollTrigger: {
                         trigger: tech.current,
                         start: '40% 30%',
                         end: '40% 20%',
-                        scrub: true,
+                        scrub: 0.3,
+                        invalidateOnRefresh: true, // Ensures proper resizing
                     },
                 }
             )
@@ -105,35 +108,39 @@ function FutureTech() {
         <>
 
             {/* for small device start */}
-            <div className='xl:hidden relative mt-[150px]'>
-                <div className=' '>
-                    <Layout>
-                        <div className=" xl:hidden">
-                            <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] mx-auto  text-white flex items-center justify-center flex-col">
-                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
-                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
+            <div className='13inch:hidden relative mt-[150px] xl:mb-[120px]'>
+                <div className=''>
+                    <>
+                        <div className=" 13inch:hidden">
+                            <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] xl:w-[800px] mx-auto  text-white flex items-center justify-center flex-col">
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[57px]  xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
+                                <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[57px]  xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
                             </div>
 
                             {/* options are will be avaiable */}
                             <div className="pt-10">
-                                <div className=" px-24 gap-[265px] flex flex-col items-center justify-between">
-                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px]' array={leftSideTechs} />
-                                    <div className=" absolute z-0 bottom-[260px] rounded-full opacity-80 blue__gradient size-[380px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  "></div>
-                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px]' array={rightSideTechs} />
+                                <div className=" px-24 gap-[265px] sm:gap-[400px] relative flex flex-col items-center justify-between">
+                                    <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]' array={leftSideTechs} />
+                                    <div className="top-1/2 -translate-y-1/2 absolute z-[10] transition-transform">
+                                        {/* <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden "> */}
+                                        <video src={features} loop autoPlay muted className="h-[65vh] xxs:h-[74vh] sm:h-[84vh] w-auto object-cover mix-blend-plus-lighter z-30" />
+                                        <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  size-[130px] sm:size-[180px] left-1/2 -translate-x-1/2' alt="" />
+                                        {/* <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  h-[130px] xxs:h-[180vh] sm:h-[84vh] left-1/2 -translate-x-1/2' alt="" /> */}
+                                        <div className=" top-1/2 -translate-y-1/2 absolute z-0 transition-transform  lg:-mt-[100px]   left-1/2 -translate-x-1/2 opacity-80 lg:opacity-40 rounded-full blue__gradient size-[380px] xs:size-[400px] md:size-[600px] lg:size-[900px] xl:size-[1000px]"></div>
+                                    </div>
+                                    <FutureTechLooping style=' z-[20] space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]' array={rightSideTechs} />
                                 </div>
                             </div>
                         </div>
-                    </Layout>
+                    </>
                 </div>
-                <div className=" py-[100px] absolute xl:hidden w-full items-center h-[94vh]  top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] justify-center overflow-hidden ">
-                    <video src={features} loop autoPlay muted className="h-full  w-auto object-cover mix-blend-plus-lighter z-30" />
-                    <img src={FutureIcon} className=' w-[140px]  z-40 absolute  absolute-center' alt="" />
-                </div>
+
             </div>
             {/* for small device emd */}
-            {/* FutureTech section */}
+
+            {/* FutureTech section bigger screen start*/}
             <Layout>
-                <div ref={tech} className="hidden xl:block relative !mb-[170px]">
+                <div ref={tech} className="hidden 13inch:block min-h-[70vh] 3xl:min-h-screen relative !mb-[170px]">
                     <div className="pb-[120px] max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
                         <h1 className="z-30 font-extrabold text-[68px] text-left">Our Future Driven</h1>
                         <h1 className="z-30 font-extrabold text-[68px] text-right -mt-[16px]">
@@ -155,17 +162,18 @@ function FutureTech() {
                     </div>
                 </div>
             </Layout>
+            {/* FutureTech section bigger screen end*/}
 
-            {/* IndexProject section */}
-            {/* <div ref={project} className="  overflow-hidden"> */}
-            <div className="relative xl:pb-[10px]">
-                <div ref={projectWrapper} className="hidden -mt-[800px] opacity-0  mx-auto px-5 xl:block">
-                    <motion.h1 className="text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
+
+            {/* IndexProject section  start*/}
+            <div id='project' className=" relative xl:pb-[10px]">
+                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 13inch:block">
+                    <motion.h1 className=" text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
                     </motion.h1>
                     <motion.div ref={projectsHolder} className=" z-10 ml-[300px] flex flex-nowrap  mx-auto w-fit relative gap-[400px] -mt-[150px]">
                         {projects.map((project, idx) => (
-                            <div className="flex items-center justify-center" key={idx}>
+                            <div className="flex items-center justify-center snap-center" key={idx}>
                                 <section>
                                     <div className=" z-40 text-white flex items-center justify-end gap-[50px]">
                                         <div className="space-y-[20px] min-w-[700px]">
@@ -178,6 +186,11 @@ function FutureTech() {
                                             <h1 className="font-normal text-[#D5D5D5] text-xl font-Roboto">{project.status}</h1>
                                         </div>
                                     </div>
+                                    {/* <Layout>
+                                        <div className="  z-[100] bg-red-700  text-white font-Roboto flex items-center gap-2">
+                                            Scroll down <MoveRight />
+                                        </div>
+                                    </Layout> */}
                                 </section>
                                 <section>
                                     <div className="z-40 min-w-max relative">
@@ -195,8 +208,11 @@ function FutureTech() {
                                     <div className=" z-40 text-white flex items-center justify-center">
                                         <div className="space-y-[20px] mr-[80px]">
                                             <img src={project.icon} alt="" />
-                                            <p className="text-[26px] font-Roboto font-light w-[700px]">{project.des}</p>
-                                            <button className="project-btn mt-3 w-full md:max-w-max">View Project</button>
+                                            <p className="text-[26px] font-Roboto font-light w-[700px] pb-[20px]">{project.des}</p>
+                                            {/* <button className=" mt-3 w-full md:max-w-max">View Project</button> */}
+                                            {/* <a href="/career" className=" mt-[20px]"><button className="z-40 transform rounded-lg px-[32px] py-[16px]   text-[22px]  transition-colors font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">View Project</button></a> */}
+                                            <a href="/career" className=""><Button text="View Projects" /></a>
+
                                         </div>
                                     </div>
                                 </section>
@@ -204,11 +220,7 @@ function FutureTech() {
                         ))}
                     </motion.div>
                     <div className=" top-1/2 left-1/2 transform  mr-[200px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
-                    <Layout children={undefined}>
-                        {/* <div className="absolute top-0 z-[100] bg-red-700 -mt-[340px] text-white font-Roboto flex items-center gap-2">
-            Scroll down <MoveRight />
-          </div> */}
-                    </Layout>
+
                 </div>
             </div>
             {/* </div> */}

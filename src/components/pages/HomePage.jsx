@@ -11,12 +11,15 @@ import App from "../HomePageComponent/test";
 
 
 export default function HomePage() {
+ 
     return (
         <div className="bg-black h-auto font-Orbitron">
             <Navbar />
             <Header />
+
             <FutureTech />
             <IndexProject />
+
             <OpenPosition />
             <Foooter />
         </div>

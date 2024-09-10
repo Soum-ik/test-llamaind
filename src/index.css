@@ -4,17 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 body::-webkit-scrollbar {
   display: none;
 }
 
 .blue__gradient {
   background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #5D5CE8 100%);
-  filter: blur(123px);
+  filter: blur(203px);
 }
 
 
@@ -67,7 +63,7 @@ body::-webkit-scrollbar {
   }
 
   .text-gradient {
-    @apply relative w-[100px] text-center bg-clip-text text-transparent text-[20px] bg-gradient-to-r font-bold duration-500 from-white to-white hover:from-[#3534C0] hover:to-[#06FFDF]
+    @apply relative w-[100px] text-center bg-clip-text text-transparent text-[20px] bg-gradient-to-r  duration-500 from-white to-white hover:from-[#3534C0] hover:to-[#06FFDF]
   }
 
   .text-carries {
@@ -218,7 +214,7 @@ body::-webkit-scrollbar {
 }
 
 .projectMovieCircel-gradient:hover {
-  
+ 
   background: linear-gradient(180deg, #3534C0 0%, #06FFDF 100%);
   box-shadow: 3.636px 3.636px 29.091px 0px rgba(93, 92, 232, 0.32);
 }
@@ -426,12 +422,12 @@ body::-webkit-scrollbar {
 
 .background-color {
   background: rgba(0, 0, 0, 0.90);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 
 .nav-box {
   display: flex;
-  width: 353px;
+  /* width: 353px; */
   flex-direction: column;
   align-items: flex-start;
 }
@@ -567,3 +563,7 @@ body::-webkit-scrollbar {
 }
 
 /* for animation */
+
+.border-drop {
+  border-bottom: 1px solid rgba(93, 92, 232, 0.20);
+}

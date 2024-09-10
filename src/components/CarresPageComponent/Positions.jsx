@@ -11,11 +11,11 @@ function Positions() {
     const [availableVacancies, setAvailableVacancies] = useState(true);
 
     return <Layout>
-        <div className='relative mt-[40px]  md:mt-[150px] xl:mt-[270px] -z-0 pb-[160px] md:pb-[300px] xl:pb-[300px]'>
+        <div id='position' className='relative mt-[40px]  md:mt-[150px] xl:mt-[270px] -z-0 pb-[160px] md:pb-[300px] xl:pb-[160px]'>
 
             {availableVacancies ?
                 <>
-                    <h1 className=" text-[68px] xs:text-[80px] sm:text-[95px] md:text-[120px] lg:text-[180px] xl:text-[250px] xl:w-[700px] text-white font-Orbitron font-bold opacity-5 z-50">Positions</h1>
+                    <h1 className=" z-[2000] text-[68px] xs:text-[80px] sm:text-[95px] md:text-[120px] lg:text-[180px] xl:text-[250px] xl:w-[700px] text-white font-Orbitron font-bold opacity-5 ">Positions</h1>
                     <JobList positions={openPositios} />
                 </> : <>
 

@@ -7,7 +7,7 @@ function JobList({ positions }) {
     }
 
     return (
-        <div className='   flex flex-col mb-20'>
+        <div className=' z-[2000]  flex flex-col mb-20'>
             {
                 positions.map((position) => (
                     <a key={position.id} href={`/career/job-details/${pathFixer(position.positionName)}`}>
@@ -16,7 +16,7 @@ function JobList({ positions }) {
                                 <h1 className="text-[34px] leading-[40px] sm:text-[43px] md:text-[50] xl:leading-[85.27px] xl:text-[68px] group-hover:text-carries duration-700 font-Orbitron font-extrabold">{position.positionName}</h1>
                                 <p className="font-Roboto  group-hover:text-carries duration-500 text-[16px] leading-[20px] md:text-[22px] md:leading-[33px] xl:text-[26px] xl:leading-[40px] flex items-center font-light gap-2">{position.type}<Dot size={40} className=' text-white  group-hover:text-[#5D5CE8]' />{position.location}</p>
                             </div>
-                            <ArrowUpRight className='size-[32px] group-hover:size-[80px] duration-700 group-hover:text-[#5D5CE8]' />
+                            <ArrowUpRight className='size-[32px] xl:group-hover:size-[80px] duration-700 group-hover:text-[#5D5CE8]' />
                         </div>
                     </a>
                 ))
