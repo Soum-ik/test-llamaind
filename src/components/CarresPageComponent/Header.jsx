@@ -9,6 +9,9 @@ import { MoveRight } from "lucide-react";
 import UseGetScroll from "../../Hooks/UseGetScroll";
 import UseWindowSize from "../../Hooks/UseGetScreenSize";
 
+// Register GSAP's ScrollTrigger
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 function Header() {
     const videoRef = useRef();
     const contentRef = useRef();
@@ -20,7 +23,6 @@ function Header() {
         end: 0
     });
 
-    console.log(scrollTriggerConfig, 'get total amount');
 
     useEffect(() => {
         if (contentRef.current) {
@@ -48,7 +50,7 @@ function Header() {
             } else if (width > 2500) {
                 return "+=163%";
             } else if (width >= 2400) {
-                return "+=200%";
+                return "+=250%";
             } else if (width > 2100) {
                 return "+=220%";
             } else if (width > 1900) {
@@ -73,8 +75,7 @@ function Header() {
             }
         };
         startValue = calcultaion(width);
-        console.log(startValue, 'start');
-
+        
 
         gsap.to(videoRef.current, {
             scrollTrigger: {
@@ -128,14 +129,14 @@ function Header() {
         });
 
 
-    }, { scope: [contentRef, videoRef] });
+    }, [contentRef, videoRef, width]);
 
     return (
         <div className=" relative xs:pt-[200px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
             <Layout>
                 {/* small screen left side start */}
-                <div className="xl:hidden pt-[90px] xl:pt-0 pb-[160px] flex items-center justify-between">
-                    <div className="z-40 max-w-[355px] xxs:max-w-max pt-[75px] space-y-[230px] md:space-y-[200px]  xl:space-y-[450px]">
+                <div className="xl:hidden z-[30] pt-[90px] xl:pt-0 pb-[160px] flex items-center justify-between">
+                    <div className="z-40 max-w-[355px] xxs:max-w-max pt-[75px] sm:pt-[120px] md:pt-[210px] space-y-[230px] md:space-y-[200px]  xl:space-y-[450px]">
                         <Innovative staticData={staticData[0]} />
                         <CoreValus staticData={staticData[1]} />
                         <BecomingOne staticData={staticData[2]} />
@@ -144,13 +145,13 @@ function Header() {
                 {/* small screen left side end */}
 
                 {/* big screen start */}
-                <div className="hidden   xl:flex items-center justify-between">
+                <div className="hidden !pt-[100px] laptop:pt-0  xl:flex items-center justify-between">
                     <div ref={contentRef} className="z-40 laptop:pt-[100px] space-y-[500px]">
                         <BigInnovative staticData={staticData[0]} />
                         <BigCoreValus staticData={staticData[1]} />
                         <BigBecomingOne staticData={staticData[2]} />
                     </div>
-                    <div ref={videoRef} className="absolute top-0 2xl:top-[10px] 3xl:-top-[130px]  6k:-top-[220px] 8k:-top-[185px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
+                    <div ref={videoRef} className="absolute pt-[20px]  top-0 2xl:top-[10px] 3xl:-top-[130px] 4xl:-top-[100px] 6k:-top-[220px] 8k:-top-[185px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
                         <video className="mix-blend-plus-lighter w-[800px] 2xl:w-[1000px] " src={animation} loop muted autoPlay />
                         <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 -z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
                     </div>
@@ -158,7 +159,7 @@ function Header() {
                 {/* big screen end */}
 
             </Layout>
-            <div className="absolute xs:top-[40px] top-[0px] left-0 flex sm:h-[78vh] xs:h-[64vh] h-[58vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div className="absolute xs:top-[40px] top-[0px] left-0 flex md:h-[800px] sm:h-[700px] xs:h-[600px] h-[500px]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={animation}
                     className="h-full w-auto object-cover"
@@ -166,8 +167,8 @@ function Header() {
                     autoPlay
                     muted
                 />
-                <div className="top-[100px] xs:-top-[200px] absolute z-[2000] mobile-blur-shadow-gradient  xs:size-[500px] size-[350px] rounded-full xl:hidden mix-blend-plus-lighter" />
-                {/* <div className=" absolute z-[100] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
+                <div className="top-[100px] xs:-top-[1px] absolute z-[2000] mobile-blur-shadow-gradient  xs:size-[450px] size-[350px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                {/* <div className=" absolute z-[1000000] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
             </div>
         </div>
     );
@@ -180,8 +181,10 @@ const Innovative = ({ staticData, animation }) => {
     return (
         <div   {...(animation && { 'data-aos': 'zoom-in-up' })} className="text-white space-y-[30px] pt-[100px]">
             <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{staticData.title}</h1>
-            <p className=" text-[#D5D5D5] text-[22px] md:text-[26px] leading-[36px] font-light font-Roboto pb-[20px]">{staticData.description}</p>
-            <a href="#position" className=" pt-[100px]"><Button text="View Open positions"/></a>
+            <p className=" text-[#D5D5D5] text-[22px] md:text-[26px] leading-[36px] font-light font-Roboto ">{staticData.description}</p>
+            <a id="#position" className=" flex items-center justify-center md:justify-start">
+                <button type="submit" className="z-40   transition-all md:max-w-max rounded-lg w-full px-[32px] py-[15px] text-[20px] md:text-[22px]  font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">{"View open positions"}</button>
+            </a>
         </div>
     );
 };

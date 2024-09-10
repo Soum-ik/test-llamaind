@@ -7,6 +7,7 @@ import DownloadIcon from '../../../public/images/dowload.png';
 import { FaLessThanEqual } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { menuItems, sections } from "../libs/staticData";
+// import { log } from "console";
 
 
 function JobDeatlis({ jobName }) {
@@ -57,9 +58,14 @@ function JobDeatlis({ jobName }) {
 
                     </aside>
                 </div>
-                <div ref={sectionsRef} className="z-40 flex flex-1 flex-col mt-[100px] xl:mt-0 gap-[60px]">
+                <div className="z-40 flex flex-1 flex-col mt-[100px] xl:mt-0 gap-[60px]">
                     {sections.map(({ id, title, content }) => (
-                        <div key={id} id={id} className="sectionEl flex flex-col gap-[20px]">
+                        <div
+                            key={id}
+                            id={id}
+                            className="sectionEl flex flex-col gap-[20px]"
+                            // ref={(el) => (sectionsRef.current[index] = el)}
+                        >
                             <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">{title}</h1>
                             <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">
                                 <MarkDown>{content}</MarkDown>

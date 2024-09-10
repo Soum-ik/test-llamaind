@@ -35,7 +35,8 @@ function Details() {
             const end = rect.bottom + window.scrollY; // Bottom position relative to the document
             setScrollTriggerConfig({ start, end });
         }
-    }, []);
+    }, [width]);
+
 
     useGSAP(() => {
         let endValue;
@@ -44,7 +45,7 @@ function Details() {
             if (width > 2700) {
                 return "+=174%";
             } else if (width > 2500) {
-                return "+=190%";
+                return "+=180%";
             } else if (width >= 2400) {
                 return "+=190%";
             } else if (width > 2100) {
@@ -56,6 +57,10 @@ function Details() {
             } else if (width > 1500) {
                 return "+=220%";
             } else if (width > 1400) {
+                return "+=230%";
+            } else if (width > 1300) {
+                return "+=200%";
+            }else if (width > 1280) {
                 return "+=230%";
             } else {
                 return "+=220%";
@@ -131,7 +136,7 @@ function Details() {
             <Layout>
 
                 {/* small screen size start */}
-                <div className=" z-40 xs:pt-[300px] sm:pt-[350px] pt-[200px] slider2 flex xl:hidden relative !justify-between pb-[160px]">
+                <div className=" z-40 xs:pt-[250px] sm:pt-[330px] pt-[200px] slider2 flex xl:hidden relative !justify-between pb-[160px]">
                     <div id="rightSide" className=" min-w-[355px] pt-[75px] md:space-y-[200px]  space-y-[160px] z-40">
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white  text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center z-40 bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
@@ -191,15 +196,15 @@ function Details() {
                     {/* <div className=' -ml-[50px] z-10 font-Roboto rotate-90  hidden md:flex  gap-5'>
                         Scroll down <MoveRight />
                     </div> */}
-                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] 4k:pt-[80px] 6k:pt-[200px] 7k:pt-[240px] 8k:pt-[500px] 9k:pt-[470px] 10k:pt-[650px] max-w-[1920px] absolute z-20 right-0">
+                    <div ref={videoRef} id="slider2-video" className=" min-w-[500px] 4xl:pt-[53px] 4k:pt-[70px] 6k:pt-[200px] 7k:pt-[240px] 8k:pt-[500px] 9k:pt-[420px] 10k:pt-[670px] max-w-[1920px] absolute z-20 right-0">
                         <div className=" relative flex items-center z-40 justify-center  ">
                             {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
-                            <div className="z-40 2xl:w-[1240px] 2xl:h-[637px] w-[1000px] h-[500px] flex items-center justify-center !mx-auto">
+                            <div className="z-[35] 2xl:w-[1240px] 2xl:h-[637px] w-[1000px] h-[500px] flex items-center justify-center !mx-auto">
                                 {/* <video className="!max-w-[850px]" src={waveVideo} loop autoPlay muted /> */}
-                                <video id="videoMoving" className="z-40 w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
+                                <video id="videoMoving" className="z-[35] w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
                             </div>
-                            <div className="absolute right-0 pb-10 z-40 about-blur-shadow size-[1000px]" />
-                            <img className="z-40 absolute -right-0 mx-auto size-[700px] 2xl:size-[840px]" src={headerImage} alt="" />
+                            <div className="absolute right-0 pb-10 z-[36] about-blur-shadow size-[1000px]" />
+                            <img className="z-[40] absolute -right-0 mx-auto size-[700px] 2xl:size-[840px]" src={headerImage} alt="" />
                         </div>
                     </div>
                 </div>
@@ -209,7 +214,7 @@ function Details() {
 
 
             {/* small size device video part start */}
-            <div className="absolute sm:-top-[80px] xs:-top-[40px] -top-[10px] left-0 flex  lg:h-[110vh] 2xl:h-[] sm:h-[100vh] xs:h-[90vh] h-[68vh]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div className="absolute sm:-top-[80px] xs:-top-[40px]  -top-[20px] left-0 flex  lg:h-[969px] sm:h-[900px] xs:h-[750px] h-[630px]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={waveVideo1}
                     className="h-full w-auto object-cover"
@@ -217,8 +222,8 @@ function Details() {
                     autoPlay
                     muted
                 />
-                <div className="top-[100px] xs:-top-[200px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
-                <img className="absolute !w-[600px] z-30" src={headerImage} alt="" />
+                <div className="top-[100px] xs:-top-[200px] sm:top-[10px] absolute z-10 mobile-blur-shadow-gradient md:size-[600px] xs:size-[500px] size-[340px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                <img className="absolute xs:w-[620px] w-[600px] z-30" src={headerImage} alt="" />
             </div>
             {/* small size device video part end */}
 

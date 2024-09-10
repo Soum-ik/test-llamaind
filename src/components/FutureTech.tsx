@@ -9,11 +9,13 @@ import { motion } from 'framer-motion'
 import project1 from '../../public/images/Group.png';
 import { leftSideTechs, rightSideTechs, projects } from '../components/libs/staticData'
 import Button from './ui/Button';
+import { useGSAP } from '@gsap/react';
+import { MoveRight } from 'lucide-react';
 
 
 
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function FutureTech() {
     const tech = useRef<HTMLDivElement | null>(null);
@@ -34,7 +36,7 @@ function FutureTech() {
     console.log(getScrollAmount());
 
 
-    useEffect(() => {
+    useGSAP(() => {
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: tech.current,
@@ -118,13 +120,13 @@ function FutureTech() {
                             </div>
 
                             {/* options are will be avaiable */}
-                            <div className="pt-10">
+                            <div className="pt-10 xl:pt-20">
                                 <div className=" px-24 gap-[265px] sm:gap-[400px] relative flex flex-col items-center justify-between">
                                     <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]' array={leftSideTechs} />
                                     <div className="top-1/2 -translate-y-1/2 absolute z-[10] transition-transform">
                                         {/* <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden "> */}
-                                        <video src={features} loop autoPlay muted className="h-[65vh] xxs:h-[74vh] sm:h-[84vh] w-auto object-cover mix-blend-plus-lighter z-30" />
-                                        <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  size-[130px] sm:size-[180px] left-1/2 -translate-x-1/2' alt="" />
+                                        <video src={features} loop autoPlay muted className="h-[600px] xxs:h-[700px] sm:h-[750px] md:h-[800px] w-auto object-cover mix-blend-plus-lighter z-30" />
+                                        <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  size-[130px] sm:size-[160px] left-1/2 -translate-x-1/2' alt="" />
                                         {/* <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  h-[130px] xxs:h-[180vh] sm:h-[84vh] left-1/2 -translate-x-1/2' alt="" /> */}
                                         <div className=" top-1/2 -translate-y-1/2 absolute z-0 transition-transform  lg:-mt-[100px]   left-1/2 -translate-x-1/2 opacity-80 lg:opacity-40 rounded-full blue__gradient size-[380px] xs:size-[400px] md:size-[600px] lg:size-[900px] xl:size-[1000px]"></div>
                                     </div>
@@ -167,7 +169,7 @@ function FutureTech() {
 
             {/* IndexProject section  start*/}
             <div id='project' className=" relative xl:pb-[10px]">
-                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 13inch:block">
+                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 13inch:block 3xl:min-h-screen">
                     <motion.h1 className=" text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
                     </motion.h1>
@@ -186,17 +188,13 @@ function FutureTech() {
                                             <h1 className="font-normal text-[#D5D5D5] text-xl font-Roboto">{project.status}</h1>
                                         </div>
                                     </div>
-                                    {/* <Layout>
-                                        <div className="  z-[100] bg-red-700  text-white font-Roboto flex items-center gap-2">
-                                            Scroll down <MoveRight />
-                                        </div>
-                                    </Layout> */}
+
                                 </section>
                                 <section>
                                     <div className="z-40 min-w-max relative">
                                         <img className="w-[920px] h-[522px]" src={project1} alt="" />
                                         <video
-                                            className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 rounded-2xl xl:w-[710px] xl:h-[468px]"
+                                            className="absolute top-[15px] rounded-[10px] transition-transform -translate-x-1/2 left-1/2 ml-1 xl:w-[750px] xl:h-[468px]"
                                             src={project.video}
                                             autoPlay
                                             loop
@@ -219,6 +217,11 @@ function FutureTech() {
                             </div>
                         ))}
                     </motion.div>
+                    <Layout>
+                        <div className="  z-[100]  pt-[100px]  text-white font-Roboto flex items-center gap-2">
+                            Scroll down <MoveRight />
+                        </div>
+                    </Layout>
                     <div className=" top-1/2 left-1/2 transform  mr-[200px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
 
                 </div>
