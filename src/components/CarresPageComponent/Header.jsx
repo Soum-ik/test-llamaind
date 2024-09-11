@@ -146,12 +146,12 @@ function Header() {
 
                 {/* big screen start */}
                 <div className="hidden !pt-[100px] laptop:pt-0  xl:flex items-center justify-between">
-                    <div ref={contentRef} className="z-40 laptop:pt-[100px] space-y-[500px]">
+                    <div ref={contentRef} className="z-40  space-y-[500px]">
                         <BigInnovative staticData={staticData[0]} />
                         <BigCoreValus staticData={staticData[1]} />
                         <BigBecomingOne staticData={staticData[2]} />
                     </div>
-                    <div ref={videoRef} className="absolute pt-[20px]  top-0 2xl:top-[10px] 3xl:-top-[130px] 4xl:-top-[100px] 6k:-top-[220px] 8k:-top-[185px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
+                    <div ref={videoRef} className="absolute   top-0 2xl:top-[10px] 3xl:-top-[190px] 4xl:-top-[100px] 6k:pt-[15px] 8k:-top-[185px] 10k:pt-[100px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
                         <video className="mix-blend-plus-lighter w-[800px] 2xl:w-[1000px] " src={animation} loop muted autoPlay />
                         <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 -z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
                     </div>

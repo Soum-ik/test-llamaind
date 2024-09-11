@@ -7,7 +7,7 @@ import DownloadIcon from '../../../public/images/dowload.png';
 import { FaLessThanEqual } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { menuItems, sections } from "../libs/staticData";
-// import { log } from "console";
+
 
 
 function JobDeatlis({ jobName }) {

@@ -218,7 +218,7 @@ function FutureTech() {
                         ))}
                     </motion.div>
                     <Layout>
-                        <div className="  z-[100]  pt-[100px]  text-white font-Roboto flex items-center gap-2">
+                        <div className="  z-[100] pt-[30px] 17inch:pt-[100px]  text-white font-Roboto flex items-center gap-2">
                             Scroll down <MoveRight />
                         </div>
                     </Layout>

@@ -113,7 +113,7 @@ function Header() {
                         </div>
     
                         <a href="#project" id="instructor" className='text-white instructor-fixer   flex justify-between'>
-                            <div className='-ml-[130px] z-10 font-Roboto rotate-90 flex gap-5'>
+                            <div className='-ml-[130px] z-10 font-Roboto rotate-90 flex gap-5 justify-end'>
                                 Scroll down <MoveRight />
                             </div>
                             <div id="projectMoveing" className='z-10 group rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
@@ -164,7 +164,7 @@ function Header() {
                         <div className='  z-10 font-Roboto rotate-90  hidden xl:flex  gap-5'>
                             Scroll down <MoveRight />
                         </div>
-                        <div className=' flex  size-[150px] md:size-[170px] sm:size-[170px] -mt-[160px] xs:-mt-[200px] sm:-mt-[290px] md:-mt-[360px] lg:-mt-[400px]  items-center justify-center mx-auto z-[50] group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
+                    <div className=' flex  size-[150px] md:size-[170px] sm:size-[170px] -mt-[160px] xs:-mt-[200px] sm:-mt-[290px] md:-mt-[360px] lg:-mt-[400px]  items-center justify-center mx-auto z-[50] group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
                             <img className=' group-hover:animate-none animate-spin-slow transition-colors duration-500' src={arrow} alt="" />
                             <div className=" absolute top-1/2 left-1/2 transition-transform -translate-x-1/2 -translate-y-1/2 group-hover:rotate-45">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

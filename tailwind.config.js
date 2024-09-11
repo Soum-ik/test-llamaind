@@ -20,9 +20,9 @@ const config = {
       screens: {
         'xxs': '390px',
         'xs': '440px',
-        // 'laptop': ''
         "13inch": "1400px",
         "laptop": "1600px",
+        "17inch" : "1750px",
         "3xl": "2000px",
         "4xl": "2300px",
         "4k": "2560px",
