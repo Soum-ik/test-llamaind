@@ -162,11 +162,14 @@ const menuItems = [
 
 const sections = [
     {
+        serial: 1,
         id: "job-description",
         title: "Job Description",
         content: `We are a startup Canadian company seeking a highly skilled Backend Developer.We are a startup Canadian company seeking a highly skilled Backend Developer`,
     },
     {
+        serial: 2,
+
         id: "Working-details",
         title: "Working Details",
         content: `
@@ -175,6 +178,8 @@ const sections = [
 - Friday, Saturday off`,
     },
     {
+        serial: 3,
+
         id: "Key-Responsibilities",
         title: "Key Responsibilities",
         content: `
@@ -185,6 +190,8 @@ const sections = [
 - Troubleshoot and resolve infrastructure and deployment issues.`,
     },
     {
+        serial: 4,
+
         id: "Technical-Proficiency",
         title: "Technical Proficiency",
         content: `
@@ -194,6 +201,8 @@ const sections = [
 - Understanding of networking, security, and system administration.`,
     },
     {
+        serial: 5,
+
         id: "Requirements",
         title: "Requirements",
         content: `
@@ -204,6 +213,8 @@ const sections = [
 - Understanding of networking, security, and system administration.`,
     },
     {
+        serial: 6,
+
         id: "Benefits",
         title: "Benefits",
         content: `

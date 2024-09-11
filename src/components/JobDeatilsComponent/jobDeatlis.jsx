@@ -7,13 +7,26 @@ import DownloadIcon from '../../../public/images/dowload.png';
 import { FaLessThanEqual } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { menuItems, sections } from "../libs/staticData";
+import { useInView, InView } from "react-intersection-observer";
 
 
 
 function JobDeatlis({ jobName }) {
     const [currentSelected, setCurrentSelected] = useState(1);
     const menuBarRef = useRef(null);
-    const sectionsRef = useRef([]);
+
+    useEffect(() => {
+        const sectionRefs = document.querySelectorAll('.wrapper');
+        window.addEventListener('scroll', () => {
+            const menuBarTop = menuBarRef.current?.offsetTop || 0;
+            sectionRefs.forEach((sectionEl, idx) => {
+                if (menuBarTop >= sectionEl.offsetTop) {
+                    setCurrentSelected(idx + 1);
+                }
+            });
+        });
+    }, []);
+
 
     const handleMenuItemClick = (e, item) => {
         e.preventDefault();
@@ -44,13 +57,13 @@ function JobDeatlis({ jobName }) {
             </div>
             <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20  xl:pt-[200px]  ">
                 <div className=" min-w-[340px] hidden lg:flex flex-col">
-                    <aside className=" sticky top-28 w-full h-fit" ref={menuBarRef}>
+                    <aside className=" sticky top-28 w-full h-fit z-[200]" ref={menuBarRef}>
                         {menuItems.map((item) => (
                             <a
                                 onClick={(e) => handleMenuItemClick(e, item)}
                                 href={item.href}
                                 key={item.id}
-                                className={`${currentSelected === item.id ? 'sidebarEl box box-font box-active' : 'box box-font'} sidebarEl`}
+                                className={`${currentSelected === item.id ? 'sidebarEl box box-font box-active' : 'box box-font'} sidebarEl z-[2000]`}
                             >
                                 {item.label}
                             </a>
@@ -59,24 +72,25 @@ function JobDeatlis({ jobName }) {
                     </aside>
                 </div>
                 <div className="z-40 flex flex-1 flex-col mt-[100px] xl:mt-0 gap-[60px]">
-                    {sections.map(({ id, title, content }) => (
+                    {sections.map(({ id, title, content }, index) => (
+
                         <div
                             key={id}
                             id={id}
-                            className="sectionEl flex flex-col gap-[20px]"
-                            // ref={(el) => (sectionsRef.current[index] = el)}
+                            className="wrapper flex flex-col gap-[20px]"
                         >
                             <h1 className="font-Roboto text-[20px] md:text-[26px] font-semibold">{title}</h1>
                             <p className="md:text-[20px] text-[16px] opacity-[.7] font-normal leading-[20px] md:leading-[24px] lg:leading-[26px]">
                                 <MarkDown>{content}</MarkDown>
                             </p>
                         </div>
+
                     ))}
                     <div className=" top-[1900px] right-[1px] bottom-0 absolute z-10 opacity-[0.3]  mobile-blur-shadow md:hidden" />
                     <div className=" absolute  -right-[200px] hidden md:block mt-[1000px] -translate-y-1/2  opacity-[.4] -translate-x-1/2 z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[900px]"></div>
 
                     {/* apply form */}
-                    <div id="Apply" className="sectionEl flex flex-col gap-[20px]">
+                    <div id="Apply" className="wrapper flex flex-col gap-[20px]">
                         <h1 className=" font-Roboto text-[20px] md:text-[26px] font-semibold">Apply</h1>
                         <form className="w-full max-w-[1020px]  font-Roboto  mt-[30px] text-white rounded-lg" >
                             <div className="grid md:grid-cols-2  md:grid-rows-5 md:grid-flow-col gap-[20px]">
