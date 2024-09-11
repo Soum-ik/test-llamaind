@@ -92,11 +92,11 @@ function Header() {
 
         <>
             {/* bigger screen start */}
-            <div ref={header} className="min-h-[100vh] hidden 3xl:pt-[60px] 13inch:block pb-[340px]">
+            <div ref={header} className="min-h-[100vh] hidden 3xl:pt-[60px] 13inch:block pb-[200px] laptop:pb-[340px]">
                 <Layout>
 
                     <div id="slider1" className="pt-[110px] 3xl:pt-[50px] 4xl:pt-[60px]  5k:pt-[140px]">
-                        <h1 id="slider1-text" className="slider1-text leading-[100px] laptop:leading-[120px] font-bold text-white header z-20 text-[80px] laptop:text-[100px] font-Orbitron text-center"   >
+                        <h1 id="slider1-text" className="slider1-text leading-[100px] laptop:leading-[120px] font-bold text-white header z-20 text-[75px] laptop:text-[100px] font-Orbitron text-center"   >
                             Pioneering the Future with
                             <br /> Digital Excellence
                         </h1>
@@ -104,10 +104,10 @@ function Header() {
                         <div>
                             <motion.div transition={{ ease: 'linear', duration: 5, delay: 1 }} id="slider1-video" className="slider1-video relative  -mt-[70px] laptop:mt-0 5k:mt-[20px]  flex items-center justify-center">
                                 <div className="flex items-center justify-center !mx-auto size-[770px]">
-                                    <video className=" z-10 -mt-[30vh] laptop:-mt-[18vh] 6k:-mt-[108px]   mix-blend-plus-lighter !mx-auto max-w-[1450px] laptop:max-w-[19200px]" playsInline src={waveVideo} loop autoPlay muted />
+                                    <video className=" z-10 -mt-[270px] laptop:-mt-[250px] 6k:-mt-[108px]   mix-blend-plus-lighter !mx-auto max-w-[1450px] laptop:max-w-[1600px] 17inch:max-w-[19200px]" playsInline src={waveVideo} loop autoPlay muted />
                                 </div>
                                 <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
-                                <img className=" z-20 absolute inset-0 mx-auto laptop:-top-[90px] size-[530px] laptop:size-[770px]" src={headerImage} alt="" />
+                                <img className=" z-20 absolute inset-0 mx-auto laptop:-top-[90px] size-[530px] laptop:size-[640px] 17inch:size-[770px]" src={headerImage} alt="" />
                             </motion.div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ function Header() {
                     </a>
 
                     <div id="slider2" className=" text-right !flex relative  z-40  mb-20 !justify-end ">
-                        <div id="slider2-text" className="slider2-text  hidden -right-[1500px] 17inch:-right-[1600px] text-left z-40 -top-[220px]  text-ellipsis absolute font-light  text-[33px] leading-[50px] laptop:text-[37px] laptop:leading-[64px] font-Roboto text-white max-w-[900px] laptop:max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
+                        <div id="slider2-text" className="slider2-text  hidden -right-[1520px] 17inch:-right-[1500px] text-left z-40 -top-[220px]  text-ellipsis absolute font-light  text-[33px] leading-[50px] laptop:text-[37px] laptop:leading-[64px] font-Roboto text-white max-w-[900px] laptop:max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
                     </div>
                     <div id="holder" className="hidden 13inch:block min-h-[10vh] mt-[130px]">
                     </div>

@@ -12,7 +12,7 @@ import { useInView, InView } from "react-intersection-observer";
 
 
 function JobDeatlis({ jobName }) {
-    const [currentSelected, setCurrentSelected] = useState(0); // Tracks current selected section
+    const [currentSelected, setCurrentSelected] = useState(1); // Tracks current selected section
     const [isManualChange, setIsManualChange] = useState(false); // Flag for manual click selection
     const menuBarRef = useRef(null); // Reference to the menu bar
 

@@ -167,7 +167,7 @@ function Details() {
                         <div className=" 2xl:min-h-[50vh] flex items-center justify-start">
                             <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
                                 {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item.title}</h1>
+                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[55px] laptop:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item.title}</h1>
                                 <p className=" mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
                                 {item.button && <a href="/"><Button text="View Open positions" /></a>}
                                 {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
@@ -178,7 +178,7 @@ function Details() {
                         <div className="  2xl:min-h-[50vh] flex items-center justify-center">
                             <div id="slider2-text" className=" space-y-[20px]  z-30 text-white text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
                                 {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item1.title}</h1>
+                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[55px] laptop:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item1.title}</h1>
                                 <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
                                 {item1.button && <a href="/"><Button text="View Projects" /></a>}
                             </div>
@@ -187,7 +187,7 @@ function Details() {
                         <div className="  2xl:min-h-[50vh] flex items-center justify-start">
                             <div id="slider3-text" className=" space-y-[20px] z-30 text-white text-5xl max-w-[730px] 2xl:max-w-[1000px] " >
                                 {item2.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
-                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold ">{item2.title}</h1>
+                                <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[55px] laptop:text-[68px] 2xl:leading-[85.27px] font-extrabold ">{item2.title}</h1>
                                 <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item2.description}</p>
                                 {item2.button && <a href="/"><Button text="View Projects" /></a>}
                             </div>
