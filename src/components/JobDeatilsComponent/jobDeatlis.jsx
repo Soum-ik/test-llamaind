@@ -12,15 +12,21 @@ import { useInView, InView } from "react-intersection-observer";
 
 
 function JobDeatlis({ jobName }) {
-    const [currentSelected, setCurrentSelected] = useState(1);
-    const menuBarRef = useRef(null);
+    const [currentSelected, setCurrentSelected] = useState(0); // Tracks current selected section
+    const [isManualChange, setIsManualChange] = useState(false); // Flag for manual click selection
+    const menuBarRef = useRef(null); // Reference to the menu bar
 
     useEffect(() => {
+        if (isManualChange) {
+            return;
+        }
+        console.log('checkingg');
+
         const sectionRefs = document.querySelectorAll('.wrapper');
         window.addEventListener('scroll', () => {
             const menuBarTop = menuBarRef.current?.offsetTop || 0;
             sectionRefs.forEach((sectionEl, idx) => {
-                if (menuBarTop >= sectionEl.offsetTop) {
+                if (menuBarTop + 100 >= sectionEl.offsetTop) {
                     setCurrentSelected(idx + 1);
                 }
             });
@@ -30,7 +36,7 @@ function JobDeatlis({ jobName }) {
 
     const handleMenuItemClick = (e, item) => {
         e.preventDefault();
-        setCurrentSelected(item.id);
+        setCurrentSelected(item.id + 1);
 
         const targetElement = document.querySelector(item.href);
         const offset = menuBarRef.current?.offsetHeight || 0;
@@ -40,7 +46,10 @@ function JobDeatlis({ jobName }) {
 
 
         window.scrollTo({ top: y, behavior: 'smooth' });
+        // Reset the flag after a short delay to re-enable scroll detection
+        setTimeout(() => setIsManualChange(false), 3000);
     };
+
 
 
     return <Layout Layout >

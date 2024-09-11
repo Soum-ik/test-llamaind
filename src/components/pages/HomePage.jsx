@@ -1,13 +1,13 @@
 
 import { useEffect } from "react";
 import Foooter from "../Foooter";
-import FutureTech from "../FutureTech";
-import Header from "../Header";
+import FutureTech from "../HomePageComponent/FutureTech";
+import Header from "../HomePageComponent/Header";
 import Navbar from "../Navbar";
 import OpenPosition from "../OpenPosition";
 import IndexProject from "../projects/IndexProject";
 import { useSmotherContext } from "../../Hooks/ScrollingContext";
-import App from "../HomePageComponent/test";
+
 
 
 export default function HomePage() {

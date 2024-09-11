@@ -1,5 +1,5 @@
 
-import Layout from "./layout/Layout";
+import Layout from "../layout/Layout";
 import waveVideo from '../../public/video/hero.mp4'
 import headerImage from '../../public/images/header.png'
 

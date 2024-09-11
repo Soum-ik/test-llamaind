@@ -1,4 +1,4 @@
-import Box from "./ui/Box";
+import Box from "../ui/Box";
 
 type FutureTechLoopingProps = {
     array: string[];

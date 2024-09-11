@@ -1,7 +1,7 @@
 import { MoveRight } from 'lucide-react';
-import Layout from "./layout/Layout";
 import arrow from '../../public/images/textSpin.png'
 import { MoveDownRight } from 'lucide-react';
+import Layout from '../layout/Layout';
 
 
 function Instructor() {

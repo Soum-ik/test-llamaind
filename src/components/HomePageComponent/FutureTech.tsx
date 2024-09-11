@@ -1,16 +1,16 @@
-import FutureIcon from '../../public/images/futureIcon.png';
-import FutureTechLooping from "./FutureTechLooping";
-import Layout from "./layout/Layout";
-import features from '../../public/video/s.mp4';
+import FutureIcon from '../../../public/images/futureIcon.png';
+import Layout from "../layout/Layout";
+import features from '../../../public/video/s.mp4';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from 'react';
 import { motion } from 'framer-motion'
-import project1 from '../../public/images/Group.png';
-import { leftSideTechs, rightSideTechs, projects } from '../components/libs/staticData'
-import Button from './ui/Button';
+import project1 from '../../../public/images/Group.png';
+import { leftSideTechs, rightSideTechs, projects } from '../../components/libs/staticData'
+import Button from '../ui/Button';
 import { useGSAP } from '@gsap/react';
 import { MoveRight } from 'lucide-react';
+import FutureTechLooping from './FutureTechLooping';
 
 
 
@@ -223,7 +223,7 @@ function FutureTech() {
                             Scroll down <MoveRight />
                         </div>
                     </Layout>
-                    <div className=" top-1/2 left-1/2 transform  mr-[200px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
+                    <div className=" top-1/2 left-1/2 transform  mr-[250px] 4xl:mr-[370px] 5k:mr-[600px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
 
                 </div>
             </div>
