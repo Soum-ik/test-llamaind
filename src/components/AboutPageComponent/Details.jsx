@@ -201,7 +201,7 @@ function Details() {
                             {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
                             <div className="z-[35] 2xl:w-[1180px] 2xl:h-[600px] laptop:w-[1240px] laptop:h-[640px] w-[1000px] h-[500px] flex items-center justify-center !mx-auto">
                                 {/* <video className="!max-w-[850px]" src={waveVideo} loop autoPlay muted /> */}
-                                <video id="videoMoving" className="z-[35] w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
+                                <video id="videoMoving" playsInline className="z-[35] w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
                             </div>
                             <div className="absolute right-0 pb-10 z-[36] about-blur-shadow size-[1000px]" />
                             <img className="z-[40] absolute -right-0 mx-auto size-[700px] 2xl:size-[780px] laptop:size-[840px]" src={headerImage} alt="" />
@@ -221,6 +221,7 @@ function Details() {
                     loop
                     autoPlay
                     muted
+                    playsInline
                 />
                 <div className="top-[100px] xs:-top-[200px] sm:top-[10px] absolute z-10 mobile-blur-shadow-gradient md:size-[600px] xs:size-[500px] size-[340px] rounded-full xl:hidden mix-blend-plus-lighter" />
                 <img className="absolute xs:w-[620px] w-[600px] z-30" src={headerImage} alt="" />

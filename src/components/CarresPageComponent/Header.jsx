@@ -152,7 +152,7 @@ function Header() {
                         <BigBecomingOne staticData={staticData[2]} />
                     </div>
                     <div ref={videoRef} className="absolute   top-0 2xl:top-[10px] 3xl:-top-[190px] 4xl:-top-[100px] 6k:pt-[15px] 8k:-top-[185px] 10k:pt-[100px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
-                        <video className="mix-blend-plus-lighter w-[800px] 2xl:w-[1000px] " src={animation} loop muted autoPlay />
+                        <video playsInline className="mix-blend-plus-lighter w-[800px] 2xl:w-[1000px] " src={animation} loop muted autoPlay />
                         <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 -z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
                     </div>
                 </div>
@@ -166,6 +166,7 @@ function Header() {
                     loop
                     autoPlay
                     muted
+                    playsInline
                 />
                 <div className="top-[100px] xs:-top-[1px] absolute z-[2000] mobile-blur-shadow-gradient  xs:size-[450px] size-[350px] rounded-full xl:hidden mix-blend-plus-lighter" />
                 {/* <div className=" absolute z-[1000000] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
