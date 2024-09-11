@@ -49,7 +49,7 @@ function IndexProject() {
 
                     <div className="z-40 flex items-center justify-center py-[40px]">
                       <img className="w-[335.852px] z-30 xxs:w-[330px] sm:w-[415px] md:w-[460px] lg:w-[598px]  lg:h-[334px]  md:h-[260px] sm:h-[238px] xs:h-[190px] xxs:h-[190px] h-[190.981px]" src={project1} alt="" />
-                      <video className=" absolute z-40 transition-transform -translate-x-1/2 left-1/2  lg:pb-[2px] lg:rounded-[10px]  rounded-[2.302px] w-[271px] lg:h-[305px] lg:w-[487px] ml-[2px] px-1.5 sm:w-[405px]  md:h-[236px] md:rounded-[31px] sm:h-[213px] h-[176px] -mt-[10px] " src={project.video} autoPlay loop muted />
+                      <video playsInline className=" absolute z-40 transition-transform -translate-x-1/2 left-1/2  lg:pb-[2px] lg:rounded-[10px]  rounded-[2.302px] w-[271px] lg:h-[305px] lg:w-[487px] ml-[2px] px-1.5 sm:w-[405px]  md:h-[236px] md:rounded-[31px] sm:h-[213px] h-[176px] -mt-[10px] " src={project.video} autoPlay loop muted />
                       <div className=" absolute z-0 rounded-full opacity-80 lg:opacity-60 blue__gradient size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  "></div>
                     </div>
 

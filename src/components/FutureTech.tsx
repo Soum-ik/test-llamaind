@@ -125,7 +125,7 @@ function FutureTech() {
                                     <FutureTechLooping style=' space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]' array={leftSideTechs} />
                                     <div className="top-1/2 -translate-y-1/2 absolute z-[10] transition-transform">
                                         {/* <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden "> */}
-                                        <video src={features} loop autoPlay muted className="h-[600px] xxs:h-[700px] sm:h-[750px] md:h-[800px] w-auto object-cover mix-blend-plus-lighter z-30" />
+                                        <video src={features} playsInline loop autoPlay muted className="h-[600px] xxs:h-[700px] sm:h-[750px] md:h-[800px] w-auto object-cover mix-blend-plus-lighter z-30" />
                                         <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  size-[130px] sm:size-[160px] left-1/2 -translate-x-1/2' alt="" />
                                         {/* <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  h-[130px] xxs:h-[180vh] sm:h-[84vh] left-1/2 -translate-x-1/2' alt="" /> */}
                                         <div className=" top-1/2 -translate-y-1/2 absolute z-0 transition-transform  lg:-mt-[100px]   left-1/2 -translate-x-1/2 opacity-80 lg:opacity-40 rounded-full blue__gradient size-[380px] xs:size-[400px] md:size-[600px] lg:size-[900px] xl:size-[1000px]"></div>
@@ -155,7 +155,7 @@ function FutureTech() {
                         <div className="px-24 flex items-center justify-between">
                             <FutureTechLooping array={leftSideTechs} />
                             <div className="!w-[1792px] iamge1-fixer flex items-center justify-center !mx-auto">
-                                <video src={features} loop autoPlay muted className="iamge1-fixer mix-blend-plus-lighter z-30 absolute absolute-center" />
+                                <video playsInline src={features} loop autoPlay muted className="iamge1-fixer mix-blend-plus-lighter z-30 absolute absolute-center" />
                                 <img src={FutureIcon} className="z-40 absolute absolute-center" alt="" />
                             </div>
                             <div className="blur-shadow z-40 absolute left-1/2 transform -translate-x-1/2" />
@@ -199,6 +199,7 @@ function FutureTech() {
                                             autoPlay
                                             loop
                                             muted
+                                            playsInline
                                         />
                                     </div>
                                 </section>

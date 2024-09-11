@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 
-function Header() {
+function  Header() {
     const header = useRef(null);
 
     const { width } = UseWindowSize();
@@ -104,7 +104,7 @@ function Header() {
                             <div>
                                 <motion.div transition={{ ease: 'linear', duration: 5, delay: 1 }} id="slider1-video" className="slider1-video relative  -mt-[70px] laptop:mt-0  flex items-center justify-center">
                                     <div className="flex items-center justify-center !mx-auto size-[770px]">
-                                        <video className=" z-10 -mt-[30vh] laptop:-mt-[18vh] 6k:-mt-[10vh]  mix-blend-plus-lighter !mx-auto max-w-[1450px] laptop:max-w-[19200px]" src={waveVideo} loop autoPlay muted />
+                                        <video className=" z-10 -mt-[30vh] laptop:-mt-[18vh] 6k:-mt-[10vh]  mix-blend-plus-lighter !mx-auto max-w-[1450px] laptop:max-w-[19200px]" playsInline src={waveVideo} loop autoPlay muted />
                                     </div>
                                     <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
                                     <img className=" z-20 absolute inset-0 mx-auto laptop:-top-[90px] size-[530px] laptop:size-[770px]" src={headerImage} alt="" />
@@ -155,6 +155,7 @@ function Header() {
                             loop
                             autoPlay
                             muted
+                            playsInline
                         />
                         <div className="top-[100px] xs:top-[70px] lg:top-[200px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] lg:size-[600px] size-[390px] rounded-full 13inch:hidden " />
                         <img className="absolute min-w-[500px] xs:w-[200px] sm:w-[600px] h-[450px] z-20  xs:h-[500px] sm:h-[560px] md:h-[600px]   xl:h-[620px] lg:max-w-[1400px] md:max-w-[900px] md:bottom-[75px] lg:bottom-[140px] xl:bottom-[120px]  bottom-28" src={headerImage} alt="" />
@@ -178,7 +179,7 @@ function Header() {
                     {/* llmamind about section start */}
                     <div className="  py-[100px] lg:py-[200px] -z-0 text-center  !flex relative  items-center md:z-40  !justify-end ">
                         <div className="mix-blend-plus-lighter overflow-hidden  absolute -left-[600px] xs:-left-[900px] sm:-left-[1050px] lg:-left-[1040px] h-[100vh]">
-                            <video className=" z-[10] mix-blend-plus-lighter w-auto h-full " src={waveVideo} loop autoPlay muted />
+                            <video className=" z-[10] mix-blend-plus-lighter w-auto h-full " src={waveVideo} loop autoPlay muted playsInline/>
                         </div>
                         <div className="-top-[10px] md:-top-[170px] -left-[260px] sm:-left-[300px] absolute z-10 blue__gradient size-[450px] sm:size-[500px] md:size-[700px] xl:size-[1000px] rounded-full opacity-[0.4] md:opacity-[.3] xl:opacity-[.3]" />
                         <div className=" max-w-[400px] sm:max-w-[800px] z-40 text-white text-[22px] text-center mx-auto xs:text-[26px] sm:text-[30px] md:text-[33px]  leading-[36px] xs:leading-[40px] sm:leading-[48px] font-Roboto font-light" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>

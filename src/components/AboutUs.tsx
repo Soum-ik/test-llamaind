@@ -10,7 +10,7 @@ const AboutUs = () => {
             <div className=" absolute -left-[520px]">
                 <div className=" relative flex items-center justify-center">
                     <div className="  !overflow-hidden flex items-center justify-center !mx-auto ">
-                        <video className=" iamge-fixer  !mx-auto  !max-w-[1750px]" src={waveVideo} loop autoPlay muted />
+                        <video className=" iamge-fixer  !mx-auto  !max-w-[1750px]" src={waveVideo} loop autoPlay muted playsInline />
                     </div>
                     <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
                     <img className=" z-40 absolute inset-0 mx-auto -top-16 size-[660px]" src={headerImage} alt="" />

@@ -51,7 +51,7 @@ const Footer = () => {
             </Layout>
             {/* <video className=" bg-transparent z-10  mx-auto !w-full  absolute left-1/2  -bottom-0 transform -translate-x-1/2" src={FooterVideo} autoPlay muted loop /> */}
             <div className="max-h-[500px] 3xl:max-h-[600px] 5k:max-h-[750px] 6k:min-h-[1200px]   overflow-hidden">
-                <video className=" mix-blend-plus-lighter h-full  -z-20 opacity-30 !w-full" src={FooterVideo} autoPlay muted loop />
+                <video playsInline className=" mix-blend-plus-lighter h-full  -z-20 opacity-30 !w-full" src={FooterVideo} autoPlay muted loop />
             </div>
         </div>
     );
