@@ -20,7 +20,7 @@ function Positions() {
                 </> : <>
 
 
-                    <div className=" z-40 flex-col  h-[280px] md:h-[506px]   flex sm:h-[100vh] xs:h-[90vh]    w-full items-center justify-center overflow-hidden ">
+                    <div className=" laptop:mb-[150px] z-40 flex-col  h-[280px] md:h-[506px]   flex sm:h-[100vh] xs:h-[90vh]    w-full items-center justify-center overflow-hidden ">
                         <video
                             src={animation}
                             className="h-full w-auto object-cover mix-blend-overlay"

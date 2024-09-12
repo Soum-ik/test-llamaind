@@ -22,11 +22,33 @@ function Details() {
     const textRef = useRef();
     const { height, width } = UseWindowSize();
 
+    useEffect(() => {
+        // Debounce function to avoid multiple reloads
+        let resizeTimeout;
+
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                window.location.reload();
+            }, 500); // 500ms debounce
+        };
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const [scrollTriggerConfig, setScrollTriggerConfig] = useState({
         start: 0,
         end: 0
     });
+
+
+
 
     useEffect(() => {
         if (textRef.current) {
@@ -50,10 +72,14 @@ function Details() {
                 return "+=185%";
             } else if (width > 2100) {
                 return "+=196%";
+            } else if (width > 2000) {
+                return "+=190%";
             } else if (width > 1900) {
                 return "+=205%";
+            } else if (width > 1800) {
+                return "+=197%";
             } else if (width > 1600) {
-                return "+=20%";
+                return "+=200%";
             } else if (width > 1500) {
                 return "+=200%";
             } else if (width > 1400) {

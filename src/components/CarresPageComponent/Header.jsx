@@ -18,6 +18,26 @@ function Header() {
     const { width } = UseWindowSize();
     let projectsWidth = contentRef.current?.offsetHeight;
 
+    useEffect(() => {
+        // Debounce function to avoid multiple reloads
+        let resizeTimeout;
+
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                window.location.reload();
+            }, 500); // 500ms debounce
+        };
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const [scrollTriggerConfig, setScrollTriggerConfig] = useState({
         start: 0,
         end: 0
