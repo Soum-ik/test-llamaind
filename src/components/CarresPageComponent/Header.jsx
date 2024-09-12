@@ -16,7 +16,7 @@ function Header() {
     const videoRef = useRef();
     const contentRef = useRef();
     const { width } = UseWindowSize();
-    let projectsWidth = contentRef.current?.offsetHeigth;
+    let projectsWidth = contentRef.current?.offsetHeight;
 
     const [scrollTriggerConfig, setScrollTriggerConfig] = useState({
         start: 0,
@@ -48,19 +48,23 @@ function Header() {
             } else if (width > 2700) {
                 return "+=190%";
             } else if (width > 2500) {
-                return "+=163%";
+                return "+=190%";
             } else if (width >= 2400) {
-                return "+=250%";
+                return "+=200%";
             } else if (width > 2100) {
                 return "+=220%";
             } else if (width > 1900) {
                 return "+=212%";
             } else if (width > 1600) {
                 return "+=220%";
+            } else if (width > 1450) {
+                return "+=230%";
             } else if (width > 1400) {
                 return "+=250%";
+            } else if (width > 1200) {
+                return "+=220%";
             } else {
-                return "+=260%";
+                return "+=200%";
             }
         };
         endValue = calculateEndValue(width);
@@ -75,7 +79,7 @@ function Header() {
             }
         };
         startValue = calcultaion(width);
-        
+
 
         gsap.to(videoRef.current, {
             scrollTrigger: {
@@ -151,8 +155,8 @@ function Header() {
                         <BigCoreValus staticData={staticData[1]} />
                         <BigBecomingOne staticData={staticData[2]} />
                     </div>
-                    <div ref={videoRef} className="absolute   top-0 2xl:top-[10px] 3xl:-top-[190px] 4xl:-top-[100px] 6k:pt-[15px] 8k:-top-[185px] 10k:pt-[100px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
-                        <video playsInline className="mix-blend-plus-lighter w-[800px] 2xl:w-[1000px] " src={animation} loop muted autoPlay />
+                    <div ref={videoRef} className="absolute top-0 2xl:top-[10px] 3xl:-top-[190px] 4xl:-top-[100px] 6k:pt-[15px] 8k:-top-[185px] 10k:pt-[100px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
+                        <video playsInline className="mix-blend-plus-lighter w-[800px] 2xl:w-[850px] laptop:w-[900px]  17inch:w-[1000px] " src={animation} loop muted autoPlay />
                         <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 -z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
                     </div>
                 </div>
@@ -235,7 +239,7 @@ const BigInnovative = ({ staticData }) => {
     return (
         <div className="   2xl:min-h-[50vh] flex items-center justify-center">
             <div className="text-white  text-5xl max-w-[700px] 2xl:max-w-[1000px] ">
-                <h1 className=" font-Orbitron text-[50px] leading-[75px] 2xl:text-[68px] 2xl:leading-[85.27px] font-extrabold ">Be Part of <br />
+                <h1 className=" font-Orbitron text-[50px] leading-[75px] laptop:text-[68px] laptop:leading-[85.27px] font-extrabold ">Be Part of <br />
                     Our Innovative Journey</h1>
                 <p className="  mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{staticData.description}</p>
                 <a href="#position"> <Button text="View Open positions" /></a>
@@ -251,7 +255,7 @@ const BigCoreValus = ({ staticData }) => {
     return (
         <div className="   2xl:min-h-[50vh] flex items-center justify-center">
             <div className=" text-white text-5xl max-w-[700px] 2xl:max-w-[1000px] ">
-                <h1 className=" max-w-[800px] font-Orbitron text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
+                <h1 className=" max-w-[800px] font-Orbitron laptop:text-[68px] laptop:leading-[85.27px] font-extrabold">{staticData.title}</h1>
                 <div className=" pt-[60px] grid grid-cols-2 gap-[30px] 2xl:gap-[60px]">
                     {
                         staticData.core_values.map((item, idx) => (
@@ -271,7 +275,7 @@ const BigBecomingOne = ({ staticData }) => {
     return (
         <div className="  2xl:min-h-[50vh] flex items-center justify-center">
             <div className=" text-white text-5xl max-w-[700px] 2xl:max-w-[1000px]">
-                <h1 className=" max-w-[800px] font-Orbitron text-[68px] leading-[85.27px] font-extrabold">{staticData.title}</h1>
+                <h1 className="text-[50px] leading-[75px]  max-w-[800px] font-Orbitron laptop:text-[68px] laptop:leading-[85.27px] font-extrabold">{staticData.title}</h1>
                 <div className=" pt-[60px] grid grid-cols-2 gap-[30px] 2xl:gap-[60px]">
                     {
                         staticData.one_of_us.map((item, idx) => (
