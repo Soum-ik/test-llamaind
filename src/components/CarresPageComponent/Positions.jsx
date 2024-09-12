@@ -8,7 +8,7 @@ import { openPositios } from '../libs/staticData';
 // import { Turtle } from 'lucide-react';
 
 function Positions() {
-    const [availableVacancies, setAvailableVacancies] = useState(true);
+    const [availableVacancies, setAvailableVacancies] = useState(false);
 
     return <Layout>
         <div id='position' className='relative mt-[40px]  md:mt-[150px] xl:mt-[270px] -z-0 pb-[160px] md:pb-[300px] xl:pb-[160px]'>

@@ -60,7 +60,7 @@ function Details() {
                 return "+=230%";
             } else if (width > 1300) {
                 return "+=200%";
-            }else if (width > 1250) {
+            } else if (width > 1250) {
                 return "+=250%";
             } else {
                 return "+=220%";
@@ -168,8 +168,8 @@ function Details() {
                             <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
                                 {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                                 <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[55px] laptop:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item.title}</h1>
-                                <p className=" mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
-                                {item.button && <a href="/"><Button text="View Open positions" /></a>}
+                                <p className=" mt-[10px] mb-[20px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
+                                {item.button && <a href="/"><Button style="py-[22px]" text="View Project" /></a>}
                                 {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
                                     Scroll down <MoveRight />
                                 </div>}
@@ -180,7 +180,7 @@ function Details() {
                                 {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                                 <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[55px] laptop:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item1.title}</h1>
                                 <p className=" text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto">{item1.description}</p>
-                                {item1.button && <a href="/"><Button text="View Projects" /></a>}
+                                {item1.button && <a href="/"><Button text="View Project" /></a>}
                             </div>
 
                         </div>

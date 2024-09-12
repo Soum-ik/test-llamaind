@@ -210,7 +210,7 @@ function FutureTech() {
                                             <p className="text-[26px] font-Roboto font-light w-[700px] pb-[20px]">{project.des}</p>
                                             {/* <button className=" mt-3 w-full md:max-w-max">View Project</button> */}
                                             {/* <a href="/career" className=" mt-[20px]"><button className="z-40 transform rounded-lg px-[32px] py-[16px]   text-[22px]  transition-colors font-Roboto duration-500  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] ">View Project</button></a> */}
-                                            <a href="/career" className=""><Button text="View Projects" /></a>
+                                            <a href="/" className=""><Button text="View Project" /></a>
 
                                         </div>
                                     </div>

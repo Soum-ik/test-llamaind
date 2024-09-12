@@ -58,7 +58,7 @@ function JobDeatlis({ jobName }) {
                 <h1 className=" z-[200] font-Orbitron 13inch:text-[68px] text-[34px] md:text-[45px] font-extrabold leading-[40px] 13inch:leading-normal">{jobName}</h1>
                 <p className="  z-[200] font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
                 {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
-                <button className=" mt-[28px] lg:mt-[32px]  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] px-[32px] py-[18px] rounded-lg z-[200] text-[20px] w-full md:w-auto font-Roboto">Apply Now</button>
+                <a href="#Apply"  className=" mt-[28px] lg:mt-[32px]  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] px-[32px] py-[18px] rounded-lg z-[200] text-[20px] w-full md:w-auto font-Roboto">Apply Now</a>
                 {/* <button className=" bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] h-[60px] px-[32px]  py-[18px]  rounded-lg w-full md:max-w-max font-Roboto mt-[32px] md:mt-[40px] font-bold">Apply</button> */}
                 <div className="right-[1px] absolute z-10 mobile-blur-shadow md:hidden" />
                 <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-10  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
@@ -149,7 +149,7 @@ function JobDeatlis({ jobName }) {
 
 
                                 <div className="  row-span-2 space-y-[10px]">
-                                    <label className="block mb-1">Resume</label>
+                                    <label className="block mb-1  font-normal text-[20px]">Resume</label>
                                     <div className="w-full md:h-[75%] h-[140px] border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
                                         <input type="file" className="hidden" id="resume" />
                                         <label htmlFor="resume" className="text-blue-500 cursor-pointer flex flex-col items-center">

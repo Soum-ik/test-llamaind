@@ -112,8 +112,12 @@ function Header() {
                         </div>
                     </div>
 
+                    {/* <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
+                        Scroll down <MoveRight />
+                    </div> */}
+
                     <a href="#project" id="instructor" className='text-white instructor-fixer   flex justify-between'>
-                        <div className='-ml-[130px] z-10 font-Roboto rotate-90 flex gap-5 justify-end'>
+                        <div className='-ml-[130px] z-10 font-Roboto rotate-90 flex gap-5 justify-end text-[18px] bg '>
                             Scroll down <MoveRight />
                         </div>
                         <div id="projectMoveing" className=' relative size-[170px]  z-10 group rounded-[154.55px] flex items-center justify-center projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
@@ -165,14 +169,14 @@ function Header() {
                         <div className='  z-10 font-Roboto rotate-90  hidden xl:flex  gap-5'>
                             Scroll down <MoveRight />
                         </div>
-                        <div className=' flex  size-[150px] md:size-[170px] sm:size-[170px] -mt-[160px] xs:-mt-[200px] sm:-mt-[290px] md:-mt-[360px] lg:-mt-[400px]  items-center justify-center mx-auto z-[50] group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
+                        <a href="#project" className=' flex  size-[150px] md:size-[170px] sm:size-[170px] -mt-[160px] xs:-mt-[200px] sm:-mt-[290px] md:-mt-[360px] lg:-mt-[400px]  items-center justify-center mx-auto z-[50] group m-2 p-4 rounded-full relative transition-colors  duration-500 projectMovieCircel-gradient  hover:projectMovieCircel-gradient-hover backdrop-blur-xl shadow-[#5c5ca0] shadow-md'>
                             <img className=' group-hover:animate-none animate-spin-slow transition-colors duration-500' src={arrow} alt="" />
                             <div className=" absolute top-1/2 left-1/2 transition-transform -translate-x-1/2 -translate-y-1/2 group-hover:rotate-45">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.86039 23.9V21.52H19.8425L0.100389 1.77788L1.77829 0.0999756L21.5204 19.8421V4.85998H23.9004V23.9H4.86039Z" fill="white" />
                                 </svg>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
 

@@ -244,8 +244,8 @@ const BigInnovative = ({ staticData }) => {
             <div className="text-white  text-5xl max-w-[700px] 2xl:max-w-[1000px] ">
                 <h1 className=" font-Orbitron text-[50px] leading-[75px] laptop:text-[68px] laptop:leading-[85.27px] font-extrabold ">Be Part of <br />
                     Our Innovative Journey</h1>
-                <p className="  mt-[10px] mb-[40px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{staticData.description}</p>
-                <a href="#position"> <Button text="View Open positions" /></a>
+                <p className="  mt-[10px] mb-[20px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{staticData.description}</p>
+                <a href="#position"> <Button style="py-[23px]" text="View Open positions" /></a>
                 {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
                     Scroll down <MoveRight />
                 </div>}
