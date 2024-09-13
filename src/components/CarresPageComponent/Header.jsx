@@ -25,7 +25,9 @@ function Header() {
         const handleResize = () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                window.location.reload();
+                if (window.innerWidth > 1280) {
+                    window.location.reload();
+                }
             }, 500); // 500ms debounce
         };
 
@@ -76,16 +78,18 @@ function Header() {
             } else if (width > 1900) {
                 return "+=212%";
             } else if (width > 1600) {
-                return "+=220%";
+                return "+=200%";
             }
             else if (width > 1500) {
                 return "+=270%";
             } else if (width > 1450) {
-                return "+=230%";
+                return "+=200%";
             } else if (width > 1400) {
                 return "+=250%";
+            } else if (width > 1300) {
+                return "+=190%";
             } else if (width > 1200) {
-                return "+=220%";
+                return "+=200%";
             } else {
                 return "+=200%";
             }
@@ -178,7 +182,7 @@ function Header() {
                         <BigCoreValus staticData={staticData[1]} />
                         <BigBecomingOne staticData={staticData[2]} />
                     </div>
-                    <div ref={videoRef} className="absolute top-0 2xl:top-[10px] 3xl:-top-[190px] 4xl:-top-[100px] 6k:pt-[15px] 8k:-top-[185px] 10k:pt-[100px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-10">
+                    <div ref={videoRef} className="absolute top-0 2xl:top-[10px] 3xl:-top-[190px] 4xl:-top-[100px] 6k:pt-[15px] 8k:-top-[185px] 10k:pt-[100px] right-[0px] 2xl:right-[5px] 3xl:right-[140px] 4k:right-[300px] 5k:right-[400px] 6k:right-[900px] 8k:right-[1900px] 10k:right-[2800px] z-[10]">
                         <video playsInline className="3xl:-mt-[100px] mix-blend-plus-lighter w-[800px] 2xl:w-[850px] laptop:w-[900px]  17inch:w-[1000px] " src={animation} loop muted autoPlay />
                         <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 -z-20  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
                     </div>

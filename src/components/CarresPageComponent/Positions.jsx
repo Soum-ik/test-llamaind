@@ -8,10 +8,10 @@ import { openPositios } from '../libs/staticData';
 // import { Turtle } from 'lucide-react';
 
 function Positions() {
-    const [availableVacancies, setAvailableVacancies] = useState(false);
+    const [availableVacancies, setAvailableVacancies] = useState(true);
 
     return <Layout>
-        <div id='position' className='relative mt-[40px]  md:mt-[150px] xl:mt-[270px] -z-0 pb-[160px] md:pb-[300px] xl:pb-[160px]'>
+        <div id='position' className='relative mt-[19px]  md:mt-[80px] lg:mt-[100px] xl:mt-[270px] -z-0 pb-[160px] md:pb-[300px] xl:pb-[160px]'>
 
             {availableVacancies ?
                 <>
@@ -20,10 +20,10 @@ function Positions() {
                 </> : <>
 
 
-                    <div className=" laptop:mb-[150px] z-40 flex-col  h-[280px] md:h-[506px]   flex sm:h-[100vh] xs:h-[90vh]    w-full items-center justify-center overflow-hidden ">
+                    <div className=" mb-[130px] laptop:mb-[150px] z-[1] flex-col  h-[280px] md:h-[506px]   flex lg:h-[600px] xs:h-[300px]    w-full items-center justify-center overflow-hidden ">
                         <video
                             src={animation}
-                            className="h-full w-auto object-cover mix-blend-overlay"
+                            className="h-full w-auto object-cover mix-blend-lighten z-[1]"
                             loop
                             autoPlay
                             muted

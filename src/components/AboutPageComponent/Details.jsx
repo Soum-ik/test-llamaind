@@ -29,7 +29,9 @@ function Details() {
         const handleResize = () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                window.location.reload();
+                if (window.innerWidth > 1280) {
+                    window.location.reload();
+                }
             }, 500); // 500ms debounce
         };
 
@@ -77,11 +79,11 @@ function Details() {
             } else if (width > 1900) {
                 return "+=205%";
             } else if (width > 1800) {
-                return "+=197%";
+                return "+=200%";
             } else if (width > 1600) {
                 return "+=200%";
             } else if (width > 1500) {
-                return "+=200%";
+                return "+=220%";
             } else if (width > 1400) {
                 return "+=230%";
             } else if (width > 1300) {
@@ -223,10 +225,8 @@ function Details() {
                         Scroll down <MoveRight />
                     </div> */}
                     <div ref={videoRef} id="slider2-video" className=" min-w-[500px] 4xl:pt-[53px] 4k:pt-[70px] 6k:pt-[200px] 7k:pt-[240px] 8k:pt-[500px] 9k:pt-[420px] 10k:pt-[670px] max-w-[1920px] absolute z-20 right-0">
-                        <div className=" relative flex items-center z-40 justify-center  ">
-                            {/* <div className="!overflow-hidden flex items-center justify-center !mx-auto"> */}
-                            <div className="z-[35] 2xl:w-[1000px] 2xl:h-[550px] laptop:w-[1240px] laptop:h-[640px] w-[990px] h-[500px] flex items-center justify-center !mx-auto">
-                                {/* <video className="!max-w-[850px]" src={waveVideo} loop autoPlay muted /> */}
+                        <div className=" relative flex items-center z-40 justify-center">
+                            <div className="z-[35] 2xl:w-[1020px] 2xl:h-[550px] laptop:w-[1240px] laptop:h-[640px] w-[990px] h-[500px] flex items-center justify-center !mx-auto">
                                 <video id="videoMoving" playsInline className="z-[35] w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
                             </div>
                             <div className="absolute right-0 pb-10 z-[36] about-blur-shadow size-[1000px]" />
