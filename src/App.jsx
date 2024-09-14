@@ -27,7 +27,7 @@ export default function App() {
   useEffect(() => {
     const handlePageLoad = () => {
       console.log('Page fully loaded');
-      setLoading(true);  // Hide loader when page is fully loaded
+      setLoading(false);  // Hide loader when page is fully loaded
     };
 
     // Listen for window onload event
