@@ -53,19 +53,19 @@ function JobDeatlis({ jobName }) {
 
 
     return <Layout Layout >
-        <div className="  text-white  pt-[100px] xl:-mb-[20px] ">
-            <div className="relative flex md:items-center justify-center  flex-col">
-                <h1 className=" z-[200] font-Orbitron 13inch:text-[68px] text-[34px] md:text-[45px] font-extrabold leading-[40px] 13inch:leading-normal">{jobName}</h1>
-                <p className="  z-[200] font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
+        <div className="  text-white  pt-[100px] xl:-mb-[20px] md:px-[30px] lg:px-[40px] 2xl:px-0">
+            <div className="relative flex xs:items-center justify-center  flex-col">
+                <h1 className="   z-[200] font-Orbitron 13inch:text-[68px] text-[34px] md:text-[45px] font-extrabold leading-[40px] 13inch:leading-normal">{jobName}</h1>
+                <p className=" text-center  z-[200] font-Roboto text-[16px] md:pt-[10px]  duration-500 md:text-[26px]   font-light flex items-center gap-[0px] md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p>
                 {/* <p className="font-Roboto text-[16px] pt-[10px]  duration-500 md:text-[26px]  font-light flex items-center gap-1 md:gap-2">{`Full time`}<Dot size={40} />{`Remote`}</p> */}
-                <a href="#Apply"  className=" mt-[28px] lg:mt-[32px]  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] px-[32px] py-[18px] rounded-lg z-[200] text-[20px] w-full md:w-auto font-Roboto">Apply Now</a>
+                <a href="#Apply"  className=" mt-[28px] text-center lg:mt-[32px]  bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] px-[32px] py-[18px] rounded-lg z-[200] text-[20px] w-full md:w-auto font-Roboto">Apply Now</a>
                 {/* <button className=" bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF] h-[60px] px-[32px]  py-[18px]  rounded-lg w-full md:max-w-max font-Roboto mt-[32px] md:mt-[40px] font-bold">Apply</button> */}
                 <div className="right-[1px] absolute z-10 mobile-blur-shadow md:hidden" />
                 <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 hidden md:block  opacity-40 -translate-x-1/2 z-10  about-blur-shadow size-[350px] xs:size-[400px] md:size-[530px] lg:size-[600px] xl:size-[800px]  2xl:size-[1000px]"></div>
 
             </div>
-            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[20px] xl:gap-[100px]  md:pt-20  xl:pt-[200px]  ">
-                <div className=" min-w-[340px] hidden lg:flex flex-col">
+            <div className="  font-Roboto min-h-[90vh] flex justify-between gap-[30px] xl:gap-[100px]  md:pt-20  xl:pt-[100px]  mt-[60px] ">
+                <div className=" min-w-[270px] xl:min-w-[340px] hidden lg:flex flex-col">
                     <aside className=" sticky top-28 w-full h-fit z-[200]" ref={menuBarRef}>
                         {menuItems.map((item) => (
                             <a
@@ -80,7 +80,7 @@ function JobDeatlis({ jobName }) {
 
                     </aside>
                 </div>
-                <div className="z-40 flex flex-1 flex-col mt-[100px] xl:mt-0 gap-[60px]">
+                <div className="z-40 flex flex-1 flex-col xl:mt-[0px] 2xl:mt-0 gap-[60px]">
                     {sections.map(({ id, title, content }, index) => (
 
                         <div

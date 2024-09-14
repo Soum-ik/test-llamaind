@@ -215,7 +215,7 @@ function FutureTech() {
                                     <div className=" min-w-max relative">
                                         <img className="w-[766px] h-[440px] 13inch:w-[920px] 13inch:h-[522px]" src={project1} alt="" />
                                         <video
-                                            className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[590px] h-[395px]  13inch:w-[750px] 13inch:h-[468px]"
+                                            className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[590px] h-[390px]  13inch:w-[750px] 13inch:h-[468px]"
                                             // className=" xl:w-[750px] xl:h-[468px]"
                                             src={project.video}
                                             autoPlay

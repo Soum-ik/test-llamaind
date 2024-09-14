@@ -57,7 +57,7 @@ function IndexProject() {
                     <div className=" body-mobile space-y-[30px] sm:text-[24px] lg:text-[30px] lg:leading-[40px] z-[30]  pb-[20px]">
                       {project.des}
                     </div>
-                    <a href="/"> <button className="md:max-w-max px-[32px] py-[18px] text-[20px]   bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF]  13inch:hidden w-full mt-2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0  mx-auto absolute font-Roboto font-bold rounded-lg">View Project</button></a>
+                    <a href="/"> <button className="md:max-w-max px-[32px] py-[18px] text-[20px]   bg-gradient-to-r to-[#6CB1FF] from-[#5D5CE8] hover:from-[#3534C0] hover:to-[#06FFDF]  13inch:hidden w-full mt-2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0  mx-auto absolute font-Roboto   rounded-lg">View Project</button></a>
                   </div>
                 </div>
               ))

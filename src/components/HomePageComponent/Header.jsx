@@ -105,7 +105,7 @@ function Header() {
                         <div>
                             <motion.div transition={{ ease: 'linear', duration: 5, delay: 1 }} id="slider1-video" className="slider1-video relative  -mt-[70px] laptop:mt-0 5k:mt-[20px]  flex items-center justify-center">
                                 <div className="flex items-center justify-center !mx-auto size-[770px]">
-                                    <video className=" z-10 -mt-[270px] laptop:-mt-[300px] 17inch:-mt-[250px] 6k:-mt-[108px]   mix-blend-plus-lighter !mx-auto max-w-[1280px] 13inch:max-w-[1400px] laptop:max-w-[1600px] 17inch:max-w-[19200px]" playsInline src={waveVideo} loop autoPlay muted />
+                                    <video className=" z-10 -mt-[270px] laptop:-mt-[300px] 17inch:-mt-[250px] 6k:-mt-[108px] mix-blend-plus-lighter !mx-auto max-w-[1280px] 13inch:max-w-[1400px] laptop:max-w-[1600px] 17inch:max-w-[19200px]" playsInline src={waveVideo} loop autoPlay muted />
                                 </div>
                                 <div className="absolute z-10 blur-[200px] rounded-full  w-[900px] h-[800px] mt- opacity-20   bg-[#5D5CE8]" />
                                 <img className=" z-20 absolute inset-0 mx-auto laptop:-top-[90px] size-[530px] laptop:size-[640px] 17inch:size-[770px]" src={headerImage} alt="" />
@@ -135,7 +135,7 @@ function Header() {
                     </a>
 
                     <div id="slider2" className="  lg:w-[1100px] 13inch:w-auto text-right !flex relative  z-40  mb-20 !justify-end ">
-                        <div id="slider2-text" className="slider2-text  hidden -right-[1730px] 13inch:-right-[1520px] 17inch:-right-[1500px] text-left z-40 -top-[220px] laptop:-top-[250px]  text-ellipsis absolute font-light  text-[33px] leading-[50px] xl:text-[30px] xl:leading-[46px] laptop:text-[35px] 17inch:text-[40px] laptop:leading-[64px] font-Roboto text-white max-w-[900px] laptop:max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
+                        <div id="slider2-text" className="slider2-text  hidden -right-[1630px] 13inch:-right-[1520px] 17inch:-right-[1500px] text-left z-40 -top-[220px] laptop:-top-[250px]  text-ellipsis absolute font-light  text-[33px] leading-[50px] xl:text-[30px] xl:leading-[46px] laptop:text-[35px] 17inch:text-[40px] laptop:leading-[64px] font-Roboto text-white max-w-[800px] 13inch:max-w-[900px] laptop:max-w-[1050px]" >At LlamaMind, We Lead in App Development, Using Cutting-Edge Tech to Shape the Digital Future. We Empower Businesses with Intelligent, Scalable Solutions for Growth and Smarter Decision-Making, Building a More Connected World.</div>
                     </div>
                     <div id="holder" className="hidden 13inch:block min-h-[10vh] mt-[130px]">
                     </div>

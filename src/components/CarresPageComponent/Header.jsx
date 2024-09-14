@@ -90,8 +90,8 @@ function Header() {
                 return "+=230%";
             } else if (width > 1300) {
                 return "+=220%";
-            } else if (width > 1200) {
-                return "+=200%";
+            } else if (width > 1280) {
+                return "+=224%";
             } else {
                 return "+=200%";
             }
@@ -196,8 +196,8 @@ function Header() {
                 <video
                     src={animation}
                     className="h-full w-auto object-cover"
-                    loop
                     autoPlay
+                    loop
                     muted
                     playsInline
                 />

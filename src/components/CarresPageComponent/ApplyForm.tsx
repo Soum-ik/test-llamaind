@@ -12,7 +12,7 @@ function ApplyForm() {
     };
 
     return <Layout>
-        <div className=" mb-10 lg:-mb-[150px] z-50  ">
+        <div className=" mb-10 lg:-mb-[150px] z-50 md:px-[30px] lg:px-[70px] 2xl:px-0 ">
             <div className=" flex flex-col gap-[17px]">
                 <h1 className=" text-white font-extrabold text-center font-Orbitron text-[34px] md:text-[68px]">Can’t see your position?</h1>
                 <p className=" text-[#D5D5D5] text-center font-light text-[22px] md:text-[26px] font-Roboto">Send your resume and the position you're interested in. We’ll be in touch if there's a fit.</p>

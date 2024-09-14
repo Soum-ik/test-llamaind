@@ -61,6 +61,8 @@ function Details() {
         }
     }, [width]);
 
+    console.log(scrollTriggerConfig.end, 'get scroll trigger');
+
 
     useGSAP(() => {
         let endValue;
@@ -89,11 +91,13 @@ function Details() {
             } else if (width > 1500) {
                 return "+=220%";
             } else if (width > 1400) {
-                return "+=230%";
+                return "+=195%";
             } else if (width > 1300) {
+                return "+=197%";
+            } else if (width > 1290) {
+                return "+=199%";
+            } else if (width > 1280) {
                 return "+=200%";
-            } else if (width > 1250) {
-                return "+=250%";
             } else {
                 return "+=220%";
             }
