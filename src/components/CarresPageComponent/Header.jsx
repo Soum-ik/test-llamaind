@@ -73,6 +73,8 @@ function Header() {
                 return "+=190%";
             } else if (width >= 2400) {
                 return "+=200%";
+            } else if (width > 2200) {
+                return "+=210%";
             } else if (width > 2100) {
                 return "+=220%";
             } else if (width > 1900) {
@@ -85,9 +87,9 @@ function Header() {
             } else if (width > 1450) {
                 return "+=200%";
             } else if (width > 1400) {
-                return "+=250%";
+                return "+=230%";
             } else if (width > 1300) {
-                return "+=190%";
+                return "+=220%";
             } else if (width > 1200) {
                 return "+=200%";
             } else {
@@ -166,7 +168,7 @@ function Header() {
         <div className=" relative xs:pt-[200px] md:pt-[160px] xxs:pt-[100px] pt-[70px]">
             <Layout>
                 {/* small screen left side start */}
-                <div className="xl:hidden z-[30] pt-[90px] xl:pt-0 pb-[160px] flex items-center justify-between">
+                <div className="xl:hidden z-[30] pt-[90px] xl:pt-0 pb-[160px] flex items-center justify-between md:px-[30px] lg:px-[70px] ">
                     <div className="z-40 max-w-[355px] xxs:max-w-max pt-[75px] sm:pt-[120px] md:pt-[210px] space-y-[230px] md:space-y-[200px]  xl:space-y-[450px]">
                         <Innovative staticData={staticData[0]} />
                         <CoreValus staticData={staticData[1]} />
@@ -190,7 +192,7 @@ function Header() {
                 {/* big screen end */}
 
             </Layout>
-            <div className="absolute xs:top-[40px] top-[0px] left-0 flex md:h-[800px] sm:h-[700px] xs:h-[600px] h-[500px]  w-full items-center justify-center overflow-hidden xl:hidden">
+            <div className="absolute xs:top-[40px] top-[50px] left-0 flex md:h-[800px] sm:h-[700px] xs:h-[600px] h-[500px]  w-full items-center justify-center overflow-hidden xl:hidden">
                 <video
                     src={animation}
                     className="h-full w-auto object-cover"
@@ -199,7 +201,7 @@ function Header() {
                     muted
                     playsInline
                 />
-                <div className="top-[100px] xs:-top-[1px] absolute z-[2000] mobile-blur-shadow-gradient  xs:size-[450px] size-[350px] rounded-full xl:hidden mix-blend-plus-lighter" />
+                <div className="-top-[80px] xs:-top-[200px] sm:top-[10px] absolute z-[2000] mobile-blur-shadow-gradient  xs:size-[450px] size-[350px] rounded-full xl:hidden mix-blend-plus-lighter" />
                 {/* <div className=" absolute z-[1000000] mobile-blur-shadow-gradient sm:size-[500px] size-[400px] rounded-full xl:hidden mix-blend-plus-lighter" /> */}
             </div>
         </div>

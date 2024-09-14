@@ -3,7 +3,7 @@ import Layout from "../layout/Layout";
 import features from '../../../public/video/s.mp4';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion'
 import project1 from '../../../public/images/Group.png';
 import { leftSideTechs, rightSideTechs, projects } from '../../components/libs/staticData'
@@ -23,6 +23,27 @@ function FutureTech() {
     const projectWrapper = useRef<HTMLDivElement | null>(null);
     const projectsHolder = useRef<HTMLDivElement | null>(null);
 
+    useEffect(() => {
+        // Debounce function to avoid multiple reloads
+        let resizeTimeout: string | number | NodeJS.Timeout | undefined;
+
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (window.innerWidth > 1280) {
+                    window.location.reload();
+                }
+            }, 500); // 500ms debounce
+        };
+
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
 
     function getScrollAmount() {
@@ -110,11 +131,11 @@ function FutureTech() {
         <>
 
             {/* for small device start */}
-            <div className='13inch:hidden relative mt-[150px] xl:mb-[120px]'>
+            <div className='xl:hidden relative mt-[150px] xl:mb-[120px]'>
                 <div className=''>
                     <>
-                        <div className=" 13inch:hidden">
-                            <div className="  w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] xl:w-[800px] mx-auto  text-white flex items-center justify-center flex-col">
+                        <div className=" xl:hidden">
+                            <div className="w-[354px] xxs:w-[370px] sm:w-[500px] md:w-[750px] xl:w-[800px] mx-auto  text-white flex items-center justify-center flex-col">
                                 <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[57px]  xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center">Our Future Driven</h1>
                                 <h1 className="z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[57px]  xl:text-[78px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px] text-center"><span className="text-[#6CB1FF]">Tech</span> Arsenal</h1>
                             </div>
@@ -142,10 +163,10 @@ function FutureTech() {
 
             {/* FutureTech section bigger screen start*/}
             <Layout>
-                <div ref={tech} className="hidden 13inch:block min-h-[70vh] 3xl:min-h-screen relative !mb-[170px]">
-                    <div className="pb-[120px] max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
-                        <h1 className="z-30 font-extrabold text-[68px] text-left">Our Future Driven</h1>
-                        <h1 className="z-30 font-extrabold text-[68px] text-right -mt-[16px]">
+                <div ref={tech} className="hidden xl:block min-h-[70vh] 3xl:min-h-screen relative !mb-[170px]">
+                    <div className="13inch:pb-[120px] pb-[80px] max-w-[600px] 13inch:max-w-[850px] mx-auto text-white flex justify-center gap-0 flex-col">
+                        <h1 className="z-30 font-extrabold  text-[49px] 13inch:text-[58px] laptop:text-[68px] text-left">Our Future Driven</h1>
+                        <h1 className="z-30 font-extrabold  text-[49px] 13inch:text-[58px] laptop:text-[68px] text-right -mt-[16px]">
                             <span className="text-[#6CB1FF]">Tech</span> Arsenal
                         </h1>
                     </div>
@@ -153,10 +174,10 @@ function FutureTech() {
                     {/* Tech Looping Section */}
                     <div className="relative pt-10">
                         <div className="px-24 flex items-center justify-between">
-                            <FutureTechLooping array={leftSideTechs} />
-                            <div className="!w-[1792px] iamge1-fixer flex items-center justify-center !mx-auto">
-                                <video playsInline src={features} loop autoPlay muted className="iamge1-fixer mix-blend-plus-lighter z-30 absolute absolute-center" />
-                                <img src={FutureIcon} className="z-40 absolute absolute-center" alt="" />
+                            <FutureTechLooping boxStyle=' py-[10px]' array={leftSideTechs} />
+                            <div className=" !w-[1100px] 13inch:!w-[1792px] iamge1-fixer flex items-center justify-center !mx-auto">
+                                <video playsInline src={features} loop autoPlay muted className=" mix-blend-plus-lighter z-30 absolute absolute-center" />
+                                <img src={FutureIcon} className="z-40 w-[150px] 13inch:w-auto absolute absolute-center" alt="" />
                             </div>
                             <div className="blur-shadow z-40 absolute left-1/2 transform -translate-x-1/2" />
                             <FutureTechLooping array={rightSideTechs} />
@@ -169,11 +190,11 @@ function FutureTech() {
 
             {/* IndexProject section  start*/}
             <div id='project' className=" relative xl:pb-[10px]">
-                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 13inch:block 3xl:min-h-screen">
-                    <motion.h1 className=" text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
+                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 xl:block 3xl:min-h-screen">
+                    <motion.h1 className=" text-[140px] 13inch:text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
                     </motion.h1>
-                    <motion.div ref={projectsHolder} className=" z-10 ml-[300px] flex flex-nowrap  mx-auto w-fit relative gap-[400px] -mt-[150px]">
+                    <motion.div ref={projectsHolder} className=" z-10 ml-[300px] flex flex-nowrap  mx-auto w-fit relative gap-[400px] -mt-[90px] 13inch:-mt-[150px]">
                         {projects.map((project, idx) => (
                             <div className="flex items-center justify-center snap-center" key={idx}>
                                 <section>
@@ -191,10 +212,11 @@ function FutureTech() {
 
                                 </section>
                                 <section>
-                                    <div className="z-40 min-w-max relative">
-                                        <img className="w-[920px] h-[522px]" src={project1} alt="" />
+                                    <div className=" min-w-max relative">
+                                        <img className="w-[766px] h-[440px] 13inch:w-[920px] 13inch:h-[522px]" src={project1} alt="" />
                                         <video
-                                            className="absolute top-[15px] rounded-[10px] transition-transform -translate-x-1/2 left-1/2 ml-1 xl:w-[750px] xl:h-[468px]"
+                                            className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[590px] h-[395px]  13inch:w-[750px] 13inch:h-[468px]"
+                                            // className=" xl:w-[750px] xl:h-[468px]"
                                             src={project.video}
                                             autoPlay
                                             loop
@@ -223,7 +245,7 @@ function FutureTech() {
                             Scroll down <MoveRight />
                         </div>
                     </Layout>
-                    <div className=" top-1/2 left-1/2 transform  mr-[250px] 4xl:mr-[370px] 5k:mr-[600px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
+                    <div className=" top-1/2 left-1/2 transform  mr-[250px] 4xl:mr-[370px] 5k:mr-[600px] 7k:mr-[1000px] -translate-y-1/2 -translate-x-1/2 flex items-center justify-center mx-auto blur-[200px] rounded-full h-[650px]  -mt-[250px] w-[650px] opacity-40 bg-[#3534C0]" />
 
                 </div>
             </div>

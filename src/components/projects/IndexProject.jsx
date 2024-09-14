@@ -27,9 +27,9 @@ function IndexProject() {
 
   return (
     <div id='project'
-      className="relative py-[160px] xl:py-0 pb-[260px] lg:pb-[330px]">
+      className="relative py-[160px] xl:py-0 pb-[260px] lg:pb-[330px] md:px-[30px] lg:px-[70px]">
       <Layout>
-        <div className="13inch:hidden">
+        <div className="xl:hidden">
           <div className=" flex items-center justify-between overflow-hidden">
             <h1 className="text-[68px] xs:text-[80px] flex-1 sm:text-[95px] md:text-[120px] lg:text-[180px] xl:text-[250px] xl:w-[700px] text-white font-Orbitron font-bold opacity-5 z-50">Projects</h1>
           </div>

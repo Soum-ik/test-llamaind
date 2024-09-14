@@ -72,6 +72,10 @@ function Details() {
                 return "+=180%";
             } else if (width >= 2400) {
                 return "+=185%";
+            } else if (width >= 2300) {
+                return "+=176%";
+            } else if (width >= 2200) {
+                return "+=180%";
             } else if (width > 2100) {
                 return "+=196%";
             } else if (width > 2000) {
@@ -164,13 +168,13 @@ function Details() {
             <Layout>
 
                 {/* small screen size start */}
-                <div className=" z-40 xs:pt-[250px] sm:pt-[330px] pt-[200px] slider2 flex xl:hidden relative !justify-between pb-[160px]">
+                <div className=" z-40 xs:pt-[250px] sm:pt-[330px] pt-[200px] slider2 flex xl:hidden relative !justify-between pb-[160px] md:px-[30px] lg:px-[70px]">
                     <div id="rightSide" className=" min-w-[355px] pt-[75px] md:space-y-[200px]  space-y-[160px] z-40">
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white  text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center z-40 bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className=" z-40 font-Orbitron text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item.title}</h1>
                             <p className="z-40 text-[#D5D5D5] font-light text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto pb-[20px]">{item.description}</p>
-                            {item.button && <a href="/career" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Open positions</button></a>}
+                            {item.button && <a href="/" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Projects</button></a>}
                         </div>
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
@@ -193,11 +197,11 @@ function Details() {
                 <div className="hidden  laptop:mt-0 !pt-[50px] 3xl:pt-[200px] 4k:pt-[400px] slider2 xl:flex relative   !justify-between pb-[400px]">
                     <div ref={textRef} id="rightSide" className="pt-[50px] space-y-[500px] z-40">
                         <div className=" 2xl:min-h-[50vh] flex items-center justify-start">
-                            <div id="slider1-text" className="  z-30 text-white   text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
-                                {item.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
+                            <div id="slider1-text" className="  z-30 text-white text-5xl max-w-[700px] 2xl:max-w-[1000px] " >
+                                {item.top && <h5 className=" gap-3 flex items-center bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                                 <h1 className="  font-Orbitron text-[50px] leading-[75px] 2xl:text-[55px] laptop:text-[68px] 2xl:leading-[85.27px] font-extrabold  ">{item.title}</h1>
                                 <p className=" mt-[10px] mb-[20px] text-[#D5D5D5] font-light text-[26px] leading-[40px] font-Roboto ">{item.description}</p>
-                                {item.button && <a href="/"><Button style="py-[22px]" text="View Project" /></a>}
+                                {item.button && <a href="/"><Button style="py-[22px]" text="View Projects" /></a>}
                                 {scrolled < 500 && <div id="scroll" className='ease-in-out duration-500 transition-transform absolute mt-[150px] -left-[50px]  text-[18px] bg z-10 font-Roboto rotate-90 flex  gap-4'>
                                     Scroll down <MoveRight />
                                 </div>}

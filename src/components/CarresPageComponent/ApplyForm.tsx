@@ -65,7 +65,7 @@ function ApplyForm() {
 
 
                     <div className=" space-y-[10px] row-span-2">
-                        <label className="block mb-1">Resume</label>
+                        <label className="block mb-1 font-normal text-[20px]">Resume</label>
                         <div className="w-full md:h-[75%] h-[144px] border-dashed border-[2px] border-[#ffffff] border-opacity-[20%] flex items-center bg-[#0A0A24] bg-opacity-[20%] justify-center rounded-lg text-center">
                             <input type="file" className="hidden" id="resume" />
                             <label htmlFor="resume" className="text-blue-500 cursor-pointer flex flex-col items-center">
