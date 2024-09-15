@@ -4,7 +4,8 @@ import { FaDiscord, FaSquareXTwitter } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
 
-import FooterVideo from "../../public/video/footerVideo.mp4";
+import FooterVideomp4 from "../../public/video/footerVideo.mp4";
+import FooterVideoWebm from "../../public/video/footerVideo.webm";
 import Layout from "./layout/Layout";
 
 const Footer = () => {
@@ -102,12 +103,15 @@ const Footer = () => {
         <video
           playsInline
           className="-z-20 h-full !w-full opacity-30 mix-blend-plus-lighter"
-          src={FooterVideo}
           autoPlay
           muted
           loop
           preload="auto"
-        />
+        >
+          <source src={FooterVideoWebm} type="video/webm" />
+          <source src={FooterVideomp4} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );
