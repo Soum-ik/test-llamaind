@@ -23,19 +23,19 @@ export default function App() {
     }
   });
 
-  const [loading, setLoading] = useState(true);  // Loading state to control page visibility
-  useEffect(() => {
-    const handlePageLoad = () => {
-      console.log('Page fully loaded');
-      setLoading(false);  // Hide loader when page is fully loaded
-    };
+  // const [loading, setLoading] = useState(true);  // Loading state to control page visibility
+  // useEffect(() => {
+  //   const handlePageLoad = () => {
+  //     console.log('Page fully loaded');
+  //     setLoading(false);  // Hide loader when page is fully loaded
+  //   };
 
-    // Listen for window onload event
-    window.addEventListener('load', handlePageLoad);
+  //   // Listen for window onload event
+  //   window.addEventListener('load', handlePageLoad);
 
-    // Cleanup the event listener when the component is unmounted
-    return () => window.removeEventListener('load', handlePageLoad);
-  }, []);
+  //   // Cleanup the event listener when the component is unmounted
+  //   return () => window.removeEventListener('load', handlePageLoad);
+  // }, []);
 
 
 
@@ -43,16 +43,14 @@ export default function App() {
     <div className="w-full h-screen font-Orbitron">
       {/* Loading Screen with Circular Progress */}
 
-      {loading ? <div className="fixed inset-0 flex justify-center items-center bg-black">
-        <CircularProgressBar />
-      </div> : <Routes>
+       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/career' element={<CareerPage />} />
         <Route path='/career/job-details/:jobName' element={<JobDetailsPage />} />
         <Route path='/contact' element={<ContactPage />} />
       </Routes>
-      }
+     
 
     </div>
   );
