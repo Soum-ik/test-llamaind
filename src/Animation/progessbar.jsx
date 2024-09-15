@@ -9,7 +9,7 @@ const CircularProgressBar = () => {
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev < 100) {
-          return prev + 10
+          return prev + 1
         } else {
           clearInterval(interval); // Stop the animation when reaching 100%
           return prev;

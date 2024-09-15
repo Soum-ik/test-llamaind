@@ -11,13 +11,14 @@ import Button from '../ui/Button';
 import { useGSAP } from '@gsap/react';
 import { MoveRight } from 'lucide-react';
 import FutureTechLooping from './FutureTechLooping';
-
+import UseWindowSize from '../../Hooks/UseGetScreenSize';
 
 
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function FutureTech() {
+    const { width } = UseWindowSize()
     const tech = useRef<HTMLDivElement | null>(null);
     const project = useRef<HTMLDivElement | null>(null);
     const projectWrapper = useRef<HTMLDivElement | null>(null);
@@ -54,8 +55,6 @@ function FutureTech() {
         return 0;
     }
 
-    console.log(getScrollAmount());
-
 
     useGSAP(() => {
         const timeline = gsap.timeline({
@@ -67,62 +66,68 @@ function FutureTech() {
             },
         });
 
-        if (tech.current) {
-            timeline
-                .to(tech.current, {
-                    opacity: 0,
-                    scale: 0.1,
-                    duration: .2,
-                    ease: 'power1.inOut',
-                    force3D: true,
-                });
-        }
+        if (width >= 1280) {
+            if (tech.current) {
+                timeline
+                    .to(tech.current, {
+                        opacity: 0,
+                        scale: 0.1,
+                        duration: .2,
+                        ease: 'power1.inOut',
+                        force3D: true,
+                    });
+            }
 
-        if (projectWrapper.current) {
-            gsap.fromTo(projectWrapper.current,
-                { opacity: 0, scale: .6, autoAlpha: 0 },
-                {
-                    scale: 1,
-                    autoAlpha: 1,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: tech.current,
-                        start: '40% 30%',
-                        end: '40% 20%',
-                        scrub: 0.3,
-                        invalidateOnRefresh: true, // Ensures proper resizing
+            if (projectWrapper.current) {
+                gsap.fromTo(projectWrapper.current,
+                    {
+                        opacity: 0, scale: .6, autoAlpha: 0,
                     },
-                }
-            )
-        }
-        const sections = projectsHolder.current?.children;
+                    {
+                        onStart: () => projectWrapper?.current?.classList.remove(''),
+                        scale: 1,
+                        autoAlpha: 1,
+                        opacity: 1,
+                        scrollTrigger: {
+                            trigger: tech.current,
+                            start: '40% 30%',
+                            end: '40% 20%',
+                            scrub: 0.3,
+                            invalidateOnRefresh: true, // Ensures proper resizing
+                        },
+                    }
+                )
+            }
+            const sections = projectsHolder.current?.children;
 
-        if (sections && projectWrapper.current) {
-            gsap.set(sections, { opacity: 1 }); // Initially set all sections to be semi-visible
+            if (sections && projectWrapper.current) {
+                gsap.set(sections, { opacity: 1 }); // Initially set all sections to be semi-visible
 
-            // Create the horizontal scrolling timeline with pinning
-            const horizontalTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: projectWrapper.current,
-                    start: "-40% top", // Pin earlier, when the section is 70% down the viewport
-                    end: () => `+=${getScrollAmount() * -1} `,
-                    pin: true,
-                    scrub: true,
-                    // markers: true,
-                },
-            });
+                // Create the horizontal scrolling timeline with pinning
+                const horizontalTimeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: projectWrapper.current,
+                        start: "-40% top", // Pin earlier, when the section is 70% down the viewport
+                        end: () => `+=${getScrollAmount() * -1} `,
+                        pin: true,
+                        scrub: true,
+                        // markers: true,
+                    },
+                });
 
-            horizontalTimeline.to(projectsHolder.current, {
-                x: getScrollAmount,
-                duration: 3,
-                ease: "0.45, 0, 0.55, 1",
-            })
+                horizontalTimeline.to(projectsHolder.current, {
+                    x: getScrollAmount,
+                    duration: 3,
+                    ease: "0.45, 0, 0.55, 1",
+                })
 
 
 
-            // Keep the center section visible
-            const centerSection = sections[Math.floor(sections.length / 2)];
-            gsap.to(centerSection, { opacity: 1, overwrite: 'auto' });
+                // Keep the center section visible
+                const centerSection = sections[Math.floor(sections.length / 2)];
+                gsap.to(centerSection, { opacity: 1, overwrite: 'auto' });
+            }
+
         }
 
     }, [tech, project, projectWrapper, projectsHolder]);
@@ -189,8 +194,8 @@ function FutureTech() {
 
 
             {/* IndexProject section  start*/}
-            <div id='project' className=" relative xl:pb-[10px]">
-                <div ref={projectWrapper} className="hidden -mt-[850px] laptop:-mt-[800px] opacity-0  mx-auto px-5 xl:block 3xl:min-h-screen">
+            <div id='project' className="xl:block hidden relative xl:pb-[10px] w-[100vw]">
+                <div ref={projectWrapper} className="-mt-[850px] laptop:-mt-[800px] overflow-hidden  opacity-0  mx-auto px-5  3xl:min-h-screen">
                     <motion.h1 className=" text-[140px] 13inch:text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
                         Projects
                     </motion.h1>
@@ -211,11 +216,11 @@ function FutureTech() {
                                     </div>
 
                                 </section>
-                                <section>
-                                    <div className=" min-w-max relative">
-                                        <img className="w-[766px] h-[440px] 13inch:w-[920px] 13inch:h-[522px]" src={project1} alt="" />
+                                <section className=''>
+                                    <div className="min-w-max relative">
+                                        <img className="w-[700px] h-[400px] 13inch:w-[920px] 13inch:h-[522px]" src={project1} alt="" />
                                         <video
-                                            className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[590px] h-[390px]  13inch:w-[750px] 13inch:h-[468px]"
+                                            className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[540px] h-[360px]  13inch:w-[750px] 13inch:h-[468px]"
                                             // className=" xl:w-[750px] xl:h-[468px]"
                                             src={project.video}
                                             autoPlay

@@ -23,34 +23,31 @@ export default function App() {
     }
   });
 
-  // const [loading, setLoading] = useState(true);  // Loading state to control page visibility
-  // useEffect(() => {
-  //   const handlePageLoad = () => {
-  //     console.log('Page fully loaded');
-  //     setLoading(false);  // Hide loader when page is fully loaded
-  //   };
+  const [loading, setLoading] = useState(true);
 
-  //   // Listen for window onload event
-  //   window.addEventListener('load', handlePageLoad);
+  useEffect(() => {
+    const handlePageLoad = () => {
+      setLoading(false);
+    };
 
-  //   // Cleanup the event listener when the component is unmounted
-  //   return () => window.removeEventListener('load', handlePageLoad);
-  // }, []);
+    window.addEventListener('load', handlePageLoad);
+
+    return () => window.removeEventListener('load', handlePageLoad);
+  }, []);
 
 
 
   return (
     <div className="w-full h-screen font-Orbitron">
-      {/* Loading Screen with Circular Progress */}
 
-       <Routes>
+
+      <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/career' element={<CareerPage />} />
         <Route path='/career/job-details/:jobName' element={<JobDetailsPage />} />
         <Route path='/contact' element={<ContactPage />} />
       </Routes>
-     
 
     </div>
   );

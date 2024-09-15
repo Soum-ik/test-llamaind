@@ -93,7 +93,7 @@ function Header() {
 
         <>
             {/* bigger screen start */}
-            <div ref={header} className="min-h-[110vh] hidden 3xl:pt-[60px] 4xl:pt-[80px] 4k:pt-[150px] xl:block pb-[300px] 13inch:pb-[250px] laptop:pb-[340px]">
+            <div ref={header} className="min-h-[110vh] hidden 3xl:pt-[60px] 4xl:pt-[80px] 4k:pt-[150px] 5k:pt-[160px] 6k:pt-[220px] 7k:pt-[270px] 8k:pt-[300px] 9k:pt-[750px]  10k:pt-[1000px] xl:block pb-[300px] 13inch:pb-[250px] laptop:pb-[340px]">
                 <Layout>
 
                     <div id="slider1" className="pt-[110px] 3xl:pt-[50px] 4xl:pt-[60px]  5k:pt-[140px]">
@@ -147,7 +147,7 @@ function Header() {
 
 
             {/* smalll screen start */}
-            <div className="min-h-[80vh] relative pt-[10px] xl:hidden">
+            <div className="min-h-[80vh]  relative pt-[10px] xl:hidden">
                 <>
                     <div className="pt-[200px] sm:pt-[250px] lg:pt-[200px] flex items-center justify-center mx-auto">
                         <h1 className=" absolute z-20 px-[10px] lg:px-[15px] leading-[46px] xs:leading-[55px] sm:leading-[65px] md:leading-[80px] lg:leading-[90px] 2xl:leading-[100px] text-[42px] xs:text-[48px] sm:text-[65px] md:text-[70px] lg:text-[75px] xl:text-[85px]  font-extrabold text-white header  font-Orbitron text-center"   >
