@@ -1,7 +1,8 @@
 import { MoveRight } from "lucide-react";
 import project1 from "../../../public/images/Group.png";
 import icon1 from "../../../public/images/projects/project1.png";
-import projectVideo from "../../../public/video/projects.mp4";
+// import projectVideo from "../../../public/video/projects.mp4";
+import projectVideo from "../../../public/video/projects.webm";
 import Layout from "../layout/Layout";
 
 function IndexProject() {

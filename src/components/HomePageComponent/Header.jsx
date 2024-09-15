@@ -216,8 +216,9 @@ function Header() {
               autoPlay
               muted
               playsInline
+              preload="auto"
             >
-              <source src={waveVideo} type="video/mp4" />
+              {/* <source src={waveVideo} type="video/mp4" /> */}
               <source src={waveVideoWebm} type="video/webm" />
             </video>
             <div className="mobile-blur-shadow-gradient absolute top-[100px] z-10 size-[390px] rounded-full xs:top-[70px] xs:size-[500px] lg:top-[200px] lg:size-[600px] 13inch:hidden" />
@@ -268,6 +269,7 @@ function Header() {
                 autoPlay
                 muted
                 playsInline
+                preload="auto"
               />
             </div>
             <div className="blue__gradient absolute -left-[260px] -top-[10px] z-10 size-[450px] rounded-full opacity-[0.4] sm:-left-[300px] sm:size-[500px] md:-top-[170px] md:size-[700px] md:opacity-[.3] xl:size-[1000px] xl:opacity-[.3]" />
