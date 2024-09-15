@@ -88,7 +88,7 @@ function ContactPage() {
 
 
 
-                <div className=" top-[100px]   absolute z-[30]  xs:size-[450px] rounded-[450px] size-[380px]  flex-shrink-0 mobile-blur-shadow-gradient -translate-x-1/2  left-1/2 " />
+                <div className=" top-[100px]   absolute z-[30]  xs:size-[450px] rounded-[450px] size-[360px] xxs:size-[380px]  flex-shrink-0 mobile-blur-shadow-gradient -translate-x-1/2  left-1/2 " />
                 {/* <div className=" absolute z-[30] top-1/2 -translate-y-1/2 left-1/2 hidden md:block -translate-x-1/2  mix-blend-plus-darker  about-blur-shadow size-[350px] xs:size-[400px] md:size-[800px] lg:size-[500px] "></div> */}
             </div>
         </div>

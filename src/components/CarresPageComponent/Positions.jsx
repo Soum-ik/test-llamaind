@@ -15,7 +15,7 @@ function Positions() {
 
             {availableVacancies ?
                 <>
-                    <h1 className=" z-[2000] text-[68px] xs:text-[80px] sm:text-[95px] md:text-[120px] lg:text-[180px] xl:text-[200px] 13inch:text-[250px] xl:w-[700px] text-white font-Orbitron font-bold opacity-5 ">Positions</h1>
+                    <h1 className=" z-[2000] text-[64px] xxs:text-[68px] xs:text-[80px] sm:text-[95px] md:text-[120px] lg:text-[180px] xl:text-[200px] 13inch:text-[250px] xl:w-[700px] text-white font-Orbitron font-bold opacity-5 ">Positions</h1>
                     <JobList positions={openPositios} />
                 </> : <>
 

@@ -181,12 +181,13 @@ function Details() {
 
                 {/* small screen size start */}
                 <div className=" z-40 xs:pt-[250px] sm:pt-[330px] pt-[200px] slider2 flex xl:hidden relative !justify-between pb-[160px] md:px-[30px] lg:px-[70px]">
-                    <div id="rightSide" className=" min-w-[355px] pt-[75px] md:space-y-[200px]  space-y-[160px] z-40">
+                    <div id="rightSide" className=" xxs:min-w-[355px] pt-[75px] md:space-y-[200px]  space-y-[160px] z-40">
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white  text-5xl max-w-[1000px] " >
                             {item.top && <h5 className=" gap-3 flex items-center z-40 bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
                             <h1 className=" z-40 font-Orbitron text-[26px] xxs:text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item.title}</h1>
                             <p className="z-40 text-[#D5D5D5] font-light text-[19px] xxs:text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto pb-[20px]">{item.description}</p>
                             {item.button && <a href="/" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Projects</button></a>}
+                            
                         </div>
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}

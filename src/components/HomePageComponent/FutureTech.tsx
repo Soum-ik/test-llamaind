@@ -174,7 +174,7 @@ function FutureTech() {
                       alt=""
                     />
                     {/* <img src={FutureIcon} className=' w-auto z-[20] top-1/2 -translate-y-1/2 absolute  h-[130px] xxs:h-[180vh] sm:h-[84vh] left-1/2 -translate-x-1/2' alt="" /> */}
-                    <div className="blue__gradient absolute left-1/2 top-1/2 z-0 size-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-80 transition-transform xs:size-[400px] md:size-[600px] lg:-mt-[100px] lg:size-[900px] lg:opacity-40 xl:size-[1000px]"></div>
+                    <div className="blue__gradient absolute left-1/2 top-1/2 z-0 size-[350px] xxs:size-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-80 transition-transform xs:size-[400px] md:size-[600px] lg:-mt-[100px] lg:size-[900px] lg:opacity-40 xl:size-[1000px]"></div>
                   </div>
                   <FutureTechLooping
                     style=" z-[20] space-y-[5px] sm:space-y-[6px] md:space-y-[8px] lg:space-y-[11px]"
