@@ -231,9 +231,9 @@ function FutureTech() {
       {/* FutureTech section bigger screen end*/}
 
       {/* IndexProject section  start*/}
-      <div id='project' className="xl:block hidden relative xl:pb-[10px] w-[100vw]">
+      <div   className="xl:block hidden relative xl:pb-[10px] w-[100vw]">
         <div ref={projectWrapper} className="-mt-[850px] laptop:-mt-[800px] overflow-hidden  opacity-0  mx-auto px-5  3xl:min-h-screen">
-          <motion.h1 className=" text-[140px] 13inch:text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
+          <motion.h1 id='project' className=" text-[140px] 13inch:text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
             Projects
           </motion.h1>
           <motion.div ref={projectsHolder} className=" z-10 ml-[300px] flex flex-nowrap  mx-auto w-fit relative gap-[400px] -mt-[90px] 13inch:-mt-[110px] 2xl:-mt-[150px] ">
@@ -255,9 +255,9 @@ function FutureTech() {
                 </section>
                 <section className=''>
                   <div className="min-w-max relative">
-                    <img className="w-[700px] h-[397px] 13inch:w-[920px] 13inch:h-[522px]" src={project1} alt="" />
+                    <img className="w-[700px] h-[400px] 13inch:w-[920px] 13inch:h-[522px]" src={project1} alt="" />
                     <video
-                      className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[540px] h-[363px]  13inch:w-[750px] 13inch:h-[468px]"
+                      className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[540px] h-[355px]  13inch:w-[750px] 13inch:h-[468px]"
                       // className=" xl:w-[750px] xl:h-[468px]"
                       src={project.video}
                       autoPlay

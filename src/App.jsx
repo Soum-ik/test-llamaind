@@ -23,17 +23,6 @@ export default function App() {
     }
   });
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const handlePageLoad = () => {
-      setLoading(false);
-    };
-
-    window.addEventListener('load', handlePageLoad);
-
-    return () => window.removeEventListener('load', handlePageLoad);
-  }, []);
 
 
 
