@@ -1,6 +1,6 @@
 import Layout from '../layout/Layout';
 import JobList from './JobList';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // import animation from '../../../public/video/no-job-open.mp4';
 import animation from '../../../public/video/no-job-open.mp4';
 // import animation from '../../../public/video/gif.gif';
@@ -9,6 +9,37 @@ import { openPositios } from '../libs/staticData';
 
 function Positions() {
     const [availableVacancies, setAvailableVacancies] = useState(true);
+
+    const videoRuningRef = useRef(null);
+
+    useEffect(() => {
+        const video = videoRuningRef.current;
+
+        // Try to autoplay the video programmatically
+        if (video) {
+            video.play().catch(error => {
+                console.error("Autoplay failed:", error);
+                // Retry autoplay if the first attempt fails
+                setTimeout(() => {
+                    video.play();
+                }, 1000); // Retry after 1 second
+            });
+
+            // Ensure the video loops manually if loop attribute fails
+            video.addEventListener('ended', () => {
+                video.play();
+            });
+
+            // Cleanup event listener on component unmount
+            return () => {
+                video.removeEventListener('ended', () => {
+                    video.play();
+                });
+            };
+        }
+    }, []);
+
+
 
     return <Layout>
         <div id='position' className='relative mt-[19px]  md:mt-[80px] lg:mt-[100px] xl:mt-[270px] -z-0 pb-[160px] md:pb-[300px] xl:pb-[160px] md:px-[30px] lg:px-[70px] xl:px-[0px]'>
@@ -27,6 +58,7 @@ function Positions() {
                             loop
                             autoPlay
                             muted
+                            ref={videoRuningRef}
                         />
                         <div className="top-[100px] absolute z-10 mobile-blur-shadow-gradient xs:size-[500px] size-[310px] rounded-full xl:hidden mix-blend-plus-lighter" />
                         <p className='  mix-blend-lighten -z-30 text-[26px] sm:text-[36px] -mt-[60px] xl:text-[46px]  font-bold text-center  font-Roboto text-[#D5D5D5]'>No Vacancies Available at this Moment</p>

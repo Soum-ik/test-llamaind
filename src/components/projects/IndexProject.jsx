@@ -4,6 +4,7 @@ import icon1 from "../../../public/images/projects/project1.png";
 // import projectVideo from "../../../public/video/projects.mp4";
 import projectVideo from "../../../public/video/projects.webm";
 import Layout from "../layout/Layout";
+import { useEffect, useRef } from "react";
 
 function IndexProject() {
   const projects = [
@@ -16,6 +17,35 @@ function IndexProject() {
       video: projectVideo,
     },
   ];
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    // Try to autoplay the video programmatically
+    if (video) {
+      video.play().catch(error => {
+        console.error("Autoplay failed:", error);
+        // Retry autoplay if the first attempt fails
+        setTimeout(() => {
+          video.play();
+        }, 1000); // Retry after 1 second
+      });
+
+      // Ensure the video loops manually if loop attribute fails
+      video.addEventListener('ended', () => {
+        video.play();
+      });
+
+      // Cleanup event listener on component unmount
+      return () => {
+        video.removeEventListener('ended', () => {
+          video.play();
+        });
+      };
+    }
+  }, []);
 
   return (
     <div
@@ -53,7 +83,7 @@ function IndexProject() {
                     <img className="w-[335.852px] z-30 xxs:w-[330px] sm:w-[415px] md:w-[460px] lg:w-[598px]  lg:h-[334px]  md:h-[260px] sm:h-[238px] xs:h-[190px] xxs:h-[190px] h-[184.981px]" src={project1} alt="" />
 
                     <video
-
+                      ref={videoRef}
                       className=" absolute z-40 transition-transform -translate-x-1/2 left-1/2  lg:pb-[2px]   w-[262px] h-[165px]     xxs:w-[271px] lg:h-[305px] lg:w-[487px] ml-[2px] px-1.5 sm:w-[405px]  md:h-[236px]  sm:h-[213px] xxs:h-[176px] -mt-[10px] "
                       src={project.video}
                       autoPlay

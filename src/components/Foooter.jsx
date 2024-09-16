@@ -7,8 +7,38 @@ import { RiInstagramFill } from "react-icons/ri";
 import FooterVideomp4 from "../../public/video/footerVideo.mp4";
 import FooterVideoWebm from "../../public/video/footerVideo.webm";
 import Layout from "./layout/Layout";
+import { useEffect, useRef } from "react";
 
 const Footer = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    // Try to autoplay the video programmatically
+    if (video) {
+      video.play().catch(error => {
+        console.error("Autoplay failed:", error);
+        // Retry autoplay if the first attempt fails
+        setTimeout(() => {
+          video.play();
+        }, 1000); // Retry after 1 second
+      });
+
+      // Ensure the video loops manually if loop attribute fails
+      video.addEventListener('ended', () => {
+        video.play();
+      });
+
+      // Cleanup event listener on component unmount
+      return () => {
+        video.removeEventListener('ended', () => {
+          video.play();
+        });
+      };
+    }
+  }, []);
+
   return (
     <div className="relative z-[10] 2xl:-mt-[100px]">
       <div className="absolute left-0 right-0 top-0 z-[40] h-2/5 w-full bg-gradient-to-b from-black md:h-4/5"></div>
@@ -101,6 +131,7 @@ const Footer = () => {
       {/* <video className=" bg-transparent z-10  mx-auto !w-full  absolute left-1/2  -bottom-0 transform -translate-x-1/2" src={FooterVideo} autoPlay muted loop /> */}
       <div className="max-h-[500px] overflow-hidden 3xl:max-h-[600px] 5k:max-h-[750px] 6k:min-h-[1200px]">
         <video
+          ref={videoRef}
           playsInline
           className="-z-20 h-full !w-full opacity-30 mix-blend-plus-lighter"
           autoPlay

@@ -18,6 +18,37 @@ import { contents } from "../libs/staticData";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function Details() {
+
+    const videoRuningRef = useRef(null);
+
+    useEffect(() => {
+        const video = videoRuningRef.current;
+
+        // Try to autoplay the video programmatically
+        if (video) {
+            video.play().catch(error => {
+                console.error("Autoplay failed:", error);
+                // Retry autoplay if the first attempt fails
+                setTimeout(() => {
+                    video.play();
+                }, 1000); // Retry after 1 second
+            });
+
+            // Ensure the video loops manually if loop attribute fails
+            video.addEventListener('ended', () => {
+                video.play();
+            });
+
+            // Cleanup event listener on component unmount
+            return () => {
+                video.removeEventListener('ended', () => {
+                    video.play();
+                });
+            };
+        }
+    }, []);
+
+
     const videoRef = useRef();
     const textRef = useRef();
     const { height, width } = UseWindowSize();
@@ -187,7 +218,7 @@ function Details() {
                             <h1 className=" z-40 font-Orbitron text-[26px] xxs:text-[34px] md:text-[43px] lg:text-[50px] xl:text-[68px] font-extrabold leading-[40px] md:leading-[50px] lg:leading-[60px] xl:leading-[85.27px]">{item.title}</h1>
                             <p className="z-40 text-[#D5D5D5] font-light text-[19px] xxs:text-[22px] md:text-[26px] leading-[36px] md:leading-[40px] font-Roboto pb-[20px]">{item.description}</p>
                             {item.button && <a href="/" className=" mt-[20px]"><button className="btn-gradient text-[20px] z-40 font-Roboto w-full md:max-w-max pt-[20px]">View Projects</button></a>}
-                            
+
                         </div>
                         <div data-aos="zoom-in-up" id="slider1-text" className=" space-y-3  z-30 text-white   text-5xl max-w-[1000px] " >
                             {item1.top && <h5 className=" gap-3 flex items-center  bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] bg-clip-text text-transparent font-normal text-[20px]">Our Vision <Minus className="bg-gradient-to-r from-[#5D5CE8] font-Roboto to-[#06FFDF] w-16 h-[3px]" /> </h5>}
@@ -244,7 +275,7 @@ function Details() {
                     <div ref={videoRef} id="slider2-video" className=" min-w-[500px] 4xl:pt-[53px] 4k:pt-[70px] 6k:pt-[200px] 7k:pt-[240px] 8k:pt-[500px] 9k:pt-[420px] 10k:pt-[670px] max-w-[1920px] absolute z-20 right-0">
                         <div className=" relative flex items-center z-40 justify-center">
                             <div className="z-[35] 2xl:w-[1020px] 2xl:h-[550px] laptop:w-[1240px] laptop:h-[640px] w-[990px] h-[500px] flex items-center justify-center !mx-auto">
-                                <video id="videoMoving" playsInline className="z-[35] w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
+                                <video ref={videoRuningRef} id="videoMoving" playsInline className="z-[35] w-full h-full absolute left-[10px] " src={waveVideo} loop autoPlay muted />
                             </div>
                             <div className="absolute right-0 pb-10 z-[36] about-blur-shadow size-[1000px]" />
                             <img className="z-[40] absolute -right-0 mx-auto size-[700px] laptop:size-[800px] 17inch:size-[840px]" src={headerImage} alt="" />
@@ -265,6 +296,7 @@ function Details() {
                     autoPlay
                     muted
                     playsInline
+                    ref={videoRuningRef}
                 />
                 <div className="top-[100px] xs:-top-[200px] sm:top-[10px] absolute z-10 mobile-blur-shadow-gradient md:size-[600px] xs:size-[500px] size-[340px] rounded-full xl:hidden mix-blend-plus-lighter" />
                 <img className="absolute xs:w-[620px] w-[600px] z-30" src={headerImage} alt="" />

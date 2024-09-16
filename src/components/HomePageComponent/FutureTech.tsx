@@ -26,6 +26,38 @@ function FutureTech() {
   const projectWrapper = useRef<HTMLDivElement | null>(null);
   const projectsHolder = useRef<HTMLDivElement | null>(null);
 
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      // Try to autoplay the video programmatically
+      video.play().catch((error) => {
+        console.error("Autoplay failed:", error);
+
+        // Retry autoplay if the first attempt fails
+        setTimeout(() => {
+          video.play();
+        }, 1000); // Retry after 1 second
+      });
+
+      // Ensure the video loops manually if loop attribute fails
+      const handleVideoEnd = () => {
+        video.play();
+      };
+
+      video.addEventListener('ended', handleVideoEnd);
+
+      // Cleanup event listener on component unmount
+      return () => {
+        video.removeEventListener('ended', handleVideoEnd);
+      };
+    }
+  }, []);
+
+
   useEffect(() => {
     // Debounce function to avoid multiple reloads
     let resizeTimeout: string | number | NodeJS.Timeout | undefined;
@@ -159,6 +191,7 @@ function FutureTech() {
                   <div className="absolute top-1/2 z-[10] -translate-y-1/2 transition-transform">
                     {/* <div className=" py-[100px] absolute 13inch:hidden w-full items-center h-[94vh]   top-[158px] sm:top-[170px] md:top-[292px] lg:top-[294px] xl:top-[340px] justify-center xl:-right-[130px] overflow-hidden "> */}
                     <video
+                      ref={videoRef}
                       playsInline
                       loop
                       autoPlay
@@ -209,10 +242,12 @@ function FutureTech() {
               <FutureTechLooping boxStyle=" py-[10px]" array={leftSideTechs} />
               <div className="iamge1-fixer !mx-auto flex !w-[1100px] items-center justify-center 13inch:!w-[1792px]">
                 <video
+                  ref={videoRef}
                   playsInline
                   src={features}
                   loop
                   autoPlay
+
                   muted
                   className="absolute-center absolute z-30 mix-blend-plus-lighter"
                 />
@@ -231,7 +266,7 @@ function FutureTech() {
       {/* FutureTech section bigger screen end*/}
 
       {/* IndexProject section  start*/}
-      <div   className="xl:block hidden relative xl:pb-[10px] w-[100vw]">
+      <div className="xl:block hidden relative xl:pb-[10px] w-[100vw]">
         <div ref={projectWrapper} className="-mt-[850px] laptop:-mt-[800px] overflow-hidden  opacity-0  mx-auto px-5  3xl:min-h-screen">
           <motion.h1 id='project' className=" text-[140px] 13inch:text-[160px] laptop:text-[250px] z-50 mx-auto max-w-[1720px] text-white font-Orbitron font-bold opacity-5">
             Projects
@@ -259,6 +294,7 @@ function FutureTech() {
                     <video
                       className="absolute top-[15px] transition-transform -translate-x-1/2 left-1/2 ml-1 w-[540px] h-[355px]  13inch:w-[750px] 13inch:h-[468px]"
                       // className=" xl:w-[750px] xl:h-[468px]"
+                      ref={videoRef}
                       src={project.video}
                       autoPlay
                       loop
