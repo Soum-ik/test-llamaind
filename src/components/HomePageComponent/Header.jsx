@@ -3,17 +3,48 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MoveRight } from "lucide-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import headerImage from "../../../public/images/header.png";
 import arrow from "../../../public/images/Vector.png";
 import waveVideo from "../../../public/video/main-animation.mp4";
 import waveVideoWebm from "../../../public/video/main-animation.webm";
 import UseWindowSize from "../../Hooks/UseGetScreenSize";
 import Layout from "../layout/Layout";
+// import useAutoPlayVideo from "../../Hooks/useAutoPlayVideo";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 
 function Header() {
   const header = useRef(null);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    // Try to autoplay the video programmatically
+    if (video) {
+      video.play().catch(error => {
+        console.error("Autoplay failed:", error);
+        // Retry autoplay if the first attempt fails
+        setTimeout(() => {
+          video.play();
+        }, 1000); // Retry after 1 second
+      });
+
+      // Ensure the video loops manually if loop attribute fails
+      video.addEventListener('ended', () => {
+        video.play();
+      });
+
+      // Cleanup event listener on component unmount
+      return () => {
+        video.removeEventListener('ended', () => {
+          video.play();
+        });
+      };
+    }
+  }, []);
+
 
   const { width } = UseWindowSize();
   useGSAP(() => {
@@ -107,6 +138,7 @@ function Header() {
               >
                 <div className="!mx-auto flex size-[770px] items-center justify-center">
                   <video
+                    ref={videoRef}
                     className="z-10 !mx-auto -mt-[270px] max-w-[1280px] mix-blend-plus-lighter 13inch:max-w-[1400px] laptop:-mt-[300px] laptop:max-w-[1600px] 17inch:-mt-[250px] 17inch:max-w-[19200px] 6k:-mt-[108px]"
                     playsInline
                     src={waveVideo}
@@ -203,7 +235,7 @@ function Header() {
 
           <div className="absolute left-0 top-[129px] flex h-[700px] w-full items-center justify-center overflow-hidden xxs:top-[129px] xs:top-[140px] xs:h-[740px] sm:top-[160px] sm:h-[850px] md:top-[71px] md:h-[940px] lg:-top-[10px] lg:h-[1030px] xl:-top-[32px] xl:h-[1050px] 13inch:hidden">
             <video
-              //   src={waveVideo}
+              ref={videoRef}
               className="z-10 h-full w-auto object-cover pt-[10px] sm:mt-[40px] md:pt-[100px]"
               loop
               autoPlay
