@@ -11,10 +11,10 @@ export default function HomePage() {
       <Navbar />
       <Header />
 
-      {/* <FutureTech />
+      <FutureTech />
       <IndexProject />
 
-      <OpenPosition /> */}
+      <OpenPosition />
       <Foooter />
     </div>
   );
