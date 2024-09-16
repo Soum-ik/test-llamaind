@@ -10,7 +10,6 @@ import waveVideo from "../../../public/video/main-animation.mp4";
 import waveVideoWebm from "../../../public/video/main-animation.webm";
 import UseWindowSize from "../../Hooks/UseGetScreenSize";
 import Layout from "../layout/Layout";
-// import useAutoPlayVideo from "../../Hooks/useAutoPlayVideo";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 
