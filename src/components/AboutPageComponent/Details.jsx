@@ -120,7 +120,10 @@ function Details() {
             } else if (width > 2000) {
                 return "+=190%";
             } else if (width > 1900) {
-                return "+=205%";
+               return "+=197%";
+            }
+            else if (width >= 1850) {
+                return "+=195%";
             } else if (width > 1800) {
                 return "+=190%";
             } else if (width > 1600) {

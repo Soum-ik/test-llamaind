@@ -120,7 +120,7 @@ function Header() {
 
     <>
       {/* bigger screen start */}
-      <div ref={header} className="min-h-[110vh] hidden 3xl:pt-[60px] 4xl:pt-[80px] 4k:pt-[150px] 5k:pt-[160px] 6k:pt-[220px] 7k:pt-[270px] 8k:pt-[300px] 9k:pt-[750px]  10k:pt-[1000px] xl:block pb-[300px] 13inch:pb-[250px] laptop:pb-[340px]">
+      <div ref={header} className="min-h-[110vh] hidden 3xl:pt-[85px] 4xl:pt-[170px] 4k:pt-[240px] 5k:pt-[160px] 6k:pt-[220px] 7k:pt-[270px] 8k:pt-[300px] 9k:pt-[750px]  10k:pt-[1000px] xl:block pb-[300px] 13inch:pb-[250px] laptop:pb-[340px]">
         <Layout>
 
           <div id="slider1" className="pt-[110px] 3xl:pt-[50px] 4xl:pt-[60px]  5k:pt-[140px]">
