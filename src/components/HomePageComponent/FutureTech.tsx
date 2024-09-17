@@ -12,8 +12,7 @@ import { useGSAP } from '@gsap/react';
 import { MoveRight } from 'lucide-react';
 import FutureTechLooping from './FutureTechLooping';
 import UseWindowSize from '../../Hooks/UseGetScreenSize';
-import featuresWebm from "../../../public/video/s.webm";
-
+import techArsenal from '../../../public/video/Tech arsenal.mp4'
 
 
 
@@ -196,11 +195,9 @@ function FutureTech() {
                       loop
                       autoPlay
                       muted
+                      src={techArsenal}
                       className="z-30 h-[600px] w-auto object-cover mix-blend-plus-lighter xxs:h-[700px] sm:h-[750px] md:h-[800px]"
-                    >
-                      <source src={features} type="video/mp4" />
-                      <source src={featuresWebm} type="video/webm" />
-                    </video>
+                    />
                     <img
                       src={FutureIcon}
                       className="absolute left-1/2 top-1/2 z-[20] size-[130px] w-auto -translate-x-1/2 -translate-y-1/2 sm:size-[160px]"

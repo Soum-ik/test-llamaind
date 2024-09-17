@@ -138,7 +138,7 @@ function Details() {
                 return "+=197%";
             } else if (width > 1290) {
                 return "+=199%";
-            } else if (width > 1280) {
+            } else if (width >= 1280) {
                 return "+=200%";
             } else {
                 return "+=220%";

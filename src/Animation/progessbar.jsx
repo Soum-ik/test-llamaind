@@ -15,13 +15,13 @@ const CircularProgressBar = () => {
           return prev;
         }
       });
-    }, 1000); // Adjust the interval speed (20ms gives a smooth animation)
+    }, 10); // Adjust the interval speed (20ms gives a smooth animation)
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className=" flex flex-col items-center   justify-center w-full h-full">
+    <div className=" flex flex-col items-center  bg-black min-h-screen  justify-center w-full h-full">
       {/* SVG Circle */}
       <div className=' relative'>
         <svg className=" size-[100px] lg:size-[150px]    transform rotate-180" viewBox="0 0 36 36">

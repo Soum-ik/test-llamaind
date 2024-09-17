@@ -23,21 +23,19 @@ export default function App() {
     }
   });
 
-
-
-
   return (
     <div className="w-full h-screen font-Orbitron">
 
-
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/career' element={<CareerPage />} />
-        <Route path='/career/job-details/:jobName' element={<JobDetailsPage />} />
-        <Route path='/contact' element={<ContactPage />} />
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/about" element={<AboutPage />} />
+        <Route path="/career" element={<CareerPage />} />
+        <Route
+          path="/career/job-details/:jobName"
+          element={<JobDetailsPage />}
+        />
+        <Route path="/contact" element={<ContactPage />} /> */}
       </Routes>
-
     </div>
   );
 }

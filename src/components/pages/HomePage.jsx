@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="h-auto bg-black font-Orbitron">
       <Navbar />
-      <Header />
+       <Header />  
 
       <FutureTech />
       <IndexProject />
